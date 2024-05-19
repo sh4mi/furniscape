@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WebController::class, 'index'])->name('home');
+Route::get('/shop', [WebController::class, 'shop'])->name('shop');
+
 Route::get('users', [UsersController::class, 'index'])->name('users.index');
 // ---->PRODUCTS<----
 Route::get('products', [ProductsController::class, 'index'])->name('products.index');

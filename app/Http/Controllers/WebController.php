@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
-
+use App\Models\Product;
 class WebController extends Controller
 {
     /**
@@ -19,6 +19,30 @@ class WebController extends Controller
         return view('web.home', [
             //'user' => $request->user(),
         ]);
+    }
+
+    public function shop(Request $request)
+    {
+        $query = Product::query();
+
+        // Apply filters if query parameters are provided
+        if ($request->filled('category')) {
+           // $query->where('category', $request->category);
+        }
+
+        if ($request->filled('price_min')) {
+            $query->where('price', '>=', $request->price_min);
+        }
+
+        if ($request->filled('price_max')) {
+            $query->where('price', '<=', $request->price_max);
+        }
+
+        // Paginate results
+        $products = $query->paginate(12);
+
+        // Pass data to the view
+        return view('web.shop', compact('products'));
     }
 
 
