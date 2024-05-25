@@ -73,13 +73,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="is_featured" name="is_featured">
+                                        <input type="checkbox" class="form-check-input" id="is_featured" name="is_featured" value="1">
                                         <label class="form-check-label" for="is_featured">Featured Product</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="is_available" name="is_available" checked>
+                                        <input type="checkbox" class="form-check-input" id="is_available" name="is_available" checked value="1">
                                         <label class="form-check-label" for="is_available">Available</label>
                                     </div>
                                 </div>

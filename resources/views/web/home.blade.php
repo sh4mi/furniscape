@@ -295,7 +295,7 @@
                         "slidesPerView": 1,
                         "observer": true,
                         "observeParents": true,
-                        "breakpoints": {     
+                        "breakpoints": {
                           "540": {
                             "slidesPerView": 1,
                             "spaceBetween": 0
@@ -312,7 +312,7 @@
                           "1500": {
                             "slidesPerView": 5
                           }
-                        },   
+                        },
                         "navigation": {
                           "nextEl": ".swiper-next",
                           "prevEl": ".swiper-prev"
@@ -323,11 +323,11 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="000">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-7.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/bed.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Must Haves</p>
-                            <h4 class="lead fw-bold">Premium Essentials</h4>
+                            <h4 class="lead fw-bold">Beds</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -335,11 +335,11 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="100">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-2.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/dining.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Curated Selection</p>
-                            <h4 class="lead fw-bold">Our Favourites</h4>
+                            <h4 class="lead fw-bold">Tables</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -347,11 +347,11 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="200">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-3.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/chair.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Streetwear Basics</p>
-                            <h4 class="lead fw-bold">T-Shirts &amp; Shirts</h4>
+                            <h4 class="lead fw-bold">Chairs</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -359,11 +359,11 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="300">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-4.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/decor.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Waterproof &amp; Lightweight</p>
-                            <h4 class="lead fw-bold">Jackets &amp; Coats</h4>
+                            <h4 class="lead fw-bold">Home & Decor</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -371,11 +371,11 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="400">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-5.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/sofas.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Keep Warm</p>
-                            <h4 class="lead fw-bold">Hats &amp; Beanies</h4>
+                            <h4 class="lead fw-bold">Sofas</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -383,11 +383,23 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="500">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-6.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/kids.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">20% Off</p>
-                            <h4 class="lead fw-bold">Summer Sale</h4>
+                            <h4 class="lead fw-bold">Kids Furniture</h4>
+                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide align-self-stretch bg-transparent h-auto">
+                        <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="500">
+                            <picture class="d-block mb-4 img-clip-shape-one">
+                                <img class="w-100" title=""
+                                    src="{{ asset('web/assets/images/product/Bathroom.jpg')}}"
+                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                            </picture>
+                            <p class="title-small mb-2 text-muted">20% Off</p>
+                            <h4 class="lead fw-bold">Bathroom Interior Design</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -395,11 +407,11 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="600">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-1.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/office.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Just Arrived</p>
-                            <h4 class="lead fw-bold">Latest Kicks</h4>
+                            <h4 class="lead fw-bold">Office Furniture</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -407,11 +419,11 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="700">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/categories/category-8.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/outdoor.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Accessories</p>
-                            <h4 class="lead fw-bold">Bags &amp; Rugsacks</h4>
+                            <h4 class="lead fw-bold">Outdoor Furniture</h4>
                             <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
@@ -447,28 +459,26 @@
             </div>
             <div class="col-12 col-md-6 position-relative z-index-20 mb-7 mb-lg-0" data-aos="fade-right">
                 <p class="text-muted title-small">Welcome</p>
-                <h3 class="display-3 fw-bold mb-5"><span class="text-outline-dark">OldSkool</span> - streetwear &
-                    footwear specialists</h3>
-                <p class="lead">We are OldSkool, a leading supplier of global streetwear brands, including names
-                    such as <a href="./category.html">Stussy</a>, <a href="./category.html">Carhartt</a>, <a
-                        href="./category.html">Gramicci</a>, <a href="./category.html">Afends</a> and many more.</p>
-                <p class="lead">With worldwide shipping and unbeatable prices - now's a great time to pick out
-                    something from our range.</p>
+                <h3 class="display-3 fw-bold mb-5"><span class="text-outline-dark">RetroFurn</span> - Vintage & Contemporary Furniture Specialists</h3>
+                <p class="lead">
+                    Discover unique furniture blending vintage charm with contemporary style at RetroFurn. From mid-century sofas to industrial dining tables, find your perfect piece today!
+                </p>
+
                 <a href="./category.html" class="btn btn-psuedo" role="button">Shop New Arrivals</a>
             </div>
             <div class="col-12 col-md-6 position-relative z-index-20 pe-0" data-aos="fade-left">
                 <picture class="w-50 d-block position-relative z-index-10 border border-white border-4 shadow-lg">
-                    <img class="img-fluid" src="{{ asset('web/assets/images/banners/banner-5.jpg')}}"
+                    <img class="img-fluid" src="{{ asset('web/assets/images/product/1.png')}}"
                         alt="HTML Bootstrap Template by Pixel Rocket">
                 </picture>
                 <picture
                     class="w-60 d-block me-8 mt-n10 shadow-lg border border-white border-4 position-relative z-index-20 ms-auto">
-                    <img class="img-fluid" src="{{ asset('web/assets/images/banners/banner-6.jpg')}}"
+                    <img class="img-fluid" src="{{ asset('web/assets/images/product/2.png')}}"
                         alt="HTML Bootstrap Template by Pixel Rocket">
                 </picture>
                 <picture
                     class="w-50 d-block me-8 mt-n7 shadow-lg border border-white border-4 position-absolute top-0 end-0 z-index-0 ">
-                    <img class="img-fluid" src="{{ asset('web/assets/images/banners/banner-7.jpg')}}"
+                    <img class="img-fluid" src="{{ asset('web/assets/images/product/3.png')}}"
                         alt="HTML Bootstrap Template by Pixel Rocket">
                 </picture>
             </div>
@@ -485,7 +495,7 @@
                     </picture>
                     <div
                         class="position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center z-index-20">
-                        <div class="py-6 px-5 px-lg-10 text-center w-100">
+                        <div class="py-6 px-5 px-lg-10 text-center ">
                             <h2 class="display-1 mb-3 fw-bold text-white"><span class="text-outline-light">Flash</span>
                                 Sale</h2>
                             <p class="fs-5 fw-light text-white d-none d-md-block">Our yearly flash sale is now on!
@@ -501,7 +511,7 @@
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
                                     <img class="w-100 rounded"
-                                        src="{{ asset('web/assets/images/banners/banner-8.jpg')}}"
+                                        src="{{ asset('web/assets/images/product/1.png')}}"
                                         alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
                                 <div class="card-overlay">
@@ -515,7 +525,7 @@
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
                                     <img class="w-100 rounded"
-                                        src="{{ asset('web/assets/images/banners/banner-9.jpg')}}"
+                                    src="{{ asset('web/assets/images/product/2.png')}}"
                                         alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
                                 <div class="card-overlay">
@@ -578,7 +588,7 @@
                       },
                       "600": {
                         "slidesPerView": 3
-                      },       
+                      },
                       "999": {
                         "slidesPerView": 5
                       },

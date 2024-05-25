@@ -11,7 +11,7 @@
             <h4 class="card-title mb-0">Products</h4>
             </div>
             <div class="col d-flex justify-content-end">
-           <a class="btn btn-danger text-white ms-3 d-none d-md-block" href="#">Add Product</a>
+           <a class="btn btn-danger text-white ms-3 d-none d-md-block" href="{{ url('/products/create') }}">Add Product</a>
             </div>
         </div>
         <div class="card-body">
@@ -51,12 +51,14 @@
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->discount_price }}</td>
                             <td>
-                                <a href="#" class="text-dark pe-2">
+                                <a href="{{ route('products.edit', $product->id) }}" class="text-dark pe-2">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a onclick="#" class="text-dark">
-                                    <i class="fa fa-trash"></i>
+                                <a onclick="deleteProduct({{ $product->id }})" class="text-dark">
+                                    <i  class="fa fa-trash"></i>
                                 </a>
+
+
                             </td>
                         </tr>
                          @endforeach
@@ -66,3 +68,28 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    function deleteProduct(productId) {
+        if (confirm('Are you sure you want to delete this product?')) {
+            fetch('/products/' + productId, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Category deleted successfully
+                    window.location.reload(); // Refresh the page to reflect changes
+                } else {
+                    // Error occurred while deleting category
+                    alert('An error occurred while deleting the category.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while deleting the category.');
+            });
+        }
+    }
+    </script>
