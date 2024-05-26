@@ -20,6 +20,24 @@ class WebController extends Controller
             //'user' => $request->user(),
         ]);
     }
+    public function account(Request $request): View
+    {
+        return view('web.account', [
+            'user' => $request->user(),
+        ]);
+    }
+    public function login(Request $request): View
+    {
+        return view('web.login', [
+            //'user' => $request->user(),
+        ]);
+    }
+    public function register(Request $request): View
+    {
+        return view('web.register', [
+            //'user' => $request->user(),
+        ]);
+    }
 
     public function shop(Request $request)
     {

@@ -5,124 +5,8 @@
 
 
     <section class="vh-75 vh-lg-60 container-fluid rounded overflow-hidden" data-aos="fade-in">
+        <img src="{{asset('assets/images/big/attachment.jpg')}}" style="width: 100%;" alt="">
 
-        <div class="swiper-container overflow-hidden rounded h-100 bg-light" data-swiper data-options='{
-              "spaceBetween": 0,
-              "slidesPerView": 1,
-              "effect": "fade",
-              "speed": 1000,
-              "loop": true,
-              "parallax": true,
-              "observer": true,
-              "observeParents": true,
-              "lazy": {
-                "loadPrevNext": true
-                },
-                "autoplay": {
-                  "delay": 5000,
-                  "disableOnInteraction": false
-              },
-              "pagination": {
-                "el": ".swiper-pagination",
-                "clickable": true
-                }
-              }'>
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide position-relative h-100 w-100">
-                    <div class="w-100 h-100 overflow-hidden position-absolute z-index-1 top-0 start-0 end-0 bottom-0">
-                        <div class="w-100 h-100 bg-img-cover bg-pos-center-center overflow-hidden"
-                            data-swiper-parallax="-100" style="will-change: transform;">
-                        </div>
-                    </div>
-                    <div
-                        class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
-                        <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">Everything You
-                            Need</p>
-                        <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
-                            data-swiper-parallax="100">
-                            <span class="text-outline-light">Summer</span> Essentials
-                        </h2>
-                        <div data-swiper-parallax-y="-25">
-                            <a href="./category.html" class="btn btn-psuedo text-white" role="button">Shop New
-                                Arrivals</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Slide-->
-
-                <!-- Slide-->
-                <div class="swiper-slide position-relative h-100 w-100">
-                    <div class="w-100 h-100 overflow-hidden position-absolute z-index-1 top-0 start-0 end-0 bottom-0">
-                        <div class="w-100 h-100 bg-img-cover bg-pos-center-center overflow-hidden"
-                            data-swiper-parallax="-100" style="will-change: transform;">
-                        </div>
-                    </div>
-                    <div
-                        class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
-                        <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">Spring
-                            Collection</p>
-                        <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
-                            data-swiper-parallax="100">
-                            Adidas <span class="text-outline-light">SS21</span></h2>
-                        <div data-swiper-parallax-y="-25">
-                            <a href="./category.html" class="btn btn-psuedo text-white" role="button">Shop Latest
-                                Adidas</a>
-                        </div>
-                    </div>
-                </div>
-                <!--/Slide-->
-
-                <!-- Slide-->
-                <div class="swiper-slide position-relative h-100 w-100">
-                    <div class="w-100 h-100 overflow-hidden position-absolute z-index-1 top-0 start-0 end-0 bottom-0">
-                        <div class="w-100 h-100 bg-img-cover bg-pos-center-center overflow-hidden"
-                            data-swiper-parallax="-100" style="will-change: transform;">
-                        </div>
-                    </div>
-                    <div
-                        class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
-                        <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">Just Do it</p>
-                        <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
-                            data-swiper-parallax="100">
-                            Nike <span class="text-outline-light">SS21</span></h2>
-                        <div data-swiper-parallax-y="-25">
-                            <a href="./category.html" class="btn btn-psuedo text-white" role="button">Shop Latest
-                                Nike</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Slide-->
-
-                <!--Slide-->
-                <div class="swiper-slide position-relative h-100 w-100">
-                    <div class="w-100 h-100 overflow-hidden position-absolute z-index-1 top-0 start-0 end-0 bottom-0">
-                        <div class="w-100 h-100 bg-img-cover bg-pos-center-center overflow-hidden"
-                            data-swiper-parallax="-100" style=" will-change: transform;">
-                        </div>
-                    </div>
-                    <div
-                        class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
-                        <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">Look Good Feel
-                            Good</p>
-                        <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
-                            data-swiper-parallax="100">
-                            <span class="text-outline-light">Sustainable</span> Fashion
-                        </h2>
-                        <div data-swiper-parallax-y="-25">
-                            <a href="./category.html" class="btn btn-psuedo text-white" role="button">Why We Are
-                                Different</a>
-                        </div>
-                    </div>
-                </div>
-                <!--/Slide-->
-
-            </div>
-
-            <div class="swiper-pagination swiper-pagination-bullet-light"></div>
-
-        </div>
-        <!-- / Swiper Info-->
     </section>
     <!--/ Top Banner-->
 
@@ -322,8 +206,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="000">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/bed.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/bed.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Must Haves</p>
@@ -334,8 +217,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="100">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/dining.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/dining.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Curated Selection</p>
@@ -346,8 +228,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="200">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/chair.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/chair.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Streetwear Basics</p>
@@ -358,8 +239,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="300">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/decor.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/decor.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Waterproof &amp; Lightweight</p>
@@ -370,8 +250,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="400">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/sofas.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/sofas.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Keep Warm</p>
@@ -382,8 +261,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="500">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/kids.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/kids.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">20% Off</p>
@@ -394,8 +272,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="500">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/Bathroom.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/Bathroom.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">20% Off</p>
@@ -406,8 +283,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="600">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/office.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/office.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Just Arrived</p>
@@ -418,8 +294,7 @@
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="700">
                             <picture class="d-block mb-4 img-clip-shape-one">
-                                <img class="w-100" title=""
-                                    src="{{ asset('web/assets/images/product/outdoor.jpg')}}"
+                                <img class="w-100" title="" src="{{ asset('web/assets/images/product/outdoor.jpg')}}"
                                     alt="HTML Bootstrap Template by Pixel Rocket">
                             </picture>
                             <p class="title-small mb-2 text-muted">Accessories</p>
@@ -459,9 +334,11 @@
             </div>
             <div class="col-12 col-md-6 position-relative z-index-20 mb-7 mb-lg-0" data-aos="fade-right">
                 <p class="text-muted title-small">Welcome</p>
-                <h3 class="display-3 fw-bold mb-5"><span class="text-outline-dark">RetroFurn</span> - Vintage & Contemporary Furniture Specialists</h3>
+                <h3 class="display-3 fw-bold mb-5"><span class="text-outline-dark">RetroFurn</span> - Vintage &
+                    Contemporary Furniture Specialists</h3>
                 <p class="lead">
-                    Discover unique furniture blending vintage charm with contemporary style at RetroFurn. From mid-century sofas to industrial dining tables, find your perfect piece today!
+                    Discover unique furniture blending vintage charm with contemporary style at RetroFurn. From
+                    mid-century sofas to industrial dining tables, find your perfect piece today!
                 </p>
 
                 <a href="./category.html" class="btn btn-psuedo" role="button">Shop New Arrivals</a>
@@ -510,8 +387,7 @@
                         <div class="col-12 col-md-6 d-flex">
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
-                                    <img class="w-100 rounded"
-                                        src="{{ asset('web/assets/images/product/1.png')}}"
+                                    <img class="w-100 rounded" src="{{ asset('web/assets/images/product/1.png')}}"
                                         alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
                                 <div class="card-overlay">
@@ -524,8 +400,7 @@
                         <div class="col-12 col-md-6 d-flex">
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
-                                    <img class="w-100 rounded"
-                                    src="{{ asset('web/assets/images/product/2.png')}}"
+                                    <img class="w-100 rounded" src="{{ asset('web/assets/images/product/2.png')}}"
                                         alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
                                 <div class="card-overlay">

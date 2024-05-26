@@ -31,41 +31,34 @@
                     </li>
                     <!-- /Mobile Nav Toggler-->
 
-                    <!-- Navbar Search-->
-                    <li class="d-none d-sm-block">
-                        <span class="nav-link text-body search-trigger cursor-pointer">Search</span>
-
-                        <!-- Search navbar overlay-->
-                        <div class="navbar-search d-none">
-                            <div class="input-group mb-3 h-100">
-                                <span class="input-group-text px-4 bg-transparent border-0"><i
-                                        class="ri-search-line ri-lg"></i></span>
-                                <input type="text" class="form-control text-body bg-transparent border-0"
-                                    placeholder="Enter your search terms...">
-                                <span
-                                    class="input-group-text px-4 cursor-pointer disable-child-pointer close-search bg-transparent border-0"><i
-                                        class="ri-close-circle-line ri-lg"></i></span>
-                            </div>
-                        </div>
-                        <div class="search-overlay"></div>
-                        <!-- / Search navbar overlay-->
-
-                    </li>
-                    <!-- /Navbar Search-->
 
                     <!-- Navbar Login-->
                     <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="nav-link text-body" href="./login.html">
+                        @auth
+                        <a class="nav-link text-body" href="{{ route('account') }}">
                             Account
                         </a>
+
+                        @else
+                        <a class="nav-link text-body" href="{{ route('login') }}">
+                            Login
+                        </a>
+                        @endauth
                     </li>
+                    @auth
+                    <li class="ms-1 d-none d-lg-inline-block">
+                        <a class="nav-link text-body" href="{{ route('logout') }}">
+                            Logout
+                        </a>
+                    </li>
+                    @endauth
                     <!-- /Navbar Login-->
 
                     <!-- Navbar Cart Icon-->
                     <li class="ms-1 d-inline-block position-relative dropdown-cart">
                         <button class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
                             type="button">
-                            Bag (2)
+                            Cart
                         </button>
                         <div class="cart-dropdown dropdown-menu">
 
@@ -164,124 +157,132 @@
                             <div class="dropdown-menu dropdown-megamenu">
                                 <div class="container-fluid">
                                     <div class="row g-0 g-lg-3">
-                                        <!-- Menswear Dropdown Menu Links Section-->
+                                        <!-- Furniture Dropdown Menu Links Section-->
                                         <div class="col col-lg-8 py-lg-5">
                                             <div class="row py-3 py-lg-0 flex-wrap gx-4 gy-6">
-                                                <!-- menu row-->
+                                                <!-- Bedroom -->
                                                 <div class="col">
                                                     <h6 class="dropdown-heading">Bedroom</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Waterproof Jackets</a></li>
+                                                                href="shop?category=beds">Beds</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Insulated Jackets</a></li>
+                                                                href="shop?category=mattresses">Mattresses</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Down Jackets</a></li>
+                                                                href="shop?category=wardrobes">Wardrobes</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Softshell Jackets</a></li>
+                                                                href="shop?category=nightstands">Nightstands</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Casual Jackets</a></li>
+                                                                href="shop?category=bedroom-furniture-sets">Bedroom
+                                                                Furniture Sets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Windproof Jackets</a></li>
+                                                                href="shop?category=dressers">Dressers</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Breathable Jackets</a></li>
+                                                                href="shop?category=mirrors">Mirrors</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Cleaning & Proofing</a></li>
+                                                                href="shop?category=bedroom-accessories">Bedroom
+                                                                Accessories</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
-                                                                href="shop?category=">View All</a></li>
+                                                                href="shop?category=bedroom">View All</a></li>
                                                     </ul>
                                                 </div>
-                                                <!-- / menu row-->
-
-                                                <!-- menu row-->
+                                                <!-- Living Room -->
                                                 <div class="col">
                                                     <h6 class="dropdown-heading">Living Room</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Insulated Jackets</a></li>
+                                                                href="shop?category=sofas">Sofas</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Bodywarmers</a></li>
+                                                                href="shop?category=armchairs">Armchairs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Parkas</a></li>
+                                                                href="shop?category=coffee-tables">Coffee Tables</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Baselayers & Thermals</a></li>
+                                                                href="shop?category=tv-stands">TV Stands</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Winter Hats</a></li>
+                                                                href="shop?category=bookcases">Bookcases</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Scarves & Neck</a></li>
+                                                                href="shop?category=side-tables">Side Tables</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Gloves & Mitts</a></li>
+                                                                href="shop?category=storage-cabinets">Storage
+                                                                Cabinets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Accessories</a></li>
+                                                                href="shop?category=rugs">Rugs</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
-                                                                href="shop?category=">View All</a></li>
+                                                                href="shop?category=living-room">View All</a></li>
                                                     </ul>
                                                 </div>
-                                                <!-- / menu row-->
-
-                                                <!-- menu row-->
+                                                <!-- Dining -->
                                                 <div class="d-none d-xxl-block col">
                                                     <h6 class="dropdown-heading">Dining</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Lifestyle & Casual</a></li>
+                                                                href="shop?category=dining-tables">Dining Tables</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Walking Shoes</a></li>
+                                                                href="shop?category=dining-chairs">Dining Chairs</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Running Shoes</a></li>
+                                                                href="shop?category=dining-sets">Dining Sets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Military Boots</a></li>
+                                                                href="shop?category=bar-stools">Bar Stools</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Fabric Walking Boots</a></li>
+                                                                href="shop?category=sideboards">Sideboards</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Leather Walking Boots</a></li>
+                                                                href="shop?category=dining-benches">Dining Benches</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Wellies</a></li>
+                                                                href="shop?category=dining-storage">Dining Storage</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=">Winter Footwear</a></li>
+                                                                href="shop?category=dining-accessories">Dining
+                                                                Accessories</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
-                                                                href="shop?category=">View All</a></li>
+                                                                href="shop?category=dining">View All</a></li>
                                                     </ul>
                                                 </div>
-                                                <!-- / menu row-->
-
-                                                <!-- menu row-->
+                                                <!-- Kitchen -->
                                                 <div class="col">
                                                     <h6 class="dropdown-heading text-danger">Kitchen</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Insulated Jackets</a></li>
+                                                                href="shop?category=kitchen-islands">Kitchen Islands</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Bodywarmers</a></li>
+                                                                href="shop?category=kitchen-cabinets">Kitchen
+                                                                Cabinets</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Parkas</a></li>
+                                                                href="shop?category=bar-stools">Bar Stools</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Baselayers & Thermals</a></li>
+                                                                href="shop?category=pantry-cabinets">Pantry Cabinets</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Winter Hats</a></li>
+                                                                href="shop?category=kitchen-tables">Kitchen Tables</a>
+                                                        </li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Scarves & Neck</a></li>
+                                                                href="shop?category=chairs">Chairs</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Gloves & Mitts</a></li>
+                                                                href="shop?category=kitchen-accessories">Kitchen
+                                                                Accessories</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=">Accessories</a></li>
+                                                                href="shop?category=kitchen-appliances">Kitchen
+                                                                Appliances</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger dropdown-link-all"
-                                                                href="shop?category=">View All</a></li>
+                                                                href="shop?category=kitchen">View All</a></li>
                                                     </ul>
                                                 </div>
-                                                <!-- / menu row-->
                                             </div>
 
                                             <div
@@ -336,9 +337,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- /Menswear Dropdown Menu Links Section-->
+                                        <!-- /Furniture Dropdown Menu Links Section-->
 
-                                        <!-- Menswear Dropdown Menu Images Section-->
+                                        <!-- Furniture Dropdown Menu Images Section-->
                                         <div class="col-lg-4 d-none d-lg-block">
                                             <div class="vw-50 border-start h-100 position-absolute"></div>
                                             <div class="py-lg-5 position-relative z-index-10 px-lg-4">
@@ -351,18 +352,18 @@
                                                                     src="{{asset('web/assets/images/banners/menu.jpg')}}"
                                                                     alt="HTML Bootstrap Template by Pixel Rocket">
                                                             </picture>
-                                                            <a class="fw-bolder link-cover" href="shop?category=">Shop
-                                                                Now</a>
+                                                            <a class="fw-bolder link-cover"
+                                                                href="shop?category=furniture">Shop Now</a>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
-                                        <!-- Menswear Dropdown Menu Images Section-->
+                                        <!-- /Furniture Dropdown Menu Images Section-->
                                     </div>
                                 </div>
                             </div>
+
                             <!-- / Menswear dropdown menu-->
                         </li>
 
