@@ -1,6 +1,6 @@
 @extends('web.layouts.app')
 @section('content')
-<section class="mt-0 ">
+<section class="mt-0">
 
     <div class="container-fluid" data-aos="fade-in">
         <!-- Category Toolbar-->
@@ -60,14 +60,14 @@
                                 class="ri-heart-line"></i></span>
                         <picture class="position-relative overflow-hidden d-block bg-light">
                             <img class="w-100 img-fluid position-relative z-index-10" title=""
-                                src="{{asset('web/assets/images/products/product-1.jpg')}}" alt="">
+                                src="{{asset('web/assets/images/product/placeholder.png')}}" alt="">
                         </picture>
                         <div class="position-absolute start-0 bottom-0 end-0 z-index-20 p-2">
                             <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
                         </div>
                     </div>
                     <div class="card-body px-0">
-                        <a class="text-decoration-none link-cover" href="./product.html">{{$product->name}}</a>
+                        <a class="text-decoration-none link-cover" href="{{route('product')}}">{{$product->name}}</a>
                         <small class="text-muted d-block">4 colours, 10 sizes</small>
                         <p class="mt-2 mb-0 small">
                             @if($product->discount_price != null)

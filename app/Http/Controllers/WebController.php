@@ -39,6 +39,13 @@ class WebController extends Controller
         ]);
     }
 
+    public function product(Request $request): View
+    {
+        return view('web.product', [
+            //'user' => $request->user(),
+        ]);
+    }
+
     public function shop(Request $request)
     {
         $query = Product::query();

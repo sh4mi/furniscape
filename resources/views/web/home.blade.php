@@ -413,8 +413,7 @@
                         <div class="col-12 col-md-6 d-flex">
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
-                                    <img class="w-100 rounded"
-                                        src="{{ asset('web/assets/images/banners/banner-10.jpg')}}"
+                                    <img class="w-100 rounded" src="{{ asset('web/assets/images/product/bed.jpg')}}"
                                         alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
                                 <div class="card-overlay">
@@ -428,7 +427,7 @@
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
                                     <img class="w-100 rounded"
-                                        src="{{ asset('web/assets/images/banners/banner-11.jpg')}}"
+                                        src="{{ asset('web/assets/images/product/bathroom.jpg')}}"
                                         alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
                                 <div class="card-overlay">
@@ -445,98 +444,7 @@
 
 
 
-        <div data-aos="fade-in">
-            <h3 class="title-small text-muted text-center mb-3 mt-5"><i class="ri-instagram-line align-bottom"></i>
-                #OLDSKOOL
-            </h3>
-            <div class="overflow-hidden">
-                <div class="swiper-container swiper-overflow-visible" data-swiper data-options='{
-                    "spaceBetween": 20,
-                    "loop": true,
-                    "autoplay": {
-                      "delay": 5000,
-                      "disableOnInteraction": false
-                    },
-                    "breakpoints": {
-                      "400": {
-                        "slidesPerView": 2
-                      },
-                      "600": {
-                        "slidesPerView": 3
-                      },
-                      "999": {
-                        "slidesPerView": 5
-                      },
-                      "1024": {
-                        "slidesPerView": 6
-                      }
-                    }
-                  }'>
-                    <div class="swiper-wrapper mb-5">
-
-                        <!-- Start of instagram slideshow loop for items-->
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1586396874197-b8fc676a5187?ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib&#x3D;rb-1.2.1&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1538329972958-465d6d2144ed?ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib&#x3D;rb-1.2.1&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1503341338985-c0477be52513?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1566677914817-56426959ae9c?ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib&#x3D;rb-1.2.1&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1582657233895-0f37a3f150c0?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1550246140-5119ae4790b8?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1520048480367-7a6a4b6efb2a?ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib&#x3D;rb-1.2.1&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide flex-column">
-                            <picture>
-                                <img class="rounded shadow-sm img-fluid" data-zoomable
-                                    src="https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;700&amp;h&#x3D;700"
-                                    title="" alt="">
-                            </picture>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--  -->
 
     </div>
 </section>
