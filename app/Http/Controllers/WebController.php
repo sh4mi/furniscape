@@ -67,7 +67,7 @@ class WebController extends Controller
         $products = $query->paginate(12);
 
         // Pass data to the view
-        return view('web.shop', compact('products'));
+        return view('web.shop', compact('products')); //mvc
     }
 
 

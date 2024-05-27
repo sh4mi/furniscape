@@ -9,31 +9,36 @@
 
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/users') }}"aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/users') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-calendar-check"></i>
                         <span class="hide-menu">Users</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/categories') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/categories') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-calendar-check"></i>
                         <span class="hide-menu">Categories</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/products') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/products') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-calendar-check"></i>
                         <span class="hide-menu">Products</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/orders') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/orders') }}"
+                        aria-expanded="false">
                         <i class="mdi mdi-calendar-check"></i>
                         <span class="hide-menu">Orders</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                        aria-expanded="false">
                         <i class="mdi mdi-apple-safari"></i>
                         <span class="hide-menu">Reports</span>
                     </a>

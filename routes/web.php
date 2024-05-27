@@ -26,7 +26,9 @@ Route::get('/account', [WebController::class, 'account'])->name('account');
 
 Route::get('/shop', [WebController::class, 'shop'])->name('shop');
 Route::get('/product', [WebController::class, 'product'])->name('product');
-
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+    });
 
 Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(function () {
     Route::get('dashboard', function () {
@@ -39,7 +41,7 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
     Route::get('products/create', [ProductsController::class, 'create'])->name('products.create');
     Route::post('products', [ProductsController::class, 'store'])->name('products.store');
     Route::get('products/{product}/edit', [ProductsController::class, 'edit'])->name('products.edit');
-    //Route.put('products/{product}', [ProductsController::class, 'update'])->name('products.update');
+    Route::post('products/{product}', [ProductsController::class, 'update'])->name('products.update');
     Route::delete('products/{product}', [ProductsController::class, 'destroy'])->name('products.destroy');
     
     // Orders

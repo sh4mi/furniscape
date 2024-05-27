@@ -12,8 +12,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\ProductImage;
-
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 class ProductsController extends Controller
 {
     /**
@@ -58,7 +58,7 @@ class ProductsController extends Controller
     {
         $product = Product::with('images')->findOrFail($id);
         // Retrieve the product by ID
-        $product = Product::findOrFail($id);
+        $product = Product::with('images')->findOrFail($id);
 
         // Retrieve all categories
         $categories = Category::all();
@@ -86,14 +86,22 @@ class ProductsController extends Controller
 
     // Find the product by ID
     $product = Product::findOrFail($id);
+    
 
     // Update the product with the validated data
     $product->update($request->except('images')); // Exclude 'images' field from the update
 
     // Handle image upload and save to database
+    $destinationPath = public_path('assets/web/images/product');
+    if (!File::exists($destinationPath)) {
+        File::makeDirectory($destinationPath, 0755, true);
+    }
     if ($request->hasFile('images')) {
         foreach ($request->file('images') as $image) {
-            $path = $image->store('product_images');
+            $filename = time().'_'.$image->getClientOriginalName();
+            $image->move($destinationPath, $filename);
+            // $path = $image->store('product_images');
+            $path = 'assets/web/images/product/'.$filename;
             $productImage = new ProductImage(); // Instantiate the ProductImage model
             $productImage->product_id = $product->id; // Assuming product_id is the foreign key linking product and product images
             $productImage->image_url = $path;
