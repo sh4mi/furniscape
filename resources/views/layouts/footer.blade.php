@@ -1,3 +1,3 @@
 <footer class="footer text-center">
-    All Rights Reserved by Ample admin. .
+    All Rights Reserved by Furniscape.
 </footer>
