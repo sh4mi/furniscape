@@ -42,8 +42,11 @@ class WebController extends Controller
     public function product(Request $request, $id): View
     {   
         $product = Product::with('images')->findOrFail($id);
+        $products = Product::with('images')->inRandomOrder()->limit(10)->get();
+        
         return view('web.product', [
             'product' => $product,
+            'products'=>$products,
         ]);
     }
 
