@@ -71,7 +71,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="fs-4 m-0">{{$product->price}} PKR</p>
                         </div>
-                        <div class="border-top mt-4 mb-3 product-option">
+                        <!-- <div class="border-top mt-4 mb-3 product-option">
                             <small class="text-uppercase pt-4 d-block fw-bolder">
                                 <span class="text-muted">Available Sizes</span> : <span class="selected-option fw-bold"
                                     data-pixr-product-option="size">M</span>
@@ -121,7 +121,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <button class="btn btn-dark w-100 mt-4 mb-0 hover-lift-sm hover-boxshadow">Add To Shopping
                             Bag</button>
