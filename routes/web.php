@@ -25,7 +25,7 @@ Route::get('/', [WebController::class, 'index'])->name('home');
 Route::get('/account', [WebController::class, 'account'])->name('account');
 
 Route::get('/shop', [WebController::class, 'shop'])->name('shop');
-Route::get('/product', [WebController::class, 'product'])->name('product');
+Route::get('/product/{id}', [WebController::class, 'product'])->name('product');
 Route::get('/foo', function () {
     Artisan::call('storage:link');
     });

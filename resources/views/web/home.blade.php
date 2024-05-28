@@ -207,7 +207,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="000">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/bed.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">Must Haves</p>
                             <h4 class="lead fw-bold">Beds</h4>
@@ -218,7 +218,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="100">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/dining.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">Curated Selection</p>
                             <h4 class="lead fw-bold">Tables</h4>
@@ -229,7 +229,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="200">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/chair.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">Streetwear Basics</p>
                             <h4 class="lead fw-bold">Chairs</h4>
@@ -240,7 +240,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="300">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/decor.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">Waterproof &amp; Lightweight</p>
                             <h4 class="lead fw-bold">Home & Decor</h4>
@@ -251,7 +251,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="400">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/sofas.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">Keep Warm</p>
                             <h4 class="lead fw-bold">Sofas</h4>
@@ -262,7 +262,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="500">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/kids.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">20% Off</p>
                             <h4 class="lead fw-bold">Kids Furniture</h4>
@@ -273,7 +273,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="500">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/Bathroom.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">20% Off</p>
                             <h4 class="lead fw-bold">Bathroom Interior Design</h4>
@@ -284,7 +284,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="600">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/office.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">Just Arrived</p>
                             <h4 class="lead fw-bold">Office Furniture</h4>
@@ -295,7 +295,7 @@
                         <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="700">
                             <picture class="d-block mb-4 img-clip-shape-one">
                                 <img class="w-100" title="" src="{{ asset('web/assets/images/product/outdoor.jpg')}}"
-                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                    alt="Furniscape">
                             </picture>
                             <p class="title-small mb-2 text-muted">Accessories</p>
                             <h4 class="lead fw-bold">Outdoor Furniture</h4>
@@ -345,18 +345,15 @@
             </div>
             <div class="col-12 col-md-6 position-relative z-index-20 pe-0" data-aos="fade-left">
                 <picture class="w-50 d-block position-relative z-index-10 border border-white border-4 shadow-lg">
-                    <img class="img-fluid" src="{{ asset('web/assets/images/product/1.png')}}"
-                        alt="HTML Bootstrap Template by Pixel Rocket">
+                    <img class="img-fluid" src="{{ asset('web/assets/images/product/1.png')}}" alt="Furniscape">
                 </picture>
                 <picture
                     class="w-60 d-block me-8 mt-n10 shadow-lg border border-white border-4 position-relative z-index-20 ms-auto">
-                    <img class="img-fluid" src="{{ asset('web/assets/images/product/2.png')}}"
-                        alt="HTML Bootstrap Template by Pixel Rocket">
+                    <img class="img-fluid" src="{{ asset('web/assets/images/product/2.png')}}" alt="Furniscape">
                 </picture>
                 <picture
                     class="w-50 d-block me-8 mt-n7 shadow-lg border border-white border-4 position-absolute top-0 end-0 z-index-0 ">
-                    <img class="img-fluid" src="{{ asset('web/assets/images/product/3.png')}}"
-                        alt="HTML Bootstrap Template by Pixel Rocket">
+                    <img class="img-fluid" src="{{ asset('web/assets/images/product/3.png')}}" alt="Furniscape">
                 </picture>
             </div>
         </div>
@@ -368,7 +365,7 @@
                 <div class="col-12 col-xl-6 position-relative" data-aos="fade-right">
                     <picture class="position-relative z-index-10">
                         <img class="w-100 rounded" src="{{ asset('web/assets/images/banners/banner-sale.jpg')}}"
-                            alt="HTML Bootstrap Template by Pixel Rocket">
+                            alt="Furniscape">
                     </picture>
                     <div
                         class="position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center z-index-20">
@@ -388,7 +385,7 @@
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
                                     <img class="w-100 rounded" src="{{ asset('web/assets/images/product/1.png')}}"
-                                        alt="HTML Bootstrap Template by Pixel Rocket">
+                                        alt="Furniscape">
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">The Jordan Delta 2</p>
@@ -401,7 +398,7 @@
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
                                     <img class="w-100 rounded" src="{{ asset('web/assets/images/product/2.png')}}"
-                                        alt="HTML Bootstrap Template by Pixel Rocket">
+                                        alt="Furniscape">
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">Latest Mens Shirts</p>
@@ -414,7 +411,7 @@
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
                                     <img class="w-100 rounded" src="{{ asset('web/assets/images/product/bed.jpg')}}"
-                                        alt="HTML Bootstrap Template by Pixel Rocket">
+                                        alt="Furniscape">
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">KiiKii Osake Tees</p>
@@ -427,8 +424,7 @@
                             <div class="card position-relative overflow-hidden">
                                 <picture class="position-relative z-index-10 d-block bg-light">
                                     <img class="w-100 rounded"
-                                        src="{{ asset('web/assets/images/product/bathroom.jpg')}}"
-                                        alt="HTML Bootstrap Template by Pixel Rocket">
+                                        src="{{ asset('web/assets/images/product/bathroom.jpg')}}" alt="Furniscape">
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">Multibuy Womens Shirts</p>

@@ -13,7 +13,7 @@
                                 d="M10.43,54.2h0L0,36.13,10.43,18.06,20.86,0H41.72L10.43,54.2Zm67.1-7.83L73,54.2,68.49,62,45,48.47,31.29,72.26H20.86l-5.22-9L52.15,0H62.58l5.21,9L54.06,32.82,77.53,46.37Z"
                                 fill="currentColor" fill-rule="evenodd" />
                         </svg> -->
-                        <img src="{{ asset('web/assets/images/logos/logo.png')}}" style="height: 55px;" alt="OldSkool"
+                        <img src="{{ asset('web/assets/images/logos/logo.png')}}" style="height: 55px;" alt="Furniscape"
                             class="img-fluid">
                     </div>
                 </a>
@@ -77,7 +77,7 @@
                                     <div class="col-2 position-relative">
                                         <picture class="d-block ">
                                             <img class="img-fluid" src="./assets/images/products/product-cart-1.jpg"
-                                                alt="HTML Bootstrap Template by Pixel Rocket">
+                                                alt="Furniscape">
                                         </picture>
                                     </div>
                                     <div class="col-9 offset-1">
@@ -97,7 +97,7 @@
                                     <div class="col-2 position-relative">
                                         <picture class="d-block ">
                                             <img class="img-fluid" src="./assets/images/products/product-cart-2.jpg"
-                                                alt="HTML Bootstrap Template by Pixel Rocket">
+                                                alt="Furniscape">
                                         </picture>
                                     </div>
                                     <div class="col-9 offset-1">
@@ -165,26 +165,26 @@
                                                     <h6 class="dropdown-heading">Bedroom</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=beds">Beds</a></li>
+                                                                href="/shop?category=beds">Beds</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=mattresses">Mattresses</a></li>
+                                                                href="/shop?category=mattresses">Mattresses</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=wardrobes">Wardrobes</a></li>
+                                                                href="/shop?category=wardrobes">Wardrobes</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=nightstands">Nightstands</a></li>
+                                                                href="/shop?category=nightstands">Nightstands</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=bedroom-furniture-sets">Bedroom
+                                                                href="/shop?category=bedroom-furniture-sets">Bedroom
                                                                 Furniture Sets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=dressers">Dressers</a></li>
+                                                                href="/shop?category=dressers">Dressers</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=mirrors">Mirrors</a></li>
+                                                                href="/shop?category=mirrors">Mirrors</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=bedroom-accessories">Bedroom
+                                                                href="/shop?category=bedroom-accessories">Bedroom
                                                                 Accessories</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
-                                                                href="shop?category=bedroom">View All</a></li>
+                                                                href="/shop?category=bedroom">View All</a></li>
                                                     </ul>
                                                 </div>
                                                 <!-- Living Room -->
@@ -192,26 +192,26 @@
                                                     <h6 class="dropdown-heading">Living Room</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=sofas">Sofas</a></li>
+                                                                href="/shop?category=sofas">Sofas</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=armchairs">Armchairs</a></li>
+                                                                href="/shop?category=armchairs">Armchairs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=coffee-tables">Coffee Tables</a>
+                                                                href="/shop?category=coffee-tables">Coffee Tables</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=tv-stands">TV Stands</a></li>
+                                                                href="/shop?category=tv-stands">TV Stands</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=bookcases">Bookcases</a></li>
+                                                                href="/shop?category=bookcases">Bookcases</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=side-tables">Side Tables</a></li>
+                                                                href="/shop?category=side-tables">Side Tables</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=storage-cabinets">Storage
+                                                                href="/shop?category=storage-cabinets">Storage
                                                                 Cabinets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=rugs">Rugs</a></li>
+                                                                href="/shop?category=rugs">Rugs</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
-                                                                href="shop?category=living-room">View All</a></li>
+                                                                href="/shop?category=living-room">View All</a></li>
                                                     </ul>
                                                 </div>
                                                 <!-- Dining -->
@@ -219,29 +219,29 @@
                                                     <h6 class="dropdown-heading">Dining</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=dining-tables">Dining Tables</a>
+                                                                href="/shop?category=dining-tables">Dining Tables</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=dining-chairs">Dining Chairs</a>
+                                                                href="/shop?category=dining-chairs">Dining Chairs</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=dining-sets">Dining Sets</a></li>
+                                                                href="/shop?category=dining-sets">Dining Sets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=bar-stools">Bar Stools</a></li>
+                                                                href="/shop?category=bar-stools">Bar Stools</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=sideboards">Sideboards</a></li>
+                                                                href="/shop?category=sideboards">Sideboards</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=dining-benches">Dining Benches</a>
+                                                                href="/shop?category=dining-benches">Dining Benches</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=dining-storage">Dining Storage</a>
+                                                                href="/shop?category=dining-storage">Dining Storage</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="shop?category=dining-accessories">Dining
+                                                                href="/shop?category=dining-accessories">Dining
                                                                 Accessories</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
-                                                                href="shop?category=dining">View All</a></li>
+                                                                href="/shop?category=dining">View All</a></li>
                                                     </ul>
                                                 </div>
                                                 <!-- Kitchen -->
@@ -250,37 +250,39 @@
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=kitchen-islands">Kitchen Islands</a>
+                                                                href="/shop?category=kitchen-islands">Kitchen
+                                                                Islands</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=kitchen-cabinets">Kitchen
+                                                                href="/shop?category=kitchen-cabinets">Kitchen
                                                                 Cabinets</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=bar-stools">Bar Stools</a></li>
+                                                                href="/shop?category=bar-stools">Bar Stools</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=pantry-cabinets">Pantry Cabinets</a>
+                                                                href="/shop?category=pantry-cabinets">Pantry
+                                                                Cabinets</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=kitchen-tables">Kitchen Tables</a>
+                                                                href="/shop?category=kitchen-tables">Kitchen Tables</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=chairs">Chairs</a></li>
+                                                                href="/shop?category=chairs">Chairs</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=kitchen-accessories">Kitchen
+                                                                href="/shop?category=kitchen-accessories">Kitchen
                                                                 Accessories</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger"
-                                                                href="shop?category=kitchen-appliances">Kitchen
+                                                                href="/shop?category=kitchen-appliances">Kitchen
                                                                 Appliances</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item text-danger dropdown-link-all"
-                                                                href="shop?category=kitchen">View All</a></li>
+                                                                href="/shop?category=kitchen">View All</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -288,7 +290,7 @@
                                             <div
                                                 class="align-items-center justify-content-between mt-5 d-none d-lg-flex">
                                                 <div class="me-5 f-w-20">
-                                                    <a class="d-block" href="shop?category=">
+                                                    <a class="d-block" href="/shop?category=">
                                                         <picture>
                                                             <img class="img-fluid d-table mx-auto"
                                                                 src="./assets/images/logos/logo-1.svg" alt="">
@@ -296,7 +298,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="me-5 f-w-20">
-                                                    <a class="d-block" href="shop?category=">
+                                                    <a class="d-block" href="/shop?category=">
                                                         <picture>
                                                             <img class="img-fluid d-table mx-auto"
                                                                 src="./assets/images/logos/logo-2.svg" alt="">
@@ -304,7 +306,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="me-5 f-w-20">
-                                                    <a class="d-block" href="shop?category=">
+                                                    <a class="d-block" href="/shop?category=">
                                                         <picture>
                                                             <img class="img-fluid d-table mx-auto"
                                                                 src="./assets/images/logos/logo-3.svg" alt="">
@@ -312,7 +314,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="me-5 f-w-20">
-                                                    <a class="d-block" href="shop?category=">
+                                                    <a class="d-block" href="/shop?category=">
                                                         <picture>
                                                             <img class="img-fluid d-table mx-auto"
                                                                 src="./assets/images/logos/logo-4.svg" alt="">
@@ -320,7 +322,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="me-5 f-w-20">
-                                                    <a class="d-block" href="shop?category=">
+                                                    <a class="d-block" href="/shop?category=">
                                                         <picture>
                                                             <img class="img-fluid d-table mx-auto"
                                                                 src="./assets/images/logos/logo-5.svg" alt="">
@@ -328,7 +330,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="me-5 f-w-20">
-                                                    <a class="d-block" href="shop?category=">
+                                                    <a class="d-block" href="/shop?category=">
                                                         <picture>
                                                             <img class="img-fluid d-table mx-auto"
                                                                 src="./assets/images/logos/logo-6.svg" alt="">
@@ -350,10 +352,10 @@
                                                             <picture class="w-100 d-block mb-2 mx-auto">
                                                                 <img class="w-100 rounded" title=""
                                                                     src="{{asset('web/assets/images/banners/menu.jpg')}}"
-                                                                    alt="HTML Bootstrap Template by Pixel Rocket">
+                                                                    alt="Furniscape">
                                                             </picture>
                                                             <a class="fw-bolder link-cover"
-                                                                href="shop?category=furniture">Shop Now</a>
+                                                                href="/shop?category=furniture">Shop Now</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -368,22 +370,22 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="shop?category=bedroom" role="button">
+                            <a class="nav-link" href="/shop?category=bedroom" role="button">
                                 Bedroom
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop?category=living" role="button">
+                            <a class="nav-link" href="/shop?category=living" role="button">
                                 Living
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop?category=dining" role="button">
+                            <a class="nav-link" href="/shop?category=dining" role="button">
                                 Dining
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop?category=kitchen" role="button">
+                            <a class="nav-link" href="/shop?category=kitchen" role="button">
                                 Kitchen
                             </a>
                         </li>

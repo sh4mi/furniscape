@@ -45,7 +45,7 @@
     </noscript>
 
     <!-- Page Title -->
-    <title>OldSkool | Bootstrap 5 HTML Template</title>
+    <title>Furniscape</title>
 
 </head>
 

@@ -39,10 +39,11 @@ class WebController extends Controller
         ]);
     }
 
-    public function product(Request $request): View
-    {
+    public function product(Request $request, $id): View
+    {   
+        $product = Product::with('images')->findOrFail($id);
         return view('web.product', [
-            //'user' => $request->user(),
+            'product' => $product,
         ]);
     }
 

@@ -58,8 +58,6 @@
                                 <a onclick="deleteProduct({{ $product->id }})" class="text-dark">
                                     <i class="fa fa-trash"></i>
                                 </a>
-
-
                             </td>
                         </tr>
                         @endforeach

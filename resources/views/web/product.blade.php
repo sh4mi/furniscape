@@ -10,8 +10,8 @@
             <nav class="m-0" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item breadcrumb-light"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item breadcrumb-light"><a href="#">T-Shirts</a></li>
-                    <li class="breadcrumb-item  breadcrumb-light active" aria-current="page">Osaka Japan Mens T-Shirt
+                    <li class="breadcrumb-item breadcrumb-light"><a href="#">{{$product->category->name}}</a></li>
+                    <li class="breadcrumb-item  breadcrumb-light active" aria-current="page">{{$product->name}}
                     </li>
                 </ol>
             </nav>
@@ -27,30 +27,13 @@
             <!-- Product Images-->
             <div class="col-12 col-md-6 col-xl-7">
                 <div class="row g-3" data-aos="fade-right">
+                    @foreach($product->images as $image)
                     <div class="col-12">
                         <picture>
-                            <img class="img-fluid" data-zoomable src="{{ asset('web/assets/images/product/1.jpg')}}"
-                                alt="HTML Bootstrap Template by Pixel Rocket">
+                            <img class="img-fluid" data-zoomable src="{{ asset($image->image_url) }}" alt="Furniscape">
                         </picture>
                     </div>
-                    <div class="col-12">
-                        <picture>
-                            <img class="img-fluid" data-zoomable src="{{ asset('web/assets/images/product/2.jpg')}}"
-                                alt="HTML Bootstrap Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-12">
-                        <picture>
-                            <img class="img-fluid" data-zoomable src="{{ asset('web/assets/images/product/3.jpg')}}"
-                                alt="HTML Bootstrap Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-12">
-                        <picture>
-                            <img class="img-fluid" data-zoomable src="{{ asset('web/assets/images/product/4.jpg')}}"
-                                alt="HTML Bootstrap Template by Pixel Rocket">
-                        </picture>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <!-- /Product Images-->
@@ -60,7 +43,8 @@
                 <div class="sticky-top top-5">
                     <div class="pb-3" data-aos="fade-in">
                         <div class="d-flex align-items-center mb-3">
-                            <p class="small fw-bolder text-uppercase tracking-wider text-muted m-0 me-4">KiiKii</p>
+                            <p class="small fw-bolder text-uppercase tracking-wider text-muted m-0 me-4">
+                                {{$product->name}}</p>
                             <div class="d-flex justify-content-start align-items-center disable-child-pointer cursor-pointer"
                                 data-pixr-scrollto data-target=".reviews">
                                 <!-- Review Stars Small-->
@@ -83,14 +67,14 @@
                             </div>
                         </div>
 
-                        <h1 class="mb-1 fs-2 fw-bold">Kiikii Osaka Japan Mens T-Shirt Limited Edition</h1>
+                        <h1 class="mb-1 fs-2 fw-bold">{{$product->name}}</h1>
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="fs-4 m-0">$34.99</p>
+                            <p class="fs-4 m-0">{{$product->price}} PKR</p>
                         </div>
                         <div class="border-top mt-4 mb-3 product-option">
                             <small class="text-uppercase pt-4 d-block fw-bolder">
-                                <span class="text-muted">Available Sizes (Mens)</span> : <span
-                                    class="selected-option fw-bold" data-pixr-product-option="size">M</span>
+                                <span class="text-muted">Available Sizes</span> : <span class="selected-option fw-bold"
+                                    data-pixr-product-option="size">M</span>
                             </small>
                             <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
                                 <div class="form-check-option form-check-rounded">
@@ -138,23 +122,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <small class="text-uppercase pt-4 d-block fw-bolder text-muted">
-                                Available Designs :
-                            </small>
-                            <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
-                                <picture class="me-2">
-                                    <img class="f-w-24 p-2 bg-light border-bottom border-dark border-2 cursor-pointer"
-                                        src="{{ asset('web/assets/images/product/thumb-1.jpg')}}"
-                                        alt="HTML Bootstrap Template by Pixel Rocket">
-                                </picture>
-                                <picture>
-                                    <img class="f-w-24 p-2 bg-light cursor-pointer"
-                                        src="{{ asset('web/assets/images/product/thumb-2.jpg')}}"
-                                        alt="HTML Bootstrap Template by Pixel Rocket">
-                                </picture>
-                            </div>
-                        </div>
+
                         <button class="btn btn-dark w-100 mt-4 mb-0 hover-lift-sm hover-boxshadow">Add To Shopping
                             Bag</button>
 
@@ -195,9 +163,7 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionProduct">
                                     <div class="accordion-body">
-                                        <p class="m-0">Made from 100% organic cotton, The Kiikii Osaka Japan T-Shirt was
-                                            created with everyday use in mind. It features printed graphics and
-                                            heavyweight fabric for maximum comfort and lifespan.</p>
+                                        <p class="m-0">{{$product->description}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -239,8 +205,9 @@
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item d-flex border-0 row g-0 px-0">
                                                 <span class="col-4 fw-bolder">Delivery</span>
-                                                <span class="col-7 offset-1">Standard delivery free for orders over $99.
-                                                    Next day delivery $9.99</span>
+                                                <span class="col-7 offset-1">Standard delivery free for orders over
+                                                    20000 PKR.
+                                                    Next day delivery 5000 PKR</span>
                                             </li>
                                             <li class="list-group-item d-flex border-0 row g-0 px-0">
                                                 <span class="col-4 fw-bolder">Returns</span>
@@ -312,7 +279,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Air
+                                    <a class="text-decoration-none link-cover" href="#">Nike Air
                                         VaporMax 2021</a>
                                     <small class="text-muted d-block">4 colours, 10 sizes</small>
                                     <p class="mt-2 mb-0 small"><s class="text-muted">$329.99</s> <span
@@ -343,7 +310,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike ZoomX
+                                    <a class="text-decoration-none link-cover" href="#">Nike ZoomX
                                         Vaporfly</a>
                                     <small class="text-muted d-block">2 colours, 4 sizes</small>
                                     <p class="mt-2 mb-0 small">$275.45</p>
@@ -369,7 +336,7 @@
                                     </picture>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Blazer
+                                    <a class="text-decoration-none link-cover" href="#">Nike Blazer
                                         Mid &#x27;77</a>
                                     <small class="text-muted d-block">5 colours, 6 sizes</small>
                                     <p class="mt-2 mb-0 small text-muted">Sold Out</p>
@@ -396,7 +363,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Air
+                                    <a class="text-decoration-none link-cover" href="#">Nike Air
                                         Force 1</a>
                                     <small class="text-muted d-block">6 colours, 9 sizes</small>
                                     <p class="mt-2 mb-0 small">$425.85</p>
@@ -426,7 +393,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Air Max
+                                    <a class="text-decoration-none link-cover" href="#">Nike Air Max
                                         90</a>
                                     <small class="text-muted d-block">4 colours, 10 sizes</small>
                                     <p class="mt-2 mb-0 small"><s class="text-muted">$196.99</s> <span
@@ -460,7 +427,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Glide
+                                    <a class="text-decoration-none link-cover" href="#">Nike Glide
                                         FlyEase</a>
                                     <small class="text-muted d-block">1 colour</small>
                                     <p class="mt-2 mb-0 small"><s class="text-muted">$329.99</s> <span
@@ -488,7 +455,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Zoom
+                                    <a class="text-decoration-none link-cover" href="#">Nike Zoom
                                         Freak</a>
                                     <small class="text-muted d-block">2 colours, 2 sizes</small>
                                     <p class="mt-2 mb-0 small">$444.99</p>
@@ -518,7 +485,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Air
+                                    <a class="text-decoration-none link-cover" href="#">Nike Air
                                         Pegasus</a>
                                     <small class="text-muted d-block">3 colours, 10 sizes</small>
                                     <p class="mt-2 mb-0 small">$178.99</p>
@@ -548,7 +515,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body px-0">
-                                    <a class="text-decoration-none link-cover" href="{{route('product')}}">Nike Air
+                                    <a class="text-decoration-none link-cover" href="#">Nike Air
                                         Jordans</a>
                                     <small class="text-muted d-block">3 colours, 10 sizes</small>
                                     <p class="mt-2 mb-0 small">$154.99</p>

@@ -56,7 +56,6 @@ class ProductsController extends Controller
     }
     public function edit($id)
     {
-        $product = Product::with('images')->findOrFail($id);
         // Retrieve the product by ID
         $product = Product::with('images')->findOrFail($id);
 
