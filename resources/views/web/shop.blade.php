@@ -61,7 +61,7 @@
                         <picture class="position-relative overflow-hidden d-block bg-light">
                             @if ($product->images->isNotEmpty())
                             <img style="min-height: 300px;" src="{{ asset($product->images->first()->image_url) }}"
-                                alt="Product Image" class="img-fluid">
+                                alt="Product Image" class="w-100 img-fluid position-relative z-index-10">
                             @else
                             <img style="height: 300px;" class="w-100 img-fluid position-relative z-index-10" title=""
                                 src="{{asset('web/assets/images/product/placeholder.png')}}" alt="">
