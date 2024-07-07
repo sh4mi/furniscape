@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\Product;
+use App\Models\Order;
 class WebController extends Controller
 {
     /**
@@ -22,8 +23,10 @@ class WebController extends Controller
     }
     public function account(Request $request): View
     {
+        $orders = Order::where('user_id', Auth::id())->get();
         return view('web.account', [
             'user' => $request->user(),
+            'orders' => $orders
         ]);
     }
     public function login(Request $request): View
@@ -74,5 +77,10 @@ class WebController extends Controller
         return view('web.shop', compact('products')); //mvc
     }
 
-
+    public function checkout(Request $request): View
+    {
+        return view('web.checkout', [
+            'user' => $request->user(),
+        ]);
+    }
 }

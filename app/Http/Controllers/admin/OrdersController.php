@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Order;
 use App\Http\Controllers\Controller;
 
 class OrdersController extends Controller
@@ -22,5 +23,9 @@ class OrdersController extends Controller
         ]);
     }
 
-
+    public function viewOrder($id)
+    {
+        $orders = Order::where('id', $id)->where('user_id', Auth::id())->get();
+        return view('orders.view', compact('orders'));
+    }
 }

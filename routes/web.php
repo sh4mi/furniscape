@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\admin\OrdersController;
@@ -25,6 +27,9 @@ Route::get('/', [WebController::class, 'index'])->name('home');
 Route::get('/account', [WebController::class, 'account'])->name('account');
 
 Route::get('/shop', [WebController::class, 'shop'])->name('shop');
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('addToCart');
+
+Route::get('/checkout', [WebController::class, 'checkout'])->name('checkout');
 Route::get('/product/{id}', [WebController::class, 'product'])->name('product');
 Route::get('/foo', function () {
     Artisan::call('storage:link');
@@ -60,6 +65,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/cart', [CartController::class, 'viewCart'])->name('cart');
+    Route::post('/update-cart', [CartController::class, 'updateItem']);
+    Route::post('/delete-cart-item', [CartController::class, 'deleteItem']);
+
+    Route::get('/checkout', [CheckoutController::class, 'viewCheckout'])->name('checkout');
+    Route::post('/place-order', [CheckoutController::class, 'placeOrder'])->name('place-order');
+    // Route::post('/my-orders', [OrdersController::class, 'myOrders'])->name('my-orders');
+    Route::get('/view-order/{id}', [OrdersController::class, 'viewOrder']);
+
 });
 
 require __DIR__.'/auth.php';

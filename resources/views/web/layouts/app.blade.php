@@ -11,6 +11,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
+    <!-- CSRF Token-->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Custom Google Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -59,14 +61,15 @@
     <!-- / Main Section-->
 
     @include('web.layouts.footer')
-
-
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Theme JS -->
     <!-- Vendor JS -->
     <script src="{{ asset('web/assets/js/vendor.bundle.js')}}"></script>
 
     <!-- Theme JS -->
     <script src="{{ asset('web/assets/js/theme.bundle.js')}}"></script>
+    <script src="{{ asset('web/assets/js/common.js')}}"></script>
 </body>
 
 </html>

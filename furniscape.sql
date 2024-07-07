@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 27, 2024 at 10:29 AM
+-- Generation Time: Jun 21, 2024 at 04:56 PM
 -- Server version: 5.7.39
 -- PHP Version: 7.4.33
 
@@ -40,7 +40,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'delectus', 'consequatur-ipsum-non-tempora-excepturi-error-illum', '2024-05-19 16:47:50', '2024-05-19 16:47:50'),
+(1, 'beds', 'beds', '2024-05-19 16:47:50', '2024-05-28 16:53:38'),
 (2, 'praesentium', 'id-et-quae-libero-magni-nostrum-consequatur', '2024-05-19 16:47:50', '2024-05-19 16:47:50'),
 (3, 'ipsa', 'dolores-in-quia-quidem-quas-neque-ex-beatae', '2024-05-19 16:47:50', '2024-05-19 16:47:50'),
 (4, 'repellendus', 'repellat-saepe-qui-et-sint-temporibus-omnis-illo-praesentium', '2024-05-19 16:47:50', '2024-05-19 16:47:50'),
@@ -192,7 +192,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `category_id`, `quantity`, `SKU`, `dimensions`, `material`, `weight`, `is_featured`, `is_available`, `price`, `discount_price`, `created_at`, `updated_at`) VALUES
-(1, 'odit', 'Libero quas dolorem tenetur unde qui est autem. Blanditiis illo aperiam et tempora. Esse eum non tempore dolor. Sint iusto dolorem animi ullam.', 5, 63, '1243234761203', '36.06x25.02x31.73', 'itaque', 797, 0, 0, 492.59, 400, '2024-05-19 17:56:51', '2024-05-19 17:56:51'),
+(1, 'Tarva Bed', 'Libero quas dolorem tenetur unde qui est autem. Blanditiis illo aperiam et tempora. Esse eum non tempore dolor. Sint iusto dolorem animi ullam.', 1, 63, NULL, '36.06x25.02x31.73', 'itaque', 797, 0, 0, 492.59, 400, '2024-05-19 17:56:51', '2024-05-28 17:23:43'),
 (2, 'fugiat', 'Ullam et illo exercitationem similique quis corrupti. Voluptate non odio consequatur beatae repellat nulla. Molestias dolorem eaque dolorem autem libero enim accusantium.', 1, 4, '3373840665720', '34.17x32.17x36.86', 'illo', 89, 1, 1, 344.53, NULL, '2024-05-19 17:56:51', '2024-05-19 17:56:51'),
 (3, 'dolorum', 'Sit voluptatum natus culpa repudiandae dolores repellendus. Voluptates voluptate tenetur officia dolores. Sint sit placeat dolor vel ad at. Alias ut libero excepturi iste possimus culpa aut.', 9, 8, '8363184427837', '76.63x37.76x23.54', 'nobis', 839, 1, 1, 799.33, 393.79, '2024-05-19 17:56:51', '2024-05-19 17:56:51'),
 (4, 'non', 'Asperiores repellat quasi soluta voluptas voluptatibus minima recusandae. Aut dolorem occaecati rem ut laudantium sed officia. Illo sed nemo nemo quos unde.', 1, 98, '7035207119869', '33.67x39.9x86.18', 'pariatur', 4, 0, 1, 704.87, 481.55, '2024-05-19 17:56:51', '2024-05-19 17:56:51'),
@@ -256,6 +256,15 @@ CREATE TABLE `product_images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_images`
+--
+
+INSERT INTO `product_images` (`id`, `product_id`, `image_url`, `created_at`, `updated_at`) VALUES
+(3, 1, 'assets/web/images/product/1716809578_logo.png', '2024-05-27 06:32:58', '2024-05-27 06:32:58'),
+(4, 1, 'assets/web/images/product/1716933058_2 (3).png', '2024-05-28 16:50:58', '2024-05-28 16:50:58'),
+(5, 1, 'assets/web/images/product/1716935023_4.jpg', '2024-05-28 17:23:43', '2024-05-28 17:23:43');
 
 -- --------------------------------------------------------
 
@@ -429,7 +438,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product_variations`

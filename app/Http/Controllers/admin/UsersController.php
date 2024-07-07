@@ -21,6 +21,4 @@ class UsersController extends Controller
             //'user' => $request->user(),
         ]);
     }
-
-
 }

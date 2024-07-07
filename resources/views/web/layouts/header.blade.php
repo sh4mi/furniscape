@@ -85,9 +85,9 @@
                                         <p class="m-0 fs-5 fw-bold">$422.99</p>
                                     </div>
                                 </div>
-                                <a href="./cart.html" class="btn btn-outline-dark w-100 text-center mt-4"
+                                <a href="{{ route('cart') }}" class="btn btn-outline-dark w-100 text-center mt-4"
                                     role="button">View Cart</a>
-                                <a href="./checkout.html" class="btn btn-dark w-100 text-center mt-2"
+                                <a href="{{ route('checkout') }}" class="btn btn-dark w-100 text-center mt-2"
                                     role="button">Proceed To Checkout</a>
                             </div>
                             <!-- / Cart Summary-->
