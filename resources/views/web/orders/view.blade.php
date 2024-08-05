@@ -65,12 +65,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php
+                                            $grandTotal = 0;
+                                            @endphp
                                             @foreach($orders as $order)
                                                 @foreach($order->orderItems as $item)
+                                                    @php
+                                                        $itemTotal = $item->price * $item->quantity;
+                                                        $grandTotal += $itemTotal;
+                                                    @endphp
                                                     <tr>
                                                         <td>{{ $item->products->name }}</td>
-                                                        <td>{{ $item->quantity }} PKR</td>
-                                                        <td>{{ $item->price }}</td>
+                                                        <td>{{ $item->quantity }}</td>
+                                                        <td>{{ $item->price }} PKR</td>
                                                         <td>
                                                             <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'path_to_default_image_or_placeholder' }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
                                                         </td>
@@ -80,7 +87,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <h4 class="px-2 mt-3">Grand Total: <span class="float-end">{{ $orders[0]['total_price'] }}</span></h4>
+                                <h4 class="px-2 mt-3">Grand Total: <span class="float-end">{{ $grandTotal }} PKR</span></h4>
                             </div>                                                      
                         </div>
                     </div>

@@ -9,7 +9,7 @@
         {{ __('Your order list is empty.') }}
     </p>
     @else 
-    <div class="container">
+    {{-- <div class="container"> --}}
         <div class="row">
             <div class="col-md-12">
                 <table class="table table-bordered text-center mydatatable" style="border: 1px solid #d1d5db;">
@@ -36,6 +36,6 @@
                 </table>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
     @endif
 </section>

@@ -53,7 +53,7 @@ $(document).ready(function() {
             }
         });
     });
-// Add To Cart Functionality
+    // Add To Cart Functionality
     $('.addToCartBtn').click(function(e) {
         e.preventDefault();
         var product_id = $(this).closest('.product_data').find('.prod_id').val();

@@ -83,4 +83,10 @@ class WebController extends Controller
             'user' => $request->user(),
         ]);
     }
+
+    public function viewOrder($id)
+    {
+        $orders = Order::where('id', $id)->where('user_id', Auth::id())->get();
+        return view('web.orders.view', compact('orders'));
+    }
 }
