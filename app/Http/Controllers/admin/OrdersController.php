@@ -16,16 +16,41 @@ class OrdersController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function index(Request $request): View
+
+     public function index(Request $request): View
     {
-        return view('admin.orders.index', [
-            //'user' => $request->user(),
-        ]);
+        $user = Auth::user();
+        if ($user->role === 'admin') {
+            $orders = Order::all();
+        } else {
+            abort(403, 'Unauthorized access.');
+        }
+
+        return view('admin.orders.index', compact('orders'));
     }
 
-    public function viewOrder($id)
+    public function edit($id)
     {
-        $orders = Order::where('id', $id)->where('user_id', Auth::id())->get();
-        return view('orders.view', compact('orders'));
+        // Retrieve the product by ID
+        $order = Order::with('orderItems')->findOrFail($id);
+
+        // Pass the product and categories to the view
+        return view('admin.orders.edit', compact('order'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $order = Order::findOrFail($id);
+        // Validate and update the order
+        $order->update($request->all());
+        return redirect()->route('orders.index')->with('success', 'Order updated successfully');
+    }
+
+    public function destroy($id)
+    {
+        $order = Order::findOrFail($id);
+        $order->delete();
+        return response()->json(['message' => 'Order deleted successfully']);
+    }
+
 }

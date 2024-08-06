@@ -51,7 +51,10 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
     
     // Orders
     Route::get('orders', [OrdersController::class, 'index'])->name('orders.index');
-    
+    Route::get('orders/{order}/edit', [OrdersController::class, 'edit'])->name('orders.edit');
+    Route::post('orders/{order}', [OrdersController::class, 'update'])->name('orders.update');
+    Route::delete('orders/{order}', [OrdersController::class, 'destroy'])->name('orders.destroy');
+
     // Categories
     Route::get('categories', [CategoriesController::class, 'index'])->name('categories.index');
     Route::get('categories/create', [CategoriesController::class, 'create'])->name('categories.create');
@@ -71,9 +74,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/checkout', [CheckoutController::class, 'viewCheckout'])->name('checkout');
     Route::post('/place-order', [CheckoutController::class, 'placeOrder'])->name('place-order');
-    // Route::post('/my-orders', [OrdersController::class, 'myOrders'])->name('my-orders');
-    Route::get('/view-order/{id}', [OrdersController::class, 'viewOrder']);
-
+    Route::get('/view-order/{id}', [WebController::class, 'viewOrder']);
 });
 
 require __DIR__.'/auth.php';
