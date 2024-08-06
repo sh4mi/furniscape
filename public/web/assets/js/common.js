@@ -1,5 +1,20 @@
 // Quantity increment / decrement 
 $(document).ready(function() {
+
+    $('.variant-thumbnail').click(function () {
+        
+        var newSrc = $(this).attr('src');
+        var name = $(this).attr("data-name");
+        var price = $(this).attr("data-price");
+        $(".var-price").text(price+" PKR");
+        $(".var-name").text(name);
+        $('.variant-thumbnail').closest(".variant-option").removeClass("selected-var");
+        $(this).closest(".variant-option").addClass("selected-var");
+        $('#main-image').attr('src', newSrc);
+        console.log("asd");
+    });
+
+
     $('.increment-btn').click(function(e) {
         e.preventDefault();
         var inc_value = $(this).closest('.product_data').find('.qty-input').val();
