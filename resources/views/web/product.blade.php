@@ -27,14 +27,29 @@
                 <!-- Product Images-->
                 <div class="col-12 col-md-6 col-xl-7">
                     <div class="row g-3" data-aos="fade-right">
+                        <!-- Main Image -->
+                        <div class="col-12">
+                            <picture>
+                                <img id="main-image" class="img-fluid product-image" data-zoomable 
+                                    src="{{ asset($product->images->first()->image_url) }}" alt="Furniscape">
+                            </picture>
+                        </div>
+                        <!-- All Images -->
                         @foreach ($product->images as $image)
+                            <div class="col-12">
+                                <picture>
+                                    <img class="img-fluid product-image" data-zoomable src="{{ asset($image->image_url) }}" alt="Furniscape">
+                                </picture>
+                            </div>
+                        @endforeach
+                        {{-- @foreach ($product->images as $image)
                             <div class="col-12">
                                 <picture>
                                     <img class="img-fluid" data-zoomable src="{{ asset($image->image_url) }}"
                                         alt="Furniscape">
                                 </picture>
                             </div>
-                        @endforeach
+                        @endforeach --}}
                     </div>
                 </div>
                 <!-- /Product Images-->
@@ -76,9 +91,31 @@
                                 <p class="fs-4 m-0">{{ $product->price }} PKR</p>
                                 @endif
                             </div>
+                              <!-- Variant Selection -->
+                              @if ($product->variants && $product->variants->isNotEmpty())
+                              <div class="variant-selection mt-4">
+                                  <h4>Select Variant</h4>
+                                  <div class="d-flex flex-wrap">
+                                      @foreach ($product->variants as $variant)
+                                          <div class="variant-option p-2 mb-2 border rounded me-2" data-variant-id="{{ $variant->id }}" data-variant-image="{{ $variant->images->first()->image_url }}" data-variant-price="{{ $variant->discount_price > 0 ? $variant->discount_price : $variant->price }}">
+                                              <div class="d-flex">
+                                                  @foreach ($variant->images as $variantImage)
+                                                      <picture>
+                                                          <img class="img-fluid variant-thumbnail" src="{{ asset($variantImage->image_url) }}" alt="Variant Image">
+                                                      </picture>
+                                                  @endforeach
+                                              </div>
+                                              <p class="mb-0 variant-color-text">Color: <span class="color-name">{{ $variant->color }}</span></p>
+                                          </div>
+                                      @endforeach
+                                  </div>
+                              </div>
+                          @endif
+                            <!-- Variant Selection -->
                             <div class="d-flex justify-content-between align-items-center">
                                 <input type="hidden" value="{{$product->id }}" class="prod_id">
-                                <label class="fs-4 m-0">Quantity :</label>
+                                <h4>Quantity : </h4>
+                                {{-- <label class="fs-4 m-0">Quantity :</label> --}}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <button type="button" id="decr-btn" class="input-group-text decrement-btn">-</button>
                                     <input type="text" name="quantity" id="quant-inp" class="form-control qty-input text-center"
@@ -681,4 +718,140 @@
         </div>
     </section>
 @endsection
+{{-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mainImage = document.getElementById('main-image');
+        const variantOptions = document.querySelectorAll('.variant-option');
+        const priceElement = document.getElementById('product-price');
 
+        let selectedVariant = null; // Track the selected variant
+
+        // Function to update main image and price
+        function updateMainImageAndPrice(option) {
+            const variantImage = option.dataset.variantImage;
+            const variantPrice = option.dataset.variantPrice;
+
+            // Update main image
+            mainImage.src = variantImage;
+
+            // Update price
+            priceElement.innerText = variantPrice + ' PKR';
+
+            // Highlight selected variant
+            variantOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+
+            // Track the selected variant
+            selectedVariant = option;
+        }
+
+        variantOptions.forEach(option => {
+            // Handle click event on variant option
+            option.addEventListener('click', function () {
+                updateMainImageAndPrice(this);
+            });
+
+            // Handle hover event on variant thumbnail
+            const variantThumbnails = option.querySelectorAll('.variant-thumbnail');
+            variantThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('mouseover', function () {
+                    mainImage.src = this.src;
+                });
+
+                // Handle click event on variant thumbnail
+                thumbnail.addEventListener('click', function () {
+                    updateMainImageAndPrice(option);
+                });
+            });
+        });
+    });
+</script> --}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mainImage = document.getElementById('main-image');
+        const variantOptions = document.querySelectorAll('.variant-option');
+        const priceElement = document.getElementById('product-price');
+
+        let selectedVariant = null; // Track the selected variant
+
+        // Function to update main image, price, and color
+        function updateMainImageAndPrice(option) {
+            const variantImage = option.dataset.variantImage;
+            const variantPrice = option.dataset.variantPrice;
+            const variantColor = option.dataset.variantColor;
+
+            // Update main image
+            mainImage.src = variantImage;
+
+            // Update price
+            priceElement.innerText = variantPrice + ' PKR';
+
+            // Update color text
+            const colorText = document.querySelector('.variant-color-text .color-name');
+            colorText.innerText = variantColor;
+
+            // Highlight selected variant
+            variantOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+
+            // Track the selected variant
+            selectedVariant = option;
+        }
+
+        variantOptions.forEach(option => {
+            // Handle click event on variant option
+            option.addEventListener('click', function () {
+                updateMainImageAndPrice(this);
+            });
+
+            // Handle hover event on variant thumbnail
+            const variantThumbnails = option.querySelectorAll('.variant-thumbnail');
+            variantThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('mouseover', function () {
+                    mainImage.src = this.src;
+                });
+
+                // Handle click event on variant thumbnail
+                thumbnail.addEventListener('click', function () {
+                    updateMainImageAndPrice(option);
+                });
+            });
+        });
+    });
+</script>
+
+
+<style>
+   .product-image {
+    width: 100%;
+    max-height: 500px; /* Set a fixed height for all images */
+    object-fit: cover;
+    display: block;
+}
+.variant-thumbnail {
+    width: 80px; /* Adjust the size of the variant thumbnails */
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.variant-option {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.variant-option.selected {
+    border-color: #000;
+    background-color: #f5f5f5;
+}
+.variant-option:hover .variant-color-text {
+    color: #000;
+}
+.variant-selection .d-flex {
+    flex-wrap: nowrap; /* Prevent wrapping to keep all images in one row */
+}
+.color-name {
+    font-weight: bold;
+}
+</style>
