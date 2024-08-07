@@ -1,5 +1,16 @@
 // Quantity increment / decrement 
 $(document).ready(function() {
+
+    $('.small-Img').on('click', function () {
+        var src = $(this).attr('src');
+        $('#featured-image').attr('src', src);
+
+        $('.small-Img').removeClass('sm-card');
+        $(this).addClass('sm-card');
+    });
+
+
+
     var selectedVariantId = null;
     $('.variant-thumbnail').click(function () {
         
@@ -10,7 +21,7 @@ $(document).ready(function() {
         $(".var-name").text(name);
         $('.variant-thumbnail').closest(".variant-option").removeClass("selected-var");
         $(this).closest(".variant-option").addClass("selected-var");
-        $('#main-image').attr('src', newSrc);
+        $('#featured-image').attr('src', newSrc);
         // Update the selected variant ID
         selectedVariantId = $(this).closest('.variant-option').data('variant-id');        
     });
