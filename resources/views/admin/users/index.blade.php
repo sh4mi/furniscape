@@ -8,11 +8,11 @@
     <div class="card">
         <div class="border-bottom title-part-padding row">
             <div class="col">
-            <h4 class="card-title mb-0">Users</h4>
+                <h4 class="card-title mb-0">Users</h4>
             </div>
-            <div class="col d-flex justify-content-end">
-           <a class="btn btn-danger text-white ms-3 d-none d-md-block" href="#">Add User</a>
-            </div>
+            <!-- <div class="col d-flex justify-content-end">
+                <a class="btn btn-danger text-white ms-3 d-none d-md-block" href="#">Add User</a>
+            </div> -->
         </div>
         <div class="card-body">
 
@@ -20,38 +20,45 @@
                 <table id="zero_config" class="table display table-bordered table-striped no-wrap">
                     <thead>
                         <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+                            <th>City</th>
+                            <th>Country</th>
+                            <th>created at</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < 40; $i++)
+                        @foreach ($users as $user)
                         <tr>
-                            <td>Tiger</td>
-                            <td>Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->phone_number}}</td>
+                            <td>{{$user->role}}</td>
+                            <td>{{$user->city}}</td>
+                            <td>{{$user->created_at}}</td>
+                            <td>{{$user->country}}</td>
                             <td>
-                                <a href="javascript:void(0)" class="text-dark pe-2">
-                                    <i data-feather="edit-2"  class="feather-sm fill-white"></i>
+                                <a href="{{ route('users.edit', $user->id) }}" class="text-dark pe-2">
+                                    <i data-feather="edit-2" class="feather-sm fill-white"></i>
                                 </a>
-                                <a href="javascript:void(0)" class="text-dark">
-                                        <i data-feather="trash-2"  class="feather-sm fill-white"></i>
-                                </a>
+                                @if($user->role == "customer")
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST"
+                                    style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                        style="background: none; border: none; cursor: pointer; padding: 0;">
+                                        <i data-feather="trash-2" class="feather-sm fill-white"></i>
+                                    </button>
+                                </form>
+                                @endif
                             </td>
+
                         </tr>
-                        @endfor
-
-
+                        @endforeach
                     </tbody>
                 </table>
             </div>

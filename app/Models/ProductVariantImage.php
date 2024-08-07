@@ -9,8 +9,7 @@ class ProductVariantImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_variant_id', 'image_url'];
-
+    protected $guarded = [];
     public function variant()
     {
         return $this->belongsTo(ProductVariant::class, 'product_variant_id');

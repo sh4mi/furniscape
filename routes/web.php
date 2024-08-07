@@ -39,7 +39,11 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
     Route::get('dashboard', function () {
         return view('dashboard');
     });
+    // Users
     Route::get('users', [UsersController::class, 'index'])->name('users.index');
+    Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('users.edit');
+    Route::post('/users/{id}', [UsersController::class, 'update'])->name('users.update');
+    Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
     
     // Products
     Route::get('products', [ProductsController::class, 'index'])->name('products.index');

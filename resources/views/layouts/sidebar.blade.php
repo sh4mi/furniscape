@@ -11,7 +11,8 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/users') }}"
                         aria-expanded="false">
-                        <i class="mdi mdi-calendar-check"></i>
+                        <i class="mdi mdi-account"></i>
+
                         <span class="hide-menu">Users</span>
                     </a>
                 </li>

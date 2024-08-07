@@ -34,7 +34,7 @@ class ProductsController extends Controller
     }
     public function store(Request $request)
     {
-        // dd($request->all());
+        
         // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
@@ -56,7 +56,9 @@ class ProductsController extends Controller
             'variants.*.discount_price' => 'nullable|numeric|min:0',
         ]);
         // Create the product
-        $product = Product::create($request->all());
+        $productData = $request->except(['images', 'variants']);
+        $product = Product::create($productData);
+        dd($product);
 
         $destinationPath = public_path('assets/web/images/product');
         if (!File::exists($destinationPath)) {

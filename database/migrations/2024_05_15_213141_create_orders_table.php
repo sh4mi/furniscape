@@ -17,6 +17,8 @@ class CreateOrdersTable extends Migration
             $table->boolean('payment_status');
             $table->text('shipping_address');
             $table->text('billing_address');
+            $table->string('tracking_no');
+            $table->double('total_price');
             $table->timestamps();
         });
     }
