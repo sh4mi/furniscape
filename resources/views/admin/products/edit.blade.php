@@ -149,6 +149,7 @@
                                     @foreach($product->variants as $index => $variant)
                                         <div class="variant mb-3">
                                             <hr>
+                                            <input type="hidden" name="variants[{{ $index }}][id]" value="{{ $variant->id }}">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label class="control-label">Variant Name</label>
