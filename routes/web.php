@@ -7,6 +7,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\admin\OrdersController;
+use App\Http\Controllers\admin\RatingController;
 use App\Http\Controllers\admin\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
@@ -70,6 +71,10 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
     Route::get('categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
     Route::put('categories/{category}', [CategoriesController::class, 'update'])->name('categories.update');
     Route::delete('categories/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
+
+    //Rating
+    Route::get('ratings', [RatingController::class, 'index'])->name('ratings.index');
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -83,6 +88,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'viewCheckout'])->name('checkout');
     Route::post('/place-order', [CheckoutController::class, 'placeOrder'])->name('place-order');
     Route::get('/view-order/{id}', [WebController::class, 'viewOrder']);
+    Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store');
 });
 
 require __DIR__.'/auth.php';
