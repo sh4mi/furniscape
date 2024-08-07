@@ -136,59 +136,65 @@
                                 </div>
 
                             </div>
-                             <!-- Variants Section -->
+                            <!-- Variants Section -->
                             <div id="variants-section">
                                 <h5>Product Variants</h5>
                                 <div id="variants">
                                     <!-- Loop through existing variants -->
                                     @foreach($product->variants as $index => $variant)
-                                        <div class="variant mb-3">
-                                            <hr>
-                                            <input type="hidden" name="variants[{{ $index }}][id]" value="{{ $variant->id }}">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label class="control-label">Variant Name</label>
-                                                    <input type="text" class="form-control" name="variants[{{ $index }}][name]" value="{{ $variant->name }}" placeholder="Variant Name" required>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="control-label">Color</label>
-                                                    <input type="text" class="form-control" name="variants[{{ $index }}][color]" value="{{ $variant->color }}" placeholder="Color" required>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="col-md-6">
-                                                    <label class="control-label">Price</label>
-                                                    <input type="number" class="form-control" name="variants[{{ $index }}][price]" value="{{ $variant->price }}" placeholder="Price" required>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="control-label">Discount Price (optional)</label>
-                                                    <input type="number" class="form-control" name="variants[{{ $index }}][discount_price]" value="{{ $variant->discount_price }}" placeholder="Discount Price">
-                                                </div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="col-md-6">
-                                                    <label class="control-label">Variant Images (optional)</label>
-                                                    <input type="file" class="form-control" name="variants[{{ $index }}][images][]" multiple>
-                                                    @if($variant->images)
-                                                        <div class="mt-2">
-                                                            @foreach($variant->images as $image)
-                                                                <img src="{{ asset($image->image_url) }}" alt="Variant Image" width="100" class="me-2">
-                                                            @endforeach
-                                                        </div>
-                                                    @endif
-                                                </div>
+                                    <div class="variant mb-3">
+                                        <hr>
+                                        <input type="hidden" name="variants[{{ $index }}][id]"
+                                            value="{{ $variant->id }}">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="control-label">Variant Name</label>
+                                                <input type="text" class="form-control"
+                                                    name="variants[{{ $index }}][name]" value="{{ $variant->name }}"
+                                                    placeholder="Variant Name" required>
                                             </div>
                                         </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <label class="control-label">Price</label>
+                                                <input type="number" class="form-control"
+                                                    name="variants[{{ $index }}][price]" value="{{ $variant->price }}"
+                                                    placeholder="Price" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="control-label">Discount Price (optional)</label>
+                                                <input type="number" class="form-control"
+                                                    name="variants[{{ $index }}][discount_price]"
+                                                    value="{{ $variant->discount_price }}" placeholder="Discount Price">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <label class="control-label">Variant Images (optional)</label>
+                                                <input type="file" class="form-control"
+                                                    name="variants[{{ $index }}][images][]" multiple>
+                                                @if($variant->images)
+                                                <div class="mt-2">
+                                                    @foreach($variant->images as $image)
+                                                    <img src="{{ asset($image->image_url) }}" alt="Variant Image"
+                                                        width="100" class="me-2">
+                                                    @endforeach
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
                                     @endforeach
                                 </div>
                                 <button type="button" id="addVariant" class="btn btn-primary mt-3">Add Variant</button>
-                            <!-- Variants Section -->
-                        </div>
-                        <!-- Form Actions -->
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-success rounded-pill px-4 mt-3">Save</button>
-                            <a href="{{ route('products.index') }}" class="btn btn-dark rounded-pill px-4 mt-3">Cancel</a>
-                        </div>
+                                <!-- Variants Section -->
+                            </div>
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success rounded-pill px-4 mt-3">Save</button>
+                                <a href="{{ route('products.index') }}"
+                                    class="btn btn-dark rounded-pill px-4 mt-3">Cancel</a>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -198,7 +204,7 @@
 
 </x-app-layout>
 <script>
-    var variantCount = {{ $product->variants->count() }}; // Initialize variant count with existing variants
+    var variantCount = {{ $product-> variants -> count() }}; // Initialize variant count with existing variants
 
     // Function to add variant fields
     function addVariantFields() {
@@ -211,10 +217,7 @@
                     <label class="control-label">Variant Name</label>
                     <input type="text" class="form-control" name="variants[${variantCount}][name]" placeholder="Variant Name" required>
                 </div>
-                <div class="col-md-6">
-                    <label class="control-label">Color</label>
-                    <input type="text" class="form-control" name="variants[${variantCount}][color]" placeholder="Color" required>
-                </div>
+               
             </div>
             <div class="row mt-3">
                 <div class="col-md-6">
@@ -238,7 +241,7 @@
     }
 
     // Event listener for the "Add Variant" button
-    document.getElementById('addVariant').addEventListener('click', function() {
+    document.getElementById('addVariant').addEventListener('click', function () {
         addVariantFields();
     });
 </script>

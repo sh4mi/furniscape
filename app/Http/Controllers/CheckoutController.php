@@ -8,7 +8,8 @@ use App\Models\User;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MyMail; 
 class CheckoutController extends Controller
 {
     public function viewCheckout()
@@ -17,14 +18,16 @@ class CheckoutController extends Controller
         return view('web.checkout', compact('cartItems'));
     }
 
+    
+
     public function placeOrder(Request $request)
     {
         $order = new Order();
         $order->user_id = Auth::id();
         $order->shipping_address = $request->input('shipping');
         $order->billing_address = $request->input('billing');
-        $order->number = $request->input('phone');
-        $order->tracking_no = 'ORD_'.rand(1111,9999);
+        $order->number = Order::generateOrderNumber();
+        $order->tracking_no = 'ORD_'.$order->number ;
         $order->payment_method = $request->input('payment_method');
         $order->status = 'pending';
         $order->payment_status = false;
@@ -55,10 +58,10 @@ class CheckoutController extends Controller
                 'price' => $price
             ]);
         }
-
-        if(Auth::user()->shipping_address == NULL)
+        $user = User::where('id', Auth::id())->first();
+        if($user)
         {
-            $user = User::where('id', Auth::id())->first();
+            
             $user->first_name = $request->input('fname');
             $user->last_name = $request->input('lname');
             $user->phone_number = $request->input('phone');
@@ -69,7 +72,10 @@ class CheckoutController extends Controller
             $user->state = $request->input('state');
             $user->zip_code = $request->input('zip');
             $user->update();
+            $toEmail = "shahmir.byteshifted@gmail.com";
+            Mail::to($toEmail)->send(new MyMail());
         }
+        
 
         Cart::destroy($cartItems);
         return redirect('/')->with('status', 'Order Placed Successfully');

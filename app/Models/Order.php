@@ -26,5 +26,20 @@ class Order extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public static function generateOrderNumber()
+    {
+        $lastOrder = self::orderBy('id', 'desc')->first();
+
+        if (!$lastOrder) {
+            return 5000;
+        }
+
+        return $lastOrder->number + 1;
+    }
 
 }
