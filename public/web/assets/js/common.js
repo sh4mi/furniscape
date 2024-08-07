@@ -1,5 +1,16 @@
 // Quantity increment / decrement 
 $(document).ready(function() {
+
+    $('.small-Img').on('click', function () {
+        var src = $(this).attr('src');
+        $('#featured-image').attr('src', src);
+
+        $('.small-Img').removeClass('sm-card');
+        $(this).addClass('sm-card');
+    });
+
+
+
     var selectedVariantId = null;
     $('.variant-thumbnail').click(function () {
         
