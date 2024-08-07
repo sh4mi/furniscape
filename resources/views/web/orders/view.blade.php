@@ -73,14 +73,25 @@
                                                     @php
                                                         $itemTotal = $item->price * $item->quantity;
                                                         $grandTotal += $itemTotal;
+                                                        $product = $item->products;
+                                                        $variant = $item->variant;
                                                     @endphp
                                                     <tr>
-                                                        <td>{{ $item->products->name }}</td>
-                                                        <td>{{ $item->quantity }}</td>
-                                                        <td>{{ $item->price }} PKR</td>
-                                                        <td>
-                                                            <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'path_to_default_image_or_placeholder' }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
-                                                        </td>
+                                                        @if ($variant)
+                                                            <td>{{ $variant->name }} - {{ $product->name }}</td>
+                                                            <td>{{ $item->quantity }}</td>
+                                                            <td>{{ $item->price }} PKR</td>
+                                                            <td>
+                                                                <img src="{{ $variant->images->isNotEmpty() ? asset($variant->images->first()->image_url) : 'path_to_default_image_or_placeholder' }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
+                                                            </td>
+                                                        @else
+                                                            <td>{{ $item->products->name }}</td>
+                                                            <td>{{ $item->quantity }}</td>
+                                                            <td>{{ $item->price }} PKR</td>
+                                                            <td>
+                                                                <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'Image' }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
+                                                            </td>
+                                                        @endif   
                                                     </tr>
                                                 @endforeach
                                             @endforeach
