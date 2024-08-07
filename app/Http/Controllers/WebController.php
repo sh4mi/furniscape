@@ -89,4 +89,18 @@ class WebController extends Controller
         $orders = Order::where('id', $id)->where('user_id', Auth::id())->get();
         return view('web.orders.view', compact('orders'));
     }
+
+    public function showWishlist()
+    {
+        return view('web.wishlist');
+    }
+    
+    public function getWishlistProducts(Request $request)
+    {
+        $wishlistIds = $request->input('wishlist_ids', []);
+
+        $products = Product::whereIn('id', $wishlistIds)->with('images')->get();
+
+        return response()->json($products);
+    }
 }

@@ -53,4 +53,27 @@ class OrdersController extends Controller
         return response()->json(['message' => 'Order deleted successfully']);
     }
 
+    public function trackOrder()
+    {
+        return view('web.track-order');
+    }
+
+    public function searchOrder(Request $request)
+    {
+        $request->validate([
+            'tracking_number' => 'required|string',
+        ]);
+
+        $trackingNumber = $request->input('tracking_number');
+        $order = Order::where('tracking_no', $trackingNumber)
+                      ->with('orderItems.products', 'orderItems.variant') // eager load related data
+                      ->first();
+
+        if (!$order) {
+            return redirect()->route('track.order')->with('error', 'Order not found.');
+        }
+
+        return view('web.track-order', ['order' => $order]);
+    }
+
 }

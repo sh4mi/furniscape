@@ -52,6 +52,16 @@
                         </a>
                     </li>
                     @endauth
+                    <li class="ms-1 d-none d-lg-inline-block">
+                        <a class="nav-link text-body" href="{{ route('wishlist') }}">
+                            Wishlist
+                        </a>
+                    </li>
+                    <li class="ms-1 d-none d-lg-inline-block">
+                        <a class="nav-link text-body" href="{{ route('track.order') }}">
+                            Track Order
+                        </a>
+                    </li>
                     <!-- /Navbar Login-->
 
                     <!-- Navbar Cart Icon-->

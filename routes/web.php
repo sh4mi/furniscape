@@ -25,6 +25,10 @@ Route::get('/signup', [WebController::class, 'register'])->name('signup');
 
 Route::get('/', [WebController::class, 'index'])->name('home');
 Route::get('/account', [WebController::class, 'account'])->name('account');
+Route::get('/wishlist', [WebController::class, 'showWishlist'])->name('wishlist');
+Route::get('/wishlist-products', [WebController::class, 'getWishlistProducts'])->name('wishlist-products');
+Route::get('/track-order', [OrdersController::class, 'trackOrder'])->name('track.order');
+Route::post('/track-order', [OrdersController::class, 'searchOrder'])->name('search.order');
 
 Route::get('/shop', [WebController::class, 'shop'])->name('shop');
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('addToCart');

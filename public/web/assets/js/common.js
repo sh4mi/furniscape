@@ -101,4 +101,55 @@ $(document).ready(function() {
         "info": true,
         "autoWidth": false,
     });
+
+    // // Initialize the wishlist state based on local storage
+    // var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // function updateHeartIcon(productId, $heartIcon) {
+    //     if (wishlist.includes(productId)) {
+    //         $heartIcon.addClass('ri-heart-fill'); // Filled heart icon
+    //         $heartIcon.removeClass('ri-heart-line');
+    //     } else {
+    //         $heartIcon.addClass('ri-heart-line'); // Outline heart icon
+    //         $heartIcon.removeClass('ri-heart-fill');
+    //     }
+    // }
+
+    // // Add event listener to toggle wishlist
+    // $(document).on('click', '.wishlist', function(e) {
+    //     e.stopPropagation(); // Prevent the click event from propagating to the parent <a> tag
+    //     e.preventDefault(); // Prevent the default action of the click event
+        
+    //     var $heartIcon = $(this).find('i'); // Find the <i> tag inside the clicked span
+    //     var productId = $(this).data('product-id');
+    //     if (!productId) return;
+
+    //     console.log("Heart icon clicked. Product ID:", productId);
+
+    //     var index = wishlist.indexOf(productId);
+    //     if (index === -1) {
+    //         // Add to wishlist
+    //         wishlist.push(productId);
+    //         console.log("Added to wishlist.");
+    //     } else {
+    //         // Remove from wishlist
+    //         wishlist.splice(index, 1);
+    //         console.log("Removed from wishlist.");
+    //     }
+
+    //     // Update local storage
+    //     localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+    //     // Update heart icon state
+    //     updateHeartIcon(productId, $heartIcon);
+    // });
+
+    // // Initialize heart icons based on current wishlist
+    // $('.wishlist').each(function() {
+    //     var $heartIcon = $(this).find('i'); // Find the <i> tag inside the span
+    //     var productId = $(this).data('product-id');
+    //     if (productId) {
+    //         updateHeartIcon(productId, $heartIcon);
+    //     }
+    // });
 });
