@@ -84,7 +84,7 @@
                         @endif
                     </div>
                     <!-- All Images -->
-                    @foreach ($product->images as $image)
+                    @foreach ($product->images->slice(1) as $image)
                     <div class="col-12">
                         <picture>
                             <img class="img-fluid product-image" data-zoomable src="{{ asset($image->image_url) }}"
@@ -92,13 +92,6 @@
                         </picture>
                     </div>
                     @endforeach
-                    {{-- @foreach ($product->images as $image)
-                    <div class="col-12">
-                        <picture>
-                            <img class="img-fluid" data-zoomable src="{{ asset($image->image_url) }}" alt="Furniscape">
-                        </picture>
-                    </div>
-                    @endforeach --}}
                 </div>
             </div>
             <!-- /Product Images-->
@@ -143,7 +136,7 @@
                         <!-- Variant Selection -->
                         @if ($product->variants && $product->variants->isNotEmpty())
                         <div class="variant-selection mt-4">
-                            <h4 class="var-name">Select Variant</h4>
+                            <h4 class="var-name">Variants</h4>
                             <div class="d-flex flex-wrap">
                                 @foreach ($product->variants as $variant)
                                 <div class="variant-option p-2 mb-2 border rounded me-2"
@@ -161,8 +154,6 @@
                                         </picture>
                                         @endforeach
                                     </div>
-                                    <p class="mb-0 variant-color-text">Color: <span class="color-name">{{
-                                            $variant->color }}</span></p>
                                 </div>
                                 @endforeach
                             </div>
