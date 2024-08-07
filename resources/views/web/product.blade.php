@@ -75,10 +75,13 @@
                 <div class="row g-3" data-aos="fade-right">
                     <!-- Main Image -->
                     <div class="col-12">
-                        <picture>
-                            <img id="main-image" class="img-fluid product-image" data-zoomable
-                                src="{{ asset($product->images->first()->image_url) }}" alt="Furniscape">
-                        </picture>
+                        @if ($product->images->isNotEmpty())
+                        <img id="main-image" class="img-fluid product-image" data-zoomable
+                            src="{{ asset($product->images->first()->image_url) }}" alt="Furniscape">
+                        @else
+                        <img id="main-image" class="img-fluid product-image" data-zoomable
+                            src="{{ asset('/web/assets/images/product/placeholder.png') }}" alt="No Image Available">
+                        @endif
                     </div>
                     <!-- All Images -->
                     @foreach ($product->images->slice(1) as $image)

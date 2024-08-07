@@ -12,14 +12,14 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->integer('quantity');
             $table->string('SKU')->nullable();
             $table->string('dimensions')->nullable();
             $table->string('material')->nullable();
             $table->integer('weight')->nullable();
-            $table->boolean('is_featured');
-            $table->boolean('is_available');
+            $table->boolean('is_featured')->default(false);
+            $table->boolean('is_available')->default(true);
             $table->double('price');
             $table->double('discount_price')->nullable();
             $table->timestamps();
