@@ -168,62 +168,9 @@
                                 <button type="button" id="incr-btn" class="input-group-text increment-btn">+</button>
                             </div>
                         </div>
-                        <!-- <div class="border-top mt-4 mb-3 product-option">
-                                        <small class="text-uppercase pt-4 d-block fw-bolder">
-                                            <span class="text-muted">Available Sizes</span> : <span class="selected-option fw-bold"
-                                                data-pixr-product-option="size">M</span>
-                                        </small>
-                                        <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
-                                            <div class="form-check-option form-check-rounded">
-                                                <input type="radio" name="product-option-sizes" value="S" id="option-sizes-0">
-                                                <label for="option-sizes-0">
-
-                                                    <small>S</small>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-option form-check-rounded">
-                                                <input type="radio" name="product-option-sizes" value="SM" id="option-sizes-1">
-                                                <label for="option-sizes-1">
-
-                                                    <small>SM</small>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-option form-check-rounded">
-                                                <input type="radio" name="product-option-sizes" value="M" checked
-                                                    id="option-sizes-2">
-                                                <label for="option-sizes-2">
-
-                                                    <small>M</small>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-option form-check-rounded">
-                                                <input type="radio" name="product-option-sizes" value="L" id="option-sizes-3">
-                                                <label for="option-sizes-3">
-
-                                                    <small>L</small>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-option form-check-rounded">
-                                                <input type="radio" name="product-option-sizes" value="Xl" id="option-sizes-4">
-                                                <label for="option-sizes-4">
-
-                                                    <small>XL</small>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-option form-check-rounded">
-                                                <input type="radio" name="product-option-sizes" value="XXL" id="option-sizes-5">
-                                                <label for="option-sizes-5">
-
-                                                    <small>XXL</small>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div> -->
-
                         <button class="btn btn-dark w-100 mt-4 mb-0 hover-lift-sm hover-boxshadow addToCartBtn">Add To
                             Shopping
                             Bag</button>
-
                         <!-- Product Highlights-->
                         <div class="my-5">
                             <div class="row">

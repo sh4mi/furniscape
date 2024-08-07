@@ -53,18 +53,34 @@
                                 @foreach($cartItems as $item)
                                     <div class="row align-items-center mb-4 text-center product_data">
                                         <div class="col-md-2">
-                                            <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'path_to_default_image_or_placeholder' }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <h6>{{ $item->products->name }}</h6>
-                                        </div>
-                                        <div class="col-md-2">
-                                            @if ($item->products->discount_price > 0)
-                                            <h6>{{ $item->products->discount_price }} PKR</h6>
+                                            @if ($item->variant)
+                                                <img src="{{ asset($item->variant->images->first()->image_url) }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
+                                                <input type="hidden" class="variant_id" value="{{ $item->variant->id }}">
                                             @else
-                                            <h6>{{ $item->products->price }} PKR</h6>
+                                                <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'Image' }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
                                             @endif
-                                            {{-- <h6>{{ $item->products->price }}</h6> --}}
+                                        </div>
+                                        <div class="col-md-2">
+                                            @if ($item->variant)
+                                                <h6>{{ $item->variant->name }} - {{ $item->products->name }}</h6>
+                                            @else
+                                                <h6>{{ $item->products->name }}</h6>
+                                            @endif
+                                        </div>
+                                        <div class="col-md-2">
+                                            @if ($item->variant)
+                                                @if ($item->variant->discount_price > 0)
+                                                    <h6>{{ $item->variant->discount_price }} PKR</h6>
+                                                @else
+                                                    <h6>{{ $item->variant->price }} PKR</h6>
+                                                @endif
+                                            @else
+                                                @if ($item->products->discount_price > 0)
+                                                    <h6>{{ $item->products->discount_price }} PKR</h6>
+                                                @else
+                                                    <h6>{{ $item->products->price }} PKR</h6>
+                                                @endif
+                                            @endif
                                         </div>
                                         <div class="col-md-3">
                                             <input type="hidden" class="prod_id" value="{{ $item->product_id}}">
@@ -82,10 +98,19 @@
                                         </div>
                                     </div>
                                 @php
-                                    if($item->products->discount_price > 0)
-                                    $total_price += $item->products->discount_price * $item->product_quant;
-                                    else
-                                    $total_price += $item->products->price * $item->product_quant;
+                                if ($item->variant) {
+                                            if ($item->variant->discount_price > 0) {
+                                                $total_price += $item->variant->discount_price * $item->product_quant;
+                                            } else {
+                                                $total_price += $item->variant->price * $item->product_quant;
+                                            }
+                                        } else {
+                                            if ($item->products->discount_price > 0) {
+                                                $total_price += $item->products->discount_price * $item->product_quant;
+                                            } else {
+                                                $total_price += $item->products->price * $item->product_quant;
+                                            }
+                                        }
                                 @endphp
                                 @endforeach
                                 <!-- /Cart Items -->

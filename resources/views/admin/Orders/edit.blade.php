@@ -64,7 +64,7 @@
                                     <div class="mb-3">
                                         <label for="total_price" class="form-label">Total Price</label>
                                         <input type="number" step="0.01" class="form-control" id="total_price" name="total_price"
-                                            value="{{ number_format($order->total_price, 2) }}" required>
+                                            value="{{ number_format($order->total_price, 2, '.', '') }}" required>
                                     </div>
                                 </div>
                                 <!-- Shipping Address -->
@@ -100,32 +100,42 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Product ID</th>
+                                            <th>Product Name</th>
                                             <th>Quantity</th>
                                             <th>Price</th>
-                                            <th>Actions</th>
+                                            {{-- <th>Actions</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="order-items">
                                         @foreach($order->orderItems as $item)
+                                            @php
+                                                $variant = $item->variant;
+                                                $product = $item->products;
+                                            @endphp
                                             <tr data-id="{{ $item->id }}">
+                                                @if ($variant)
+                                                    <td>
+                                                        <input type="text" class="form-control" value="{{ $variant->name }} - {{ $product->name }}" readonly>
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        <input type="text" class="form-control" value="{{ $product->name }}" readonly>
+                                                    </td>
+                                                @endif
                                                 <td>
-                                                    <input type="text" name="order_items[{{ $item->id }}][product_id]" class="form-control" value="{{ $item->product_id }}" required>
+                                                    <input type="number" name="order_items[{{ $item->id }}][quantity]" class="form-control" value="{{ $item->quantity }}" readonly>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="order_items[{{ $item->id }}][quantity]" class="form-control" value="{{ $item->quantity }}" required>
+                                                    <input type="number" step="0.01" name="order_items[{{ $item->id }}][price]" class="form-control" value="{{ number_format($item->price, 2, '.', '') }}" readonly>
                                                 </td>
-                                                <td>
-                                                    <input type="number" step="0.01" name="order_items[{{ $item->id }}][price]" class="form-control" value="{{ number_format($item->price, 2) }}" required>
-                                                </td>
-                                                <td>
+                                                {{-- <td>
                                                     <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <button type="button" class="btn btn-primary" onclick="addItem()">Add Item</button>
+                                {{-- <button type="button" class="btn btn-primary" onclick="addItem()">Add Item</button> --}}
                             </div>
                         </div>
                         <!-- Form Actions -->
@@ -139,24 +149,25 @@
         </div>
         <!-- Column -->
     </div>
-
     <script>
         function removeItem(button) {
             // Remove the item row
             button.closest('tr').remove();
         }
 
-        function addItem() {
-            const tbody = document.getElementById('order-items');
-            const rowCount = tbody.rows.length;
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td><input type="text" name="order_items[new][product_id]" class="form-control" required></td>
-                <td><input type="number" name="order_items[new][quantity]" class="form-control" required></td>
-                <td><input type="number" step="0.01" name="order_items[new][price]" class="form-control" required></td>
-                <td><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button></td>
-            `;
-            tbody.appendChild(newRow);
-        }
+        // function addItem() {
+        //     const tbody = document.getElementById('order-items');
+        //     const rowCount = tbody.rows.length;
+        //     const newRow = document.createElement('tr');
+        //     newRow.innerHTML = `
+        //         <td><input type="text" name="order_items[new][product_id]" class="form-control" required>
+        //         <input type="hidden" name="order_items[new][variant_id]" value="">
+        //         <input type="text" class="form-control" name="order_items[new][name]" value="" readonly></td>
+        //         <td><input type="number" name="order_items[new][quantity]" class="form-control" required></td>
+        //         <td><input type="number" step="0.01" name="order_items[new][price]" class="form-control" required></td>
+        //         <td><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button></td>
+        //     `;
+        //     tbody.appendChild(newRow);
+        // }
     </script>
 </x-app-layout>

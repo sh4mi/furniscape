@@ -1,6 +1,6 @@
 // Quantity increment / decrement 
 $(document).ready(function() {
-
+    var selectedVariantId = null;
     $('.variant-thumbnail').click(function () {
         
         var newSrc = $(this).attr('src');
@@ -11,7 +11,8 @@ $(document).ready(function() {
         $('.variant-thumbnail').closest(".variant-option").removeClass("selected-var");
         $(this).closest(".variant-option").addClass("selected-var");
         $('#main-image').attr('src', newSrc);
-        console.log("asd");
+        // Update the selected variant ID
+        selectedVariantId = $(this).closest('.variant-option').data('variant-id');        
     });
 
 
@@ -40,11 +41,13 @@ $(document).ready(function() {
     $('.deleteCartItem').click(function(e) {
         e.preventDefault();
         var prod_id = $(this).closest('.product_data').find('.prod_id').val();
+        var variant_id = $(this).closest('.product_data').find('.variant_id').val();
         $.ajax({ 
             type: 'POST',
             url: '/delete-cart-item',
             data: {
-                'prod_id': prod_id
+                'prod_id': prod_id,
+                'variant_id': variant_id || null
             },
             success: function(response) {
                 window.location.reload();
@@ -56,12 +59,14 @@ $(document).ready(function() {
         e.preventDefault();
         var prod_id = $(this).closest('.product_data').find('.prod_id').val();
         var qty = $(this).closest('.product_data').find('.qty-input').val();
+        var variant_id = $(this).closest('.product_data').find('.variant_id').val(); 
         $.ajax({ 
             type: 'POST',
             url: '/update-cart',
             data: {
                 'prod_id': prod_id,
                 'prod_qty' : qty,
+                'variant_id': variant_id || null,
             },
             success: function(response) {
                 window.location.reload();
@@ -79,7 +84,8 @@ $(document).ready(function() {
             url: '/add-to-cart',
             data: {
                 'product_id': product_id,
-                'product_qty': product_qty
+                'product_qty': product_qty,
+                'variant_id': selectedVariantId
             },
             success: function(response) {
                 alert(response.status);
