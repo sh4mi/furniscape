@@ -3,7 +3,7 @@
 <style>
     .product-image {
         width: 100%;
-        max-height: 500px;
+        /* max-height: 500px; */
         /* Set a fixed height for all images */
         object-fit: cover;
         display: block;
@@ -15,6 +15,17 @@
         height: 80px;
         object-fit: cover;
         cursor: pointer;
+    }
+
+    .wishlist i {
+        color: #232323;
+        font-size: 28px;
+        position: relative;
+        top: -13px;
+    }
+
+    .ri-heart-fill {
+        color: red !important;
     }
 
     .selected-var {
@@ -71,33 +82,30 @@
         <div class="row g-9 product_data" data-sticky-container>
 
             <!-- Product Images-->
-            <div class="col-12 col-md-6 col-xl-7">
+            <div class="col-12 col-md-6 col-xl-6">
                 <div class="row g-3" data-aos="fade-right">
                     <!-- Main Image -->
-                    <div class="col-12">
+                    <div class="img-card">
                         @if ($product->images->isNotEmpty())
-                        <img id="main-image" class="img-fluid product-image" data-zoomable
+                        <img id="featured-image" class="img-fluid product-image" data-zoomable
                             src="{{ asset($product->images->first()->image_url) }}" alt="Furniscape">
                         @else
-                        <img id="main-image" class="img-fluid product-image" data-zoomable
+                        <img id="featured-image" class="" data-zoomable
                             src="{{ asset('/web/assets/images/product/placeholder.png') }}" alt="No Image Available">
                         @endif
+                        @foreach ($product->images as $image)
+                        <!-- small img -->
+                        <div class="small-Card">
+                            <img src="{{ asset($image->image_url) }}" alt="" class="small-Img  product-image">
+                        </div>
+                        @endforeach
                     </div>
-                    <!-- All Images -->
-                    @foreach ($product->images->slice(1) as $image)
-                    <div class="col-12">
-                        <picture>
-                            <img class="img-fluid product-image" data-zoomable src="{{ asset($image->image_url) }}"
-                                alt="Furniscape">
-                        </picture>
-                    </div>
-                    @endforeach
                 </div>
             </div>
             <!-- /Product Images-->
 
             <!-- Product Information-->
-            <div class="col-12 col-md-6 col-lg-5">
+            <div class="col-12 col-md-6 col-lg-6">
                 <div class="sticky-top top-5">
                     <div class="pb-3" data-aos="fade-in">
                         <div class="d-flex align-items-center mb-3">
@@ -134,8 +142,8 @@
                             @endif
                         </div>
                         <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted wishlist"
-                            data-product-id="{{ $product->id }}" style="cursor: pointer;">
-                            <i class="ri-heart-line" style="color: #ff0000;"></i>
+                            title="Add to wishlist" data-product-id="{{ $product->id }}" style="cursor: pointer;">
+                            <i class="ri-heart-line"></i>
                         </span>
                         <!-- Variant Selection -->
                         @if ($product->variants && $product->variants->isNotEmpty())
@@ -148,15 +156,13 @@
                                     data-variant-image="{{ $variant->images->first()->image_url }}"
                                     data-variant-price="{{ $variant->discount_price > 0 ? $variant->discount_price : $variant->price }}">
                                     <div class="d-flex">
-                                        @foreach ($variant->images as $variantImage)
-                                        <picture>
-                                            <img class="img-fluid variant-thumbnail"
-                                                src="{{ asset($variantImage->image_url) }}"
-                                                data-name="{{ $variant->name}}"
-                                                data-price="{{ $variant->discount_price > 0 ? $variant->discount_price : $variant->price }}"
-                                                alt="Variant Image">
-                                        </picture>
-                                        @endforeach
+                                        @if ($variant->images->isNotEmpty())
+                                        <img class="img-fluid variant-thumbnail"
+                                            src="{{ asset($variant->images->first()->image_url) }}"
+                                            data-name="{{ $variant->name}}"
+                                            data-price="{{ $variant->discount_price > 0 ? $variant->discount_price : $variant->price }}"
+                                            alt="Variant Image">
+                                        @endif
                                     </div>
                                 </div>
                                 @endforeach
@@ -711,7 +717,7 @@
 </section>
 @endsection
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // Initialize the wishlist state based on local storage
         var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
@@ -756,12 +762,12 @@
 
         // Add event listener to all heart icons
         var heartIcons = document.querySelectorAll('.wishlist');
-        heartIcons.forEach(function(icon) {
+        heartIcons.forEach(function (icon) {
             icon.addEventListener('click', handleHeartClick);
         });
 
         // Initialize heart icons based on current wishlist
-        heartIcons.forEach(function(icon) {
+        heartIcons.forEach(function (icon) {
             var heartIcon = icon.querySelector('i'); // Find the <i> tag inside the span
             var productId = icon.dataset.productId;
             if (productId) {

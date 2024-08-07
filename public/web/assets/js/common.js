@@ -21,7 +21,7 @@ $(document).ready(function() {
         $(".var-name").text(name);
         $('.variant-thumbnail').closest(".variant-option").removeClass("selected-var");
         $(this).closest(".variant-option").addClass("selected-var");
-        $('#main-image').attr('src', newSrc);
+        $('#featured-image').attr('src', newSrc);
         // Update the selected variant ID
         selectedVariantId = $(this).closest('.variant-option').data('variant-id');        
     });
