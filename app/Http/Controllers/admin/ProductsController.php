@@ -16,6 +16,7 @@ use App\Models\ProductVariant;
 use App\Models\ProductVariantImage;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Arr;
 class ProductsController extends Controller
 {
     /**
@@ -34,7 +35,7 @@ class ProductsController extends Controller
     }
     public function store(Request $request)
     {
-        
+       // dd($request->all());
         // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
@@ -50,15 +51,11 @@ class ProductsController extends Controller
             'price' => 'required|numeric|min:0',
             'discount_price' => 'nullable|numeric|min:0',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate images
-            'variants.*.name' => 'required|string|max:255',
-            'variants.*.color' => 'required|string|max:255',
-            'variants.*.price' => 'required|numeric|min:0',
-            'variants.*.discount_price' => 'nullable|numeric|min:0',
         ]);
         // Create the product
         $productData = $request->except(['images', 'variants']);
         $product = Product::create($productData);
-        dd($product);
+        
 
         $destinationPath = public_path('assets/web/images/product');
         if (!File::exists($destinationPath)) {
@@ -78,30 +75,7 @@ class ProductsController extends Controller
             }
         }
 
-        // Handle product variants
-        if ($request->has('variants')) {
-            foreach ($request->variants as $variantData) {
-                $variant = new ProductVariant($variantData);
-                $variant->product_id = $product->id;
-                $variant->save();
-
-                // Handle variant images if needed
-                if (isset($variantData['images'])) {
-                    foreach ($variantData['images'] as $variantImage) {
-                        $filename = time() . '_' . $variantImage->getClientOriginalName();
-                        $variantImage->move($destinationPath, $filename);
-                        $path = 'assets/web/images/product/' . $filename;
-
-                        $productVariantImage = new ProductVariantImage();
-                        $productVariantImage->product_variant_id = $variant->id;
-                        $productVariantImage->image_url = $path;
-                        $productVariantImage->save();
-                    }
-                }
-            }
-        }
-        // Redirect to the index page with a success message
-        return redirect()->route('products.index')->with('success', 'Product created successfully.');
+        return redirect()->route('products.edit', $product->id)->with('success', 'Product created successfully.');
     }
     public function edit($id)
     {
@@ -133,7 +107,6 @@ class ProductsController extends Controller
             'discount_price' => 'nullable|numeric|min:0',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate images
             'variants.*.name' => 'required|string|max:255',
-            'variants.*.color' => 'required|string|max:255',
             'variants.*.price' => 'required|numeric|min:0',
             'variants.*.discount_price' => 'nullable|numeric|min:0',
             'variants.*.images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate variant images
@@ -197,7 +170,9 @@ class ProductsController extends Controller
                     }
                 } else {
                     // Create new variant
-                    $variant = new ProductVariant($variantData);
+                   // dd($variantData);
+                    $variantDataNew = Arr::except($variantData, ['images']);
+                    $variant = new ProductVariant($variantDataNew);
                     $variant->product_id = $product->id;
                     $variant->save();
 

@@ -10,8 +10,16 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.store') }}"
-                        enctype="multipart/form-data">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-body">
                             <h5 class="card-title">Add Product</h5>
@@ -28,8 +36,8 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="description" class="form-label">Description</label>
-                                        <textarea class="form-control" id="description" name="description" placeholder="Enter product description"
-                                            rows="3" required></textarea>
+                                        <textarea class="form-control" id="description" name="description"
+                                            placeholder="Enter product description" rows="3" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -39,7 +47,7 @@
                                             <option value="">Select category</option>
                                             <!-- Loop through categories to populate options -->
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -112,21 +120,13 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="images" class="form-label">Product Images</label>
-                                        <input type="file" class="form-control" id="images" name="images[]"
-                                            multiple>
+                                        <input type="file" class="form-control" id="images" name="images[]" multiple>
                                     </div>
                                 </div>
 
                             </div>
                             <!-- Variants Section -->
-                            <div id="variants-section">
-                                <h5>Product Variants</h5>
-                                <div id="variants">
-                                    <!-- Variant fields will be dynamically added here -->
-                                </div>
-                                <button type="button" id="addVariant" class="btn btn-primary mt-2">Add
-                                    Variant</button>
-                            </div>
+
                             <div class="form-actions mt-2">
                                 <button type="submit" class="btn btn-success rounded-pill px-4"> Save</button>
                                 <button type="button" class="btn btn-dark rounded-pill px-4">Cancel</button>
@@ -138,49 +138,3 @@
         <!-- Column -->
     </div>
 </x-app-layout>
-<script>
-    var variantCount = 0; // Initialize variant count
-
-    // Function to add variant fields
-    function addVariantFields() {
-        var variantDiv = document.createElement('div');
-        variantDiv.classList.add('variant');
-        variantDiv.innerHTML = `
-            <hr>
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="control-label">Variant Name</label>
-                    <input type="text" class="form-control" name="variants[${variantCount}][name]" placeholder="Variant Name" required>
-                </div>
-                <div class="col-md-6">
-                    <label class="control-label">Color</label>
-                    <input type="text" class="form-control" name="variants[${variantCount}][color]" placeholder="Color" required>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <label class="control-label">Price</label>
-                    <input type="number" class="form-control" name="variants[${variantCount}][price]" placeholder="Price" required>
-                </div>
-                <div class="col-md-6">
-                    <label class="control-label">Discount Price (optional)</label>
-                    <input type="number" class="form-control" name="variants[${variantCount}][discount_price]" placeholder="Discount Price">
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <label class="control-label">Variant Images (optional)</label>
-                    <input type="file" class="form-control" name="variants[${variantCount}][images][]" multiple>
-                </div>
-            </div>
-        `;
-        document.getElementById('variants').appendChild(variantDiv);
-        variantCount++; // Increment variant count
-    }
-
-    // Event listener for the "Add Variant" button
-    document.getElementById('addVariant').addEventListener('click', function() {
-        addVariantFields();
-    });
-</script>
-
