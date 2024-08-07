@@ -133,6 +133,10 @@
                             <p class="fs-4 m-0 var-price">{{ $product->price }} PKR</p>
                             @endif
                         </div>
+                        <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted wishlist"
+                            data-product-id="{{ $product->id }}" style="cursor: pointer;">
+                            <i class="ri-heart-line" style="color: #ff0000;"></i>
+                        </span>
                         <!-- Variant Selection -->
                         @if ($product->variants && $product->variants->isNotEmpty())
                         <div class="variant-selection mt-4">
@@ -706,3 +710,63 @@
     </div>
 </section>
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize the wishlist state based on local storage
+        var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        function updateHeartIcon(productId, heartIcon) {
+            if (wishlist.includes(productId)) {
+                heartIcon.classList.add('ri-heart-fill'); // Filled heart icon
+                heartIcon.classList.remove('ri-heart-line');
+            } else {
+                heartIcon.classList.add('ri-heart-line'); // Outline heart icon
+                heartIcon.classList.remove('ri-heart-fill');
+            }
+        }
+
+        // Function to handle heart icon click
+        function handleHeartClick(event) {
+            event.stopPropagation(); // Prevent the click event from propagating to the parent <a> tag
+            event.preventDefault(); // Prevent the default action of the click event
+
+            var heartIcon = event.currentTarget.querySelector('i'); // Find the <i> tag inside the clicked span
+            var productId = event.currentTarget.dataset.productId;
+            if (!productId) return;
+
+            console.log("Heart icon clicked. Product ID:", productId);
+
+            var index = wishlist.indexOf(productId);
+            if (index === -1) {
+                // Add to wishlist
+                wishlist.push(productId);
+                console.log("Added to wishlist.");
+            } else {
+                // Remove from wishlist
+                wishlist.splice(index, 1);
+                console.log("Removed from wishlist.");
+            }
+
+            // Update local storage
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            // Update heart icon state
+            updateHeartIcon(productId, heartIcon);
+        }
+
+        // Add event listener to all heart icons
+        var heartIcons = document.querySelectorAll('.wishlist');
+        heartIcons.forEach(function(icon) {
+            icon.addEventListener('click', handleHeartClick);
+        });
+
+        // Initialize heart icons based on current wishlist
+        heartIcons.forEach(function(icon) {
+            var heartIcon = icon.querySelector('i'); // Find the <i> tag inside the span
+            var productId = icon.dataset.productId;
+            if (productId) {
+                updateHeartIcon(productId, heartIcon);
+            }
+        });
+    });
+</script>
