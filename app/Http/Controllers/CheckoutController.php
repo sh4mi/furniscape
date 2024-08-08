@@ -18,8 +18,6 @@ class CheckoutController extends Controller
         return view('web.checkout', compact('cartItems'));
     }
 
-    
-
     public function placeOrder(Request $request)
     {
         $order = new Order();
@@ -72,13 +70,13 @@ class CheckoutController extends Controller
             $user->state = $request->input('state');
             $user->zip_code = $request->input('zip');
             $user->update();
-            $toEmail = "shahmir.byteshifted@gmail.com";
-            Mail::to($toEmail)->send(new MyMail());
+            // $toEmail = "shahmir.byteshifted@gmail.com";
+            // Mail::to($toEmail)->send(new MyMail());
         }
         
 
         Cart::destroy($cartItems);
-        return redirect('/')->with('status', 'Order Placed Successfully');
+        return redirect('/')->with('success', 'Order Placed Successfully');
     }
 
     // public function placeOrder(Request $request)

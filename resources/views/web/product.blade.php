@@ -18,7 +18,7 @@
     }
 
     .wishlist i {
-        color: #232323;
+        color: red;
         font-size: 28px;
         position: relative;
         top: -13px;
@@ -77,7 +77,7 @@
     <!-- / Breadcrumbs-->
 
     <div class="container-fluid mt-5">
-
+        <div id="alert-placeholder"></div>
         <!-- Product Top Section-->
         <div class="row g-9 product_data" data-sticky-container>
 
@@ -733,9 +733,6 @@
 
         // Function to handle heart icon click
         function handleHeartClick(event) {
-            event.stopPropagation(); // Prevent the click event from propagating to the parent <a> tag
-            event.preventDefault(); // Prevent the default action of the click event
-
             var heartIcon = event.currentTarget.querySelector('i'); // Find the <i> tag inside the clicked span
             var productId = event.currentTarget.dataset.productId;
             if (!productId) return;
