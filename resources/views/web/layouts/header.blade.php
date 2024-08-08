@@ -66,44 +66,12 @@
 
                     <!-- Navbar Cart Icon-->
                     <li class="ms-1 d-inline-block position-relative dropdown-cart">
-                        <button class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
-                            type="button">
+                        <button 
+                            class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
+                            type="button"
+                            onclick="window.location.href='{{ route('cart') }}'">
                             Cart
-                        </button>
-                        <div class="cart-dropdown dropdown-menu">
-
-                            <!-- Cart Header-->
-                            <div class="d-flex justify-content-between align-items-center border-bottom pt-3 pb-4">
-                                <h6 class="fw-bolder m-0">Cart Summary (2 items)</h6>
-                                <i class="ri-close-circle-line text-muted ri-lg cursor-pointer btn-close-cart"></i>
-                            </div>
-                            <!-- / Cart Header-->
-
-                            <!-- Cart Items-->
-                           
-                            <!-- /Cart Items-->
-
-                            <!-- Cart Summary-->
-                            <div>
-                                <div class="pt-3">
-                                    <div
-                                        class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-start mb-4 mb-md-2">
-                                        <div>
-                                            <p class="m-0 fw-bold fs-5">Grand Total</p>
-                                            <span class="text-muted small">Inc $45.89 sales tax</span>
-                                        </div>
-                                        <p class="m-0 fs-5 fw-bold">$422.99</p>
-                                    </div>
-                                </div>
-                                <a href="{{ route('cart') }}" class="btn btn-outline-dark w-100 text-center mt-4"
-                                    role="button">View Cart</a>
-                                <a href="{{ route('checkout') }}" class="btn btn-dark w-100 text-center mt-2"
-                                    role="button">Proceed To Checkout</a>
-                            </div>
-                            <!-- / Cart Summary-->
-                        </div>
-
-
+                        </button>                    
                     </li>
                     <!-- /Navbar Cart Icon-->
 

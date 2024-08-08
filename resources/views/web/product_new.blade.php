@@ -71,7 +71,6 @@
     <!-- / Breadcrumbs-->
 
     <div class="container-fluid mt-5">
-
         <!-- Product Top Section-->
         <div class="row g-9 product_data" data-sticky-container>
 
