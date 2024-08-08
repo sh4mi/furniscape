@@ -8,11 +8,12 @@
     <div class="card">
         <div class="border-bottom title-part-padding row">
             <div class="col">
-                <h4 class="card-title mb-0">Users</h4>
+                <h4 class="card-title mb-0">Delivery Persons</h4>
             </div>
-            <!-- <div class="col d-flex justify-content-end">
-                <a class="btn btn-danger text-white ms-3 d-none d-md-block" href="#">Add User</a>
-            </div> -->
+            <div class="col d-flex justify-content-end">
+                <a class="btn btn-danger text-white ms-3 d-none d-md-block" 
+                href="{{ url('admin/riders/create') }}">Add Delivery Person</a>
+            </div>
         </div>
         <div class="card-body">
 
@@ -23,7 +24,6 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Role</th>
                             <th>City</th>
                             <th>Country</th>
                             <th>Created at</th>
@@ -31,21 +31,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($riders as $rider)
                         <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->phone_number}}</td>
-                            <td>{{$user->role}}</td>
-                            <td>{{$user->city}}</td>
-                            <td>{{$user->created_at}}</td>
-                            <td>{{$user->country}}</td>
+                            <td>{{$rider->name}}</td>
+                            <td>{{$rider->email}}</td>
+                            <td>{{$rider->phone_number}}</td>
+                            <td>{{$rider->city}}</td>
+                            <td>{{$rider->created_at}}</td>
+                            <td>{{$rider->country}}</td>
                             <td>
-                                <a href="{{ route('users.edit', $user->id) }}" class="text-dark pe-2">
+                                <a href="{{ route('riders.edit', $rider->id) }}" class="text-dark pe-2">
                                     <i data-feather="edit-2" class="feather-sm fill-white"></i>
                                 </a>
-                                @if($user->role == "customer")
-                                <form action="{{ route('users.destroy', $user->id) }}" method="POST"
+                                <form action="{{ route('riders.destroy', $rider->id) }}" method="POST"
                                     style="display:inline;">
                                     @csrf
                                     @method('DELETE')
@@ -54,7 +52,6 @@
                                         <i data-feather="trash-2" class="feather-sm fill-white"></i>
                                     </button>
                                 </form>
-                                @endif
                             </td>
 
                         </tr>

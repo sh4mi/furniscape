@@ -5,6 +5,7 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\admin\UsersController;
+use App\Http\Controllers\admin\DriversController;
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\admin\OrdersController;
 use App\Http\Controllers\admin\RatingController;
@@ -50,6 +51,14 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
     Route::post('/users/{id}', [UsersController::class, 'update'])->name('users.update');
     Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
     
+    //Delivery Person
+    Route::get('riders', [DriversController::class, 'index'])->name('riders.index');
+    Route::get('riders/create', [DriversController::class, 'create'])->name('riders.create');
+    Route::post('riders', [DriversController::class, 'store'])->name('riders.store');
+    Route::get('/riders/{id}/edit', [DriversController::class, 'edit'])->name('riders.edit');
+    Route::post('/riders/{id}', [DriversController::class, 'update'])->name('riders.update');
+    Route::delete('/riders/{id}', [DriversController::class, 'destroy'])->name('riders.destroy');
+
     // Products
     Route::get('products', [ProductsController::class, 'index'])->name('products.index');
     Route::get('products/create', [ProductsController::class, 'create'])->name('products.create');

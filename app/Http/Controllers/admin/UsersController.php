@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class UsersController extends Controller
 {
     /**
@@ -17,7 +19,7 @@ class UsersController extends Controller
      */
     public function index(Request $request): View
     {
-        $users = User::all();
+        $users = User::whereIn('role', ['admin', 'customer'])->get();
         return view('admin.users.index', [
             'users' => $users,
         ]);
