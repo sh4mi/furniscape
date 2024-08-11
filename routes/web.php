@@ -81,6 +81,10 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
     Route::put('categories/{category}', [CategoriesController::class, 'update'])->name('categories.update');
     Route::delete('categories/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
 
+    //Manage Delivery
+    Route::get('manage-delivery', [OrdersController::class, 'manageDelivery'])->name('manage-delivery');
+    Route::post('orders/{order}/assign-rider', [OrdersController::class, 'assignRider']);
+
     //Rating
     Route::get('ratings', [RatingController::class, 'index'])->name('ratings.index');
 

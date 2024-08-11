@@ -15,7 +15,7 @@
                     <thead>
                         <tr>
                             <th>Tracking Number</th>
-                            <th>User ID</th>
+                            <th>User</th>
                             <th>Status</th>
                             <th>Payment Method</th>
                             <th>Payment Status</th>
@@ -27,7 +27,7 @@
                         @foreach($orders as $order)
                         <tr>
                             <td>{{ $order->tracking_no }}</td>
-                            <td>{{ $order->user_id }}</td>
+                            <td>{{ $order->user->name }}</td>
                             <td>{{ $order->status }}</td>
                             <td>{{ $order->payment_method }}</td>
                             <td>

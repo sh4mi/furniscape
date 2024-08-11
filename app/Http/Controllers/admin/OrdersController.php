@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\Order;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class OrdersController extends Controller
@@ -74,6 +75,32 @@ class OrdersController extends Controller
         }
 
         return view('web.track-order', ['order' => $order]);
+    }
+
+    public function manageDelivery(Request $request): View
+    {
+        $user = Auth::user();
+        if ($user->role === 'admin') {
+            $orders = Order::with('user')->get();
+            $riders = User::where('role', 'rider')->get(); // Fetch all delivery persons
+        } else {
+            abort(403, 'Unauthorized access.');
+        }
+
+        return view('admin.orders.manage-delivery', compact('orders', 'riders'));
+    }
+
+    public function assignRider(Request $request, Order $order)
+    {
+        $validatedData = $request->validate([
+            'rider_id' => 'required|exists:users,id',
+        ]);
+
+        $order->rider_id = $validatedData['rider_id'];
+        $order->status = 'dispatched'; 
+        $order->save();
+
+        return response()->json(['success' => true]);
     }
 
 }
