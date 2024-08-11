@@ -33,6 +33,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('web/assets/css/theme.bundle.css')}}" />
+    <link rel="stylesheet" href="{{ asset('/dist/css/icons/font-awesome/css/fontawesome-all.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('web/assets/css/custom.css')}}" />
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

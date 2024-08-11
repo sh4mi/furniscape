@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white flex-column border-0  ">
+<nav class="navbar navbar-expand-lg navbar-light flex-column border-0  ">
     <div class="container-fluid">
         <div class="w-100">
             <div class="d-flex justify-content-between align-items-center flex-wrap">
@@ -15,6 +15,7 @@
                         </svg> -->
                         <img src="{{ asset('web/assets/images/logos/logo.png')}}" style="height: 55px;" alt="Furniscape"
                             class="img-fluid">
+                        <h2 class="logo-title">Furniscape</h2>
                     </div>
                 </a>
                 <!-- / Logo-->
@@ -32,46 +33,18 @@
                     <!-- /Mobile Nav Toggler-->
 
 
-                    <!-- Navbar Login-->
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        @auth
-                        <a class="nav-link text-body" href="{{ route('account') }}">
-                            Account
-                        </a>
 
-                        @else
-                        <a class="nav-link text-body" href="{{ route('login') }}">
-                            Login
-                        </a>
-                        @endauth
-                    </li>
-                    @auth
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="nav-link text-body" href="{{ route('logout') }}">
-                            Logout
+                    <li class=" d-none d-lg-inline-block">
+                        <a class="nav-link text-body" title="wishlist" href="{{ route('wishlist') }}">
+                            <i class="fa fa-heart" style="color:red;font-size: 18px;"></i>
                         </a>
                     </li>
-                    @endauth
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="nav-link text-body" href="{{ route('wishlist') }}">
-                            Wishlist
-                        </a>
-                    </li>
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="nav-link text-body" href="{{ route('track.order') }}">
-                            Track Order
-                        </a>
-                    </li>
-                    <!-- /Navbar Login-->
-
                     <!-- Navbar Cart Icon-->
-                    <li class="ms-1 d-inline-block position-relative dropdown-cart">
-                        <button 
-                            class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
-                            type="button"
-                            onclick="window.location.href='{{ route('cart') }}'">
-                            Cart
-                        </button>                    
+                    <li class=" d-inline-block position-relative dropdown-cart">
+                        <button class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
+                            type="button" onclick="window.location.href='{{ route('cart') }}'">
+                            <i class="fas fa-cart-plus" style="color:white;font-size: 18px;"></i>
+                        </button>
                     </li>
                     <!-- /Navbar Cart Icon-->
 
@@ -304,8 +277,32 @@
 
                             <!-- / Menswear dropdown menu-->
                         </li>
+                        <li class="ms-1 d-none d-lg-inline-block">
+                            @auth
+                            <a class="nav-link text-body" href="{{ route('account') }}">
+                                Account
+                            </a>
 
-                        <li class="nav-item">
+                            @else
+                            <a class="nav-link text-body" href="{{ route('login') }}">
+                                Login
+                            </a>
+                            @endauth
+                        </li>
+                        @auth
+                        <li class="ms-1 d-none d-lg-inline-block">
+                            <a class="nav-link text-body" href="{{ route('logout') }}">
+                                Logout
+                            </a>
+                        </li>
+                        @endauth
+
+                        <li class="ms-1 d-none d-lg-inline-block">
+                            <a class="nav-link text-body" href="{{ route('track.order') }}">
+                                Track Order
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="/shop?category=bedroom" role="button">
                                 Bedroom
                             </a>
@@ -324,7 +321,7 @@
                             <a class="nav-link" href="/shop?category=kitchen" role="button">
                                 Kitchen
                             </a>
-                        </li>
+                        </li> -->
 
                     </ul> <!-- / Menu-->
 
