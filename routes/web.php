@@ -84,6 +84,7 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
     //Manage Delivery
     Route::get('manage-delivery', [OrdersController::class, 'manageDelivery'])->name('manage-delivery');
     Route::post('orders/{order}/assign-rider', [OrdersController::class, 'assignRider']);
+    Route::post('orders/{order}/update-status', [OrdersController::class, 'updateStatus'])->name('orders.updateStatus');
 
     //Rating
     Route::get('ratings', [RatingController::class, 'index'])->name('ratings.index');

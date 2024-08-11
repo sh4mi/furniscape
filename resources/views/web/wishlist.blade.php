@@ -1,7 +1,7 @@
 @extends('web.layouts.app')
 
 @section('content')
-<section class="mt-0">
+<section class="mt-4">
     <div class="container-fluid" data-aos="fade-in">
         <h1 class="mb-4">Wishlist Products</h1>
         <div id="wishlist-products" class="row g-4">
