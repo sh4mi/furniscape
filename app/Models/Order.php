@@ -19,7 +19,8 @@ class Order extends Model
         'shipping_address',
         'billing_address',
         'tracking_no',
-        'total_price'
+        'total_price',
+        'rider_id',
     ];
 
     public function orderItems()

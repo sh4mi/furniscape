@@ -84,6 +84,13 @@
                         <span class="hide-menu">Delivery Persons</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/manage-delivery') }}"
+                        aria-expanded="false">
+                        <i class="mdi mdi-calendar-check"></i>
+                        <span class="hide-menu">Manage Delivery</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
