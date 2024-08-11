@@ -45,7 +45,7 @@
                                     <a href="{{ route('orders.edit', $order->id) }}" class="text-dark pe-2">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a onclick="deleteOrder({{ $order->id }})" class="text-dark">
+                                    <a onclick="deleteOrder({{ $order->id }})" class="text-dark pe-2">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                     @if ($order->status == 'pending')
