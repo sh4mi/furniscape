@@ -196,15 +196,16 @@ class ProductsController extends Controller
                     }
                 }
             }
-        }
-
-        // Ensure that existing variants not included in the request are preserved
+            // Ensure that existing variants not included in the request are preserved
         $variantsToKeep = array_diff($existingVariantIds, $requestVariantIds);
         ProductVariant::whereIn('id', $variantsToKeep)
             ->get()
             ->each(function ($variant) {
                 $variant->load('images'); // Load existing images if needed
             });
+        }
+
+        
 
         // Redirect to the index page with a success message
         return redirect()->route('products.index')->with('success', 'Product updated successfully.');

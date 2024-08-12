@@ -48,7 +48,7 @@
         <!-- Products-->
         <div class="row g-4">
             @foreach($products as $product)
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-lg-3 col-md-4">
                 <!-- Card Product-->
                 <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
                     <div class="card-img position-relative">

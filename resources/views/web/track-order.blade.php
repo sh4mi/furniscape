@@ -52,13 +52,13 @@
         margin-top: 5px;
     }
 
-    .list-unstyled li {
+    /* .list-unstyled li {
         background: #fff;
         padding: 15px;
         margin-bottom: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+    } */
 
     .form-group label {
         font-weight: bold;
@@ -71,7 +71,8 @@
     }
 
     .order-info strong {
-        font-weight: bold; /* Ensure strong tags are bold */
+        font-weight: bold;
+        /* Ensure strong tags are bold */
     }
 </style>
 
@@ -80,38 +81,40 @@
         <h1 class="mb-4">Track Your Order</h1>
 
         @if(session('error'))
-            <div class="alert alert-danger">{{ session('error') }}</div>
+        <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
         <form action="{{ route('search.order') }}" method="POST" class="mb-5">
             @csrf
             <div class="form-group">
-                <input type="text" name="tracking_number" id="tracking_number" class="form-control" placeholder="Enter Order Tracking Number" required>
+                <input type="text" name="tracking_number" id="tracking_number" class="form-control"
+                    placeholder="Enter Order Tracking Number" required>
             </div>
             <button type="submit" class="btn btn-dark mb-0 hover-lift-sm hover-boxshadow">Search</button>
         </form>
 
         @if(isset($order))
-            <div class="order-details">
-                <h2 class="mb-4">Order Details</h2>
-                <div class="order-info">
-                    <p><strong>Order Number:</strong> {{ $order->number }}</p>
-                    <p><strong>Order Status:</strong> 
-                        <span class="badge status-{{ strtolower(str_replace(' ', '-', $order->status)) }}">
-                            <i class="fa {{ $order->status_icon }}"></i> {{ $order->status }}
-                        </span>
-                    </p>
-                    <p><strong>Payment Method:</strong> {{ $order->payment_method == 'cod' ? 'Cash On Delivery' : 'Cash On Delivery'}}</p>
-                    <p><strong>Payment Status:</strong> 
-                        <span class="badge {{ $order->payment_status == 1 ? 'badge-success' : 'badge-warning' }}">
-                            {{ $order->payment_status == 1 ? 'Received' : 'Pending' }}
-                        </span>
-                    </p>
-                    <p><strong>Shipping Address:</strong> {{ $order->shipping_address }}</p>
-                    <p><strong>Billing Address:</strong> {{ $order->billing_address }}</p>
-                    <p><strong>Total Price:</strong> {{ $order->total_price }} PKR</p>
-                </div>
+        <div class="order-details">
+            <h2 class="mb-4">Order Details</h2>
+            <div class="order-info">
+                <p><strong>Order Number:</strong> {{ $order->number }}</p>
+                <p><strong>Order Status:</strong>
+                    <span class="badge status-{{ strtolower(str_replace(' ', '-', $order->status)) }}">
+                        <i class="fa {{ $order->status_icon }}"></i> {{ $order->status }}
+                    </span>
+                </p>
+                <p><strong>Payment Method:</strong> {{ $order->payment_method == 'cod' ? 'Cash On Delivery' : 'Cash On
+                    Delivery'}}</p>
+                <p><strong>Payment Status:</strong>
+                    <span class="badge {{ $order->payment_status == 1 ? 'badge-success' : 'badge-warning' }}">
+                        {{ $order->payment_status == 1 ? 'Received' : 'Pending' }}
+                    </span>
+                </p>
+                <p><strong>Shipping Address:</strong> {{ $order->shipping_address }}</p>
+                <p><strong>Billing Address:</strong> {{ $order->billing_address }}</p>
+                <p><strong>Total Price:</strong> {{ $order->total_price }} PKR</p>
             </div>
+        </div>
         @endif
     </div>
 </section>
