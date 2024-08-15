@@ -155,42 +155,42 @@
                                                 </div>
                                                 <!-- Kitchen -->
                                                 <div class="col">
-                                                    <h6 class="dropdown-heading text-danger">Kitchen</h6>
+                                                    <h6 class="dropdown-heading">Kitchen</h6>
                                                     <ul class="list-unstyled">
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item"
                                                                 href="/shop?category=kitchen-islands">Kitchen
                                                                 Islands</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item"
                                                                 href="/shop?category=kitchen-cabinets">Kitchen
                                                                 Cabinets</a></li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item"
                                                                 href="/shop?category=bar-stools">Bar Stools</a></li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item"
                                                                 href="/shop?category=pantry-cabinets">Pantry
                                                                 Cabinets</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item"
                                                                 href="/shop?category=kitchen-tables">Kitchen Tables</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item"
                                                                 href="/shop?category=chairs">Chairs</a></li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item "
                                                                 href="/shop?category=kitchen-accessories">Kitchen
                                                                 Accessories</a></li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger"
+                                                                class="dropdown-item "
                                                                 href="/shop?category=kitchen-appliances">Kitchen
                                                                 Appliances</a></li>
                                                         <li class="dropdown-list-item"><a
-                                                                class="dropdown-item text-danger dropdown-link-all"
+                                                                class="dropdown-item dropdown-link-all"
                                                                 href="/shop?category=kitchen">View All</a></li>
                                                     </ul>
                                                 </div>
