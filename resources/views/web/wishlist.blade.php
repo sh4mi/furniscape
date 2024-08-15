@@ -46,7 +46,6 @@
                             </div>
                             <div class="card-body px-0">
                                 <a class="text-decoration-none link-cover" href="/product/${product.id}">${product.name}</a>
-                                <small class="text-muted d-block">4 colours, 10 sizes</small>
                                 <p class="mt-2 mb-0 small">
                                     ${product.discount_price
                                         ? `<s class="text-muted">PKR ${product.discount_price}</s>`

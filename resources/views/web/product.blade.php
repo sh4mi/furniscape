@@ -136,9 +136,9 @@
                         <h1 class="mb-1 fs-2 fw-bold">{{ $product->name }}</h1>
                         <div class="d-flex justify-content-between align-items-center">
                             @if ($product->discount_price > 0)
-                            <p class="fs-4 m-0 var-price">{{ $product->discount_price }} PKR</p>
+                            <h2 class="fs-4 m-0 var-price">Rs.{{ $product->discount_price }}</h2>
                             @else
-                            <p class="fs-4 m-0 var-price">{{ $product->price }} PKR</p>
+                            <h2 class="fs-4 m-0 var-price">Rs.{{ $product->price }}</h2>
                             @endif
                         </div>
                         <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted wishlist"
@@ -173,7 +173,6 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <input type="hidden" value="{{$product->id }}" class="prod_id">
                             <h4>Quantity : </h4>
-                            {{-- <label class="fs-4 m-0">Quantity :</label> --}}
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" id="decr-btn" class="input-group-text decrement-btn">-</button>
                                 <input type="text" name="quantity" id="quant-inp"
@@ -226,12 +225,12 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
+                                {{-- <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         Details & Care
                                     </button>
-                                </h2>
+                                </h2> --}}
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionProduct">
                                     <div class="accordion-body">
@@ -349,7 +348,6 @@
                                 </div>
                                 <div class="card-body px-0">
                                     <a class="text-decoration-none link-cover" href="#">{{ $product->name }}</a>
-                                    <small class="text-muted d-block">4 colours, 10 sizes</small>
                                     <p class="mt-2 mb-0 small">
                                         {{ $product->price }}
                                         PKR

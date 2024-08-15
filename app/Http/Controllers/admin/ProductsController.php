@@ -257,8 +257,16 @@ class ProductsController extends Controller
     // }
     public function destroy(Product $product)
     {
-        $product->delete();
+        if ($product) {
+            if ($product->orderItems()->count() > 0) {
+                $product->orderItems()->delete();
+            }
 
-        return response()->json(['message' => 'product deleted successfully']);
+            $product->delete();
+    
+            return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
+        }
+    
+        return redirect()->route('products.index')->with('error', 'Product not found.');
     }
 }

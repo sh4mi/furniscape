@@ -70,15 +70,15 @@
                                         <div class="col-md-2">
                                             @if ($item->variant)
                                                 @if ($item->variant->discount_price > 0)
-                                                    <h6>{{ $item->variant->discount_price }} PKR</h6>
+                                                    <h6>Rs.{{ $item->variant->discount_price }}</h6>
                                                 @else
-                                                    <h6>{{ $item->variant->price }} PKR</h6>
+                                                    <h6>Rs.{{ $item->variant->price }} </h6>
                                                 @endif
                                             @else
                                                 @if ($item->products->discount_price > 0)
-                                                    <h6>{{ $item->products->discount_price }} PKR</h6>
+                                                    <h6>Rs.{{ $item->products->discount_price }}</h6>
                                                 @else
-                                                    <h6>{{ $item->products->price }} PKR</h6>
+                                                    <h6>{Rs.{ $item->products->price }}</h6>
                                                 @endif
                                             @endif
                                         </div>

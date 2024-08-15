@@ -61,7 +61,7 @@
                                     <div class="mb-3">
                                         <label for="sku" class="form-label">SKU</label>
                                         <input type="text" class="form-control" id="sku" name="sku"
-                                            value="{{ $product->sku }}">
+                                            value="{{ $product->SKU }}">
                                     </div>
                                 </div>
                                 <!-- Dimensions -->
