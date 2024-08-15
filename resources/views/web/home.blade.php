@@ -5,7 +5,7 @@
 
 
     <section class="vh-75 vh-lg-60 container-fluid rounded overflow-hidden" data-aos="fade-in">
-        <img src="{{asset('assets/images/big/attachment.jpg')}}" style="width: 100%;" alt="">
+        <img src="{{asset('assets/images/big/bckk.jpg')}}" style="width: 100%;" alt="">
 
     </section>
     <!--/ Top Banner-->

@@ -53,8 +53,7 @@
                 <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
                     <div class="card-img position-relative">
                         <div class="card-badges">
-                            <span class="badge badge-card"><span
-                                    class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale</span>
+                            <span class="badge badge-card"></span>
                         </div>
                         <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i
                                 class="ri-heart-line"></i></span>
@@ -74,7 +73,7 @@
                     <div class="card-body px-0">
                         <a class="text-decoration-none link-cover"
                             href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
-                        <small class="text-muted d-block">4 colours, 10 sizes</small>
+                      
                         <p class="mt-2 mb-0 small">
                             @if($product->discount_price != null)
                             <s class="text-muted">PKR {{$product->discount_price}}</s>

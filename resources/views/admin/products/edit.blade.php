@@ -132,6 +132,7 @@
                                     <div class="col-md-3 mb-3">
                                         <img src="{{ asset($image->image_url) }}" alt="Product Image" class="img-fluid">
                                     </div>
+    
                                     @endforeach
                                 </div>
 
