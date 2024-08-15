@@ -5,7 +5,7 @@
 
 
     <section class="vh-75 vh-lg-60 container-fluid rounded overflow-hidden" data-aos="fade-in">
-        <img src="{{asset('assets/images/big/attachment.jpg')}}" style="width: 100%;" alt="">
+        <img src="{{asset('assets/images/big/bckk.jpg')}}" style="width: 100%;" alt="">
 
     </section>
     <!--/ Top Banner-->
@@ -17,7 +17,7 @@
                 <div class="marquee-body">
                     <div class="marquee-section animation-marquee-50">
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-1.svg')}}" alt="">
@@ -25,7 +25,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-2.svg')}}" alt="">
@@ -33,7 +33,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-3.svg')}}" alt="">
@@ -41,7 +41,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-4.svg')}}" alt="">
@@ -49,7 +49,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-5.svg')}}" alt="">
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-6.svg')}}" alt="">
@@ -65,7 +65,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-7.svg')}}" alt="">
@@ -73,7 +73,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-8.svg')}}" alt="">
@@ -81,7 +81,7 @@
                             </a>
                         </div>
                         <div class="mx-3 mx-lg-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-9.svg')}}" alt="">
@@ -91,7 +91,7 @@
                     </div>
                     <div class="marquee-section animation-marquee-50">
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-1.svg')}}" alt="">
@@ -99,7 +99,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-2.svg')}}" alt="">
@@ -107,7 +107,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-3.svg')}}" alt="">
@@ -115,7 +115,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-4.svg')}}" alt="">
@@ -123,7 +123,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-5.svg')}}" alt="">
@@ -131,7 +131,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-6.svg')}}" alt="">
@@ -139,7 +139,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-7.svg')}}" alt="">
@@ -147,7 +147,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-8.svg')}}" alt="">
@@ -155,7 +155,7 @@
                             </a>
                         </div>
                         <div class="mx-5 f-w-24">
-                            <a class="d-block" href="./category.html">
+                            <a class="d-block" href="./shop?category=beds">
                                 <picture>
                                     <img class="img-fluid d-table mx-auto"
                                         src="{{ asset('web/assets/images/logos/logo-9.svg')}}" alt="">
@@ -211,7 +211,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">Must Haves</p>
                             <h4 class="lead fw-bold">Beds</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=beds" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -222,7 +222,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">Curated Selection</p>
                             <h4 class="lead fw-bold">Tables</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=tables" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -233,7 +233,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">Streetwear Basics</p>
                             <h4 class="lead fw-bold">Chairs</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=chairs" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -244,7 +244,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">Waterproof &amp; Lightweight</p>
                             <h4 class="lead fw-bold">Home & Decor</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=home" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -255,7 +255,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">Keep Warm</p>
                             <h4 class="lead fw-bold">Sofas</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=sofa" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -266,7 +266,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">20% Off</p>
                             <h4 class="lead fw-bold">Kids Furniture</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=kids" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -277,7 +277,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">20% Off</p>
                             <h4 class="lead fw-bold">Bathroom Interior Design</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=bathroom" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -288,7 +288,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">Just Arrived</p>
                             <h4 class="lead fw-bold">Office Furniture</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=office" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                     <div class="swiper-slide align-self-stretch bg-transparent h-auto">
@@ -299,7 +299,7 @@
                             </picture>
                             <p class="title-small mb-2 text-muted">Accessories</p>
                             <h4 class="lead fw-bold">Outdoor Furniture</h4>
-                            <a href="./category.html" class="btn btn-psuedo align-self-start">Shop Now</a>
+                            <a href="./shop?category=outdoor" class="btn btn-psuedo align-self-start">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -341,7 +341,7 @@
                     mid-century sofas to industrial dining tables, find your perfect piece today!
                 </p>
 
-                <a href="./category.html" class="btn btn-psuedo" role="button">Shop New Arrivals</a>
+                <a href="./shop?category=beds" class="btn btn-psuedo" role="button">Shop New Arrivals</a>
             </div>
             <div class="col-12 col-md-6 position-relative z-index-20 pe-0" data-aos="fade-left">
                 <picture class="w-50 d-block position-relative z-index-10 border border-white border-4 shadow-lg">
@@ -374,7 +374,7 @@
                                 Sale</h2>
                             <p class="fs-5 fw-light text-white d-none d-md-block">Our yearly flash sale is now on!
                                 Grab yourself a bargain from the world's leading streetwear brands.</p>
-                            <a href="./category.html" class="btn btn-psuedo text-white" role="button">Shop All Sale
+                            <a href="./shop?category=beds" class="btn btn-psuedo text-white" role="button">Shop All Sale
                                 Items</a>
                         </div>
                     </div>
@@ -389,7 +389,8 @@
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">The Jordan Delta 2</p>
-                                    <a href="./category.html" class="btn btn-psuedo text-white py-2" role="button">Shop
+                                    <a href="./shop?category=beds" class="btn btn-psuedo text-white py-2"
+                                        role="button">Shop
                                         Kicks</a>
                                 </div>
                             </div>
@@ -402,7 +403,8 @@
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">Latest Mens Shirts</p>
-                                    <a href="./category.html" class="btn btn-psuedo text-white py-2" role="button">Shop
+                                    <a href="./shop?category=beds" class="btn btn-psuedo text-white py-2"
+                                        role="button">Shop
                                         New</a>
                                 </div>
                             </div>
@@ -415,7 +417,8 @@
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">KiiKii Osake Tees</p>
-                                    <a href="./category.html" class="btn btn-psuedo text-white py-2" role="button">Shop
+                                    <a href="./shop?category=beds" class="btn btn-psuedo text-white py-2"
+                                        role="button">Shop
                                         T-Shirts</a>
                                 </div>
                             </div>
@@ -428,7 +431,8 @@
                                 </picture>
                                 <div class="card-overlay">
                                     <p class="lead fw-bolder mb-2">Multibuy Womens Shirts</p>
-                                    <a href="./category.html" class="btn btn-psuedo text-white py-2" role="button">Shop
+                                    <a href="./shop?category=beds" class="btn btn-psuedo text-white py-2"
+                                        role="button">Shop
                                         Sale Items</a>
                                 </div>
                             </div>
