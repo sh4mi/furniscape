@@ -16,13 +16,13 @@
     <!-- /Breadcrumbs -->
 
     <!-- Page Content -->
-    <div class="container">
+    <div >
         @if($cartItems->count() > 0)
         <div class="row g-0 vh-lg-100">
-            <div class="col-12 col-lg-8 pt-lg-6">
-                <div class="pe-lg-5">
-                    <h4 class="fw-bold">Your Cart</h4>
-                    <div class="container">
+            <div class="col-12 col-lg-7 pt-lg-6 ms-5">
+                <div >
+                    <h4 class="fw-bold mb-4">Your Cart</h4>
+                    <div class="container mb-5">
                         <div class="card shadow">
                             <div class="card-body" style="background-color: #f8f9fa; border: 1px solid #ced4da; border-radius: 10px; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
                                 <!-- Heading Row -->
@@ -54,10 +54,10 @@
                                     <div class="row align-items-center mb-4 text-center product_data">
                                         <div class="col-md-2">
                                             @if ($item->variant)
-                                                <img src="{{ asset($item->variant->images->first()->image_url) }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
+                                                <img src="{{ asset($item->variant->images->first()->image_url) }}" class="img-fluid rounded" alt="Image" style="width: 80px; height: 80px;">
                                                 <input type="hidden" class="variant_id" value="{{ $item->variant->id }}">
                                             @else
-                                                <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'Image' }}" class="img-fluid rounded" alt="Image" style="max-width: 70px; height: auto;">
+                                                <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'Image' }}" class="img-fluid rounded" alt="Image" style="width: 80px; height: 80px;">
                                             @endif
                                         </div>
                                         <div class="col-md-2">
@@ -121,8 +121,8 @@
             </div>
             <div class="col-12 col-lg-4 bg-light pt-lg-6 aside-checkout pb-5 pb-lg-0 my-5 my-lg-0">
                 <div class="p-4 py-lg-0 pe-lg-0 ps-lg-5">
-                    <h4 class="fw-bold">Cart Summary</h4>
-                    <div class="card-body" style="background-color: #f8f9fa; border: 1px solid #ced4da; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
+                    <h4 class="fw-bold mb-4">Cart Summary</h4>
+                    <div class="card-body" style="background-color: #f8f9fa; border: 1px solid #ced4da; border-radius: 10px; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
                     <div class="row align-items-center mb-4 text-center">
                             <div class="col-6 text-start">
                                 <h6>Total Items :</h6>
