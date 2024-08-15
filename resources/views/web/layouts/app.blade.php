@@ -31,6 +31,12 @@
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="{{ asset('web/assets/css/libs.bundle.css')}}" />
 
+    <link rel="stylesheet" href="{{ asset('web/assets/css/bootstrap.min.css')}}">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{{ asset('web/assets/css/style.css')}}">
+
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('web/assets/css/theme.bundle.css')}}" />
     <link rel="stylesheet" href="{{ asset('/dist/css/icons/font-awesome/css/fontawesome-all.min.css')}}" />
@@ -84,6 +90,9 @@
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+    <script src="{{ asset('web/assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/popper.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/bootstrap.min.js')}}"></script>
     <!--End of Tawk.to Script-->
 </body>
 
