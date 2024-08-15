@@ -47,11 +47,19 @@ class OrdersController extends Controller
         return redirect()->route('orders.index')->with('success', 'Order updated successfully');
     }
 
-    public function destroy($id)
+    public function destroy(Order $order)
     {
-        $order = Order::findOrFail($id);
-        $order->delete();
-        return response()->json(['message' => 'Order deleted successfully']);
+        if($order){
+            if ($order->orderItems()->count() > 0) {
+                $order->orderItems()->delete();
+            }
+
+            $order->delete();
+    
+            return redirect()->route('orders.index')->with('success', 'Order deleted successfully.');
+        }
+    
+        return redirect()->route('orders.index')->with('error', 'Product not found.');
     }
 
     public function trackOrder()

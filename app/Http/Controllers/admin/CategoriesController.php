@@ -70,8 +70,13 @@ class CategoriesController extends Controller
         }
         public function destroy(Category $category)
         {
+            if($category){
+            if ($category->products()->count() > 0) {
+                $category->products()->delete();
+            }
             $category->delete();
-
-            return response()->json(['message' => 'Category deleted successfully']);
+            return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
+            }
+            return redirect()->route('categories.index')->with('error', 'Category not found.');
         }
 }

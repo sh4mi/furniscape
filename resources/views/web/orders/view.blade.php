@@ -97,7 +97,7 @@
                                                             @if ($variant)
                                                                 <td>{{ $variant->name }} - {{ $product->name }}</td>
                                                                 <td>{{ $item->quantity }}</td>
-                                                                <td>{{ $item->price }} PKR</td>
+                                                                <td>Rs.{{ $item->price }}</td>
                                                                 <td>
                                                                     <img src="{{ $variant->images->isNotEmpty() ? asset($variant->images->first()->image_url) : 'path_to_default_image_or_placeholder' }}"
                                                                         class="img-fluid rounded" alt="Image"
@@ -106,7 +106,7 @@
                                                             @else
                                                                 <td>{{ $item->products->name }}</td>
                                                                 <td>{{ $item->quantity }}</td>
-                                                                <td>{{ $item->price }} PKR</td>
+                                                                <td>Rs.{{ $item->price }}</td>
                                                                 <td>
                                                                     <img src="{{ $item->products->images->isNotEmpty() ? asset($item->products->images->first()->image_url) : 'Image' }}"
                                                                         class="img-fluid rounded" alt="Image"

@@ -52,11 +52,12 @@
                 <!-- Card Product-->
                 <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
                     <div class="card-img position-relative">
-                        <div class="card-badges">
-                            <span class="badge badge-card"></span>
+                        {{-- <div class="card-badges">
+                            <span class="badge badge-card"><span
+                                    class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale</span>
                         </div>
                         <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i
-                                class="ri-heart-line"></i></span>
+                                class="ri-heart-line"></i></span> --}}
                         <picture class="position-relative overflow-hidden d-block bg-light">
                             @if ($product->images->isNotEmpty())
                             <img style="min-height: 300px;" src="{{ asset($product->images->first()->image_url) }}"
@@ -73,7 +74,6 @@
                     <div class="card-body px-0">
                         <a class="text-decoration-none link-cover"
                             href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
-                      
                         <p class="mt-2 mb-0 small">
                             @if($product->discount_price != null)
                             <s class="text-muted">PKR {{$product->discount_price}}</s>

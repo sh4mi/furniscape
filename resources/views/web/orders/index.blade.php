@@ -25,7 +25,7 @@
                         @foreach($orders as $order)
                         <tr>
                             <td>{{ $order->tracking_no }}</td>
-                            <td>{{ $order->total_price }} PKR</td>
+                            <td>Rs.{{ $order->total_price }}</td>
                             <td>{{ $order->status }}</td>
                             <td>
                                 <a href="{{ url('view-order/'.$order->id) }}" class="btn btn-dark hover-lift-sm hover-boxshadow w-80">View</a>

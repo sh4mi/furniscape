@@ -112,7 +112,7 @@
                 </p>
                 <p><strong>Shipping Address:</strong> {{ $order->shipping_address }}</p>
                 <p><strong>Billing Address:</strong> {{ $order->billing_address }}</p>
-                <p><strong>Total Price:</strong> {{ $order->total_price }} PKR</p>
+                <p><strong>Total Price:</strong> Es.{{ $order->total_price }}</p>
             </div>
         </div>
         @endif
