@@ -46,7 +46,7 @@
                             <td>{{ $product->SKU }}</td>
                             <td>{{ $product->dimensions }}</td>
                             <td>{{ $product->material }}</td>
-                            <td>{{ $product->weight }}</td>
+                            <td>{{ $product->weight }} lbs</td>
                             <td>{{ $product->is_featured ? 'Yes' : 'No' }}</td>
                             <td>{{ $product->is_available ? 'Yes' : 'No' }}</td>
                             <td>{{ $product->price }}</td>

@@ -261,7 +261,7 @@ class ProductsController extends Controller
             if ($product->orderItems()->count() > 0) {
                 $product->orderItems()->delete();
             }
-
+            $product->images()->delete(); 
             $product->delete();
     
             return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
