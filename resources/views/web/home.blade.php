@@ -4,8 +4,8 @@
 
 
 
-    <section class="vh-75 vh-lg-60 container-fluid rounded overflow-hidden" data-aos="fade-in">
-        <img src="{{asset('assets/images/big/bckk.jpg')}}" style="width: 100%;" alt="">
+    <section style="padding: 0;" class="container-fluid rounded overflow-hidden" data-aos="fade-in">
+        <img src="{{asset('assets/images/big/bckk.jpeg')}}" style="width: 100%;" alt="">
 
     </section>
     <!--/ Top Banner-->
@@ -330,14 +330,14 @@
 
         <div class="position-relative row my-lg-7 pt-5 pt-lg-0 g-8">
             <div class="bg-text bottom-0 start-0 end-0" data-aos="fade-up">
-                <h2 class="bg-text-title opacity-10"><span class="text-outline-dark">Old</span>Skool</h2>
+                <h2 class="bg-text-title opacity-10"><span class="text-outline-dark">Furniscape</span></h2>
             </div>
             <div class="col-12 col-md-6 position-relative z-index-20 mb-7 mb-lg-0" data-aos="fade-right">
                 <p class="text-muted title-small">Welcome</p>
-                <h3 class="display-3 fw-bold mb-5"><span class="text-outline-dark">RetroFurn</span> - Vintage &
+                <h3 class="display-3 fw-bold mb-5"><span class="text-outline-dark">Furniscape</span> - Vintage &
                     Contemporary Furniture Specialists</h3>
                 <p class="lead">
-                    Discover unique furniture blending vintage charm with contemporary style at RetroFurn. From
+                    Discover unique furniture blending vintage charm with contemporary style at Furniscape. From
                     mid-century sofas to industrial dining tables, find your perfect piece today!
                 </p>
 
@@ -363,17 +363,14 @@
         <div class="pt-7 mb-5 mb-lg-10">
             <div class="row g-4">
                 <div class="col-12 col-xl-6 position-relative" data-aos="fade-right">
-                    <picture class="position-relative z-index-10">
-                        <img class="w-100 rounded" src="{{ asset('web/assets/images/banners/banner-sale.jpg')}}"
-                            alt="Furniscape">
-                    </picture>
-                    <div
+
+                    <div style="background: #7e5a45;"
                         class="position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center z-index-20">
                         <div class="py-6 px-5 px-lg-10 text-center ">
                             <h2 class="display-1 mb-3 fw-bold text-white"><span class="text-outline-light">Flash</span>
                                 Sale</h2>
                             <p class="fs-5 fw-light text-white d-none d-md-block">Our yearly flash sale is now on!
-                                Grab yourself a bargain from the world's leading streetwear brands.</p>
+                                Grab yourself a bargain from the world's leading furniture brands.</p>
                             <a href="./shop?category=beds" class="btn btn-psuedo text-white" role="button">Shop All Sale
                                 Items</a>
                         </div>

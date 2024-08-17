@@ -61,12 +61,12 @@
                                     @method('DELETE')
                                     <button type="submit"
                                         style="background: none; border: none; cursor: pointer; padding: 0;">
-                                        <i data-feather="trash-2" class="feather-sm fill-white"></i>
+                                        <i class="fa fa-trash"></i>
                                     </button>
                                 </form>
-                                {{-- <a onclick="deleteProduct({{ $product->id }})" class="text-dark">
+                                <!-- <a onclick="deleteProduct({{ $product->id }})" class="text-dark">
                                     <i class="fa fa-trash"></i>
-                                </a> --}}
+                                </a>  -->
                             </td>
                         </tr>
                         @endforeach

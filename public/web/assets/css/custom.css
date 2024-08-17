@@ -3,11 +3,24 @@
 }
 
 .navbar-light {
-    background-color: black !important;
+    background-color: #c8b89f !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #000000 !important;
+}
+
+body {
+    background-color: #f2f2f2 !important;
+}
+
+footer {
+    background-color: #c8b89f !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -15,7 +28,7 @@
 }
 
 .logo-title {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-left: 14px;
 }
 
@@ -23,7 +36,47 @@
 .text-body-active:active,
 .text-body-focus:focus,
 .text-body-hover:hover {
-    color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.footer-20192 h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.5;
+    color: black;
+}
+
+.footer-20192 .footer-logo {
+    color: #000;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.footer-20192 .links li a {
+    color: #000000;
+}
+
+.footer-20192 .social li a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background-color: #111827;
+    color: #fff;
+}
+
+.footer-20192 .cta {
+    -webkit-box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
+    box-shadow: -20px -20px 0 0 rgb(195 193 175 / 74%);
+    padding: 20px;
+    background-color: #93875b;
+    top: -150px;
+    position: relative;
 }
 
 .img-card img {
