@@ -115,21 +115,23 @@
                                 data-pixr-scrollto data-target=".reviews">
                                 <!-- Review Stars Small-->
                                 <div class="rating position-relative d-table">
-                                    <div class="position-absolute stars" style="width: 80%">
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
+                                    @php
+                                        $averageRating = $product->ratings->avg('rating');
+                                        $ratingPercentage = ($averageRating / 5) * 100;
+                                    @endphp
+                                    <div class="position-absolute stars" style="width: {{ $ratingPercentage }}%">
+                                        @for ($i = 0; $i < 5; $i++)
+                                                <i class="ri-star-fill text-dark mr-1"></i>
+                                        @endfor
                                     </div>
                                     <div class="stars">
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
+                                        @for ($i = 0; $i < 5; $i++)
+                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
+                                        @endfor
                                     </div>
-                                </div> <small class="text-muted d-inline-block ms-2 fs-bolder">(105 reviews)</small>
+                                </div> <small class="text-muted d-inline-block ms-2 fs-bolder">
+                                    ({{ $product->ratings->count() }} review(s))
+                                </small>
                             </div>
                         </div>
 
@@ -348,10 +350,10 @@
                                 <div class="card-body px-0">
                                     <a class="text-decoration-none link-cover" href="#">{{ $product->name }}</a>
                                     <p class="mt-2 mb-0 small">
-                                        {{ $product->price }}
-                                        PKR
+                                        Rs.{{ $product->price }}
+                                        
                                         @if ($product->discount_price != null)
-                                        <span class="text-danger">{{ $product->discount_price }} PKR
+                                        Rs.<span class="text-danger">{{ $product->discount_price }}
                                         </span>
                                         @endif
                                     </p>
@@ -380,336 +382,94 @@
             </div>
             <!-- / Related Products-->
 
-            <!-- Reviews-->
-            <div class="col-12" data-aos="fade-up">
-                <h3 class="fs-4 fw-bolder mt-7 mb-4 reviews">Reviews</h3>
+        <!-- Reviews-->
+        <div class="col-12" data-aos="fade-up">
+            <h3 class="fs-4 fw-bolder mt-7 mb-4 reviews">Reviews</h3>
 
-                <!-- Review Summary-->
-                <div class="bg-light p-5 justify-content-between d-flex flex-column flex-lg-row">
-                    <div class="d-flex flex-column align-items-center mb-4 mb-lg-0">
-                        <div
-                            class="bg-dark text-white f-w-24 f-h-24 d-flex rounded-circle align-items-center justify-content-center fs-2 fw-bold mb-3">
-                            4.3</div>
-                        <!-- Review Stars Medium-->
-                        <div class="rating position-relative d-table">
-                            <div class="position-absolute stars" style="width: 88%">
+            <!-- Review Summary-->
+            <div class="bg-light p-5 justify-content-between d-flex flex-column flex-lg-row">
+                <div class="d-flex flex-column align-items-center mb-4 mb-lg-0">
+                    <div class="bg-dark text-white f-w-24 f-h-24 d-flex rounded-circle align-items-center justify-content-center fs-2 fw-bold mb-3">
+                        {{ $product->ratings->isNotEmpty() ? $product->ratings->avg('rating') : 'N/A' }}
+                    </div>
+                    <!-- Review Stars Medium-->
+                    <div class="rating position-relative d-table">
+                        <div class="position-absolute stars" style="width: {{ ($product->ratings->isNotEmpty() ? ($product->ratings->avg('rating') / 5) * 100 : 0) }}%">
+                            @for ($i = 0; $i < 5; $i++)
                                 <i class="ri-star-fill text-dark ri-2x mr-1"></i>
-                                <i class="ri-star-fill text-dark ri-2x mr-1"></i>
-                                <i class="ri-star-fill text-dark ri-2x mr-1"></i>
-                                <i class="ri-star-fill text-dark ri-2x mr-1"></i>
-                                <i class="ri-star-fill text-dark ri-2x mr-1"></i>
-                            </div>
-                            <div class="stars">
+                            @endfor
+                        </div>
+                        <div class="stars">
+                            @for ($i = 0; $i < 5; $i++)
                                 <i class="ri-star-fill ri-2x mr-1 text-muted opacity-25"></i>
-                                <i class="ri-star-fill ri-2x mr-1 text-muted opacity-25"></i>
-                                <i class="ri-star-fill ri-2x mr-1 text-muted opacity-25"></i>
-                                <i class="ri-star-fill ri-2x mr-1 text-muted opacity-25"></i>
-                                <i class="ri-star-fill ri-2x mr-1 text-muted opacity-25"></i>
-                            </div>
+                            @endfor
                         </div>
-                    </div>
-                    <div class="d-flex flex-grow-1 flex-column ms-lg-8">
-                        <div class="d-flex align-items-center justify-content-start mb-2">
-                            <div class="f-w-20">
-                                <!-- Review Stars Small-->
-                                <div class="rating position-relative d-table">
-                                    <div class="position-absolute stars" style="width: 100%">
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                    </div>
-                                    <div class="stars">
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="progress d-flex flex-grow-1 mx-4 f-h-1">
-                                <div class="progress-bar bg-dark" role="progressbar" style="width: 80%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <span class="fw-bold small d-block f-w-4 text-end">55</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-start mb-2">
-                            <div class="f-w-20">
-                                <!-- Review Stars Small-->
-                                <div class="rating position-relative d-table">
-                                    <div class="position-absolute stars" style="width: 80%">
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                    </div>
-                                    <div class="stars">
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="progress d-flex flex-grow-1 mx-4 f-h-1">
-                                <div class="progress-bar bg-dark" role="progressbar" style="width: 60%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <span class="fw-bold small d-block f-w-4 text-end">32</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-start mb-2">
-                            <div class="f-w-20">
-                                <!-- Review Stars Small-->
-                                <div class="rating position-relative d-table">
-                                    <div class="position-absolute stars" style="width: 60%">
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                    </div>
-                                    <div class="stars">
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="progress d-flex flex-grow-1 mx-4 f-h-1">
-                                <div class="progress-bar bg-dark" role="progressbar" style="width: 30%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <span class="fw-bold small d-block f-w-4 text-end">15</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-start mb-2">
-                            <div class="f-w-20">
-                                <!-- Review Stars Small-->
-                                <div class="rating position-relative d-table">
-                                    <div class="position-absolute stars" style="width: 40%">
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                    </div>
-                                    <div class="stars">
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="progress d-flex flex-grow-1 mx-4 f-h-1">
-                                <div class="progress-bar bg-dark" role="progressbar" style="width: 8%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <span class="fw-bold small d-block f-w-4 text-end">5</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-start mb-2">
-                            <div class="f-w-20">
-                                <!-- Review Stars Small-->
-                                <div class="rating position-relative d-table">
-                                    <div class="position-absolute stars" style="width: 20%">
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                    </div>
-                                    <div class="stars">
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="progress d-flex flex-grow-1 mx-4 f-h-1">
-                                <div class="progress-bar bg-dark" role="progressbar" style="width: 5%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <span class="fw-bold small d-block f-w-4 text-end">1</span>
-                        </div>
-                        <p class="mt-3 mb-0 d-flex align-items-start"><i class="ri-chat-voice-line me-2"></i> 105
-                            customers have reviewed this product</p>
-                    </div>
-                </div><!-- / Rewview Summary-->
-
-                <!-- Reviews-->
-                <div class="row g-6 g-md-8 g-lg-10 my-3">
-                    <div class="col-12 col-lg-6 col-xxl-4">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <!-- Review Stars Small-->
-                            <div class="rating position-relative d-table">
-                                <div class="position-absolute stars" style="width: 80%">
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                </div>
-                                <div class="stars">
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                </div>
-                            </div>
-                            <div class="text-muted small">20th September 2020 by DaveD</div>
-                        </div>
-                        <p class="fw-bold mb-2">Great fit, great price</p>
-                        <p class="fs-7">Worth buying this for value for money. But be warned: get one size larger as
-                            the
-                            medium is closer to small medium!</p>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xxl-4">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <!-- Review Stars Small-->
-                            <div class="rating position-relative d-table">
-                                <div class="position-absolute stars" style="width: 40%">
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                </div>
-                                <div class="stars">
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                </div>
-                            </div>
-                            <div class="text-muted small">18th September 2020 by Sandra K</div>
-                        </div>
-                        <p class="fw-bold mb-2">Not worth the money</p>
-                        <p class="fs-7">Loose and poor stiching on the sides. Won&#x27;t buy this again.</p>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xxl-4">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <!-- Review Stars Small-->
-                            <div class="rating position-relative d-table">
-                                <div class="position-absolute stars" style="width: 90%">
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                </div>
-                                <div class="stars">
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                </div>
-                            </div>
-                            <div class="text-muted small">16th September 2020 by MikeS</div>
-                        </div>
-                        <p class="fw-bold mb-2">Decent for the price</p>
-                        <p class="fs-7">I buy these often as they are good quality and value for money.</p>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xxl-4">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <!-- Review Stars Small-->
-                            <div class="rating position-relative d-table">
-                                <div class="position-absolute stars" style="width: 85%">
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                </div>
-                                <div class="stars">
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                </div>
-                            </div>
-                            <div class="text-muted small">14th September 2020 by Frankie</div>
-                        </div>
-                        <p class="fw-bold mb-2">Great little T</p>
-                        <p class="fs-7">Wore this to my local music festival - went down well.</p>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xxl-4">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <!-- Review Stars Small-->
-                            <div class="rating position-relative d-table">
-                                <div class="position-absolute stars" style="width: 70%">
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                </div>
-                                <div class="stars">
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                </div>
-                            </div>
-                            <div class="text-muted small">20th September 2020 by Kevin</div>
-                        </div>
-                        <p class="fw-bold mb-2">Great for the BBQ</p>
-                        <p class="fs-7">Bought this on the off chance it would work well with my skinny jeans, was a
-                            great decision. Would recommend.</p>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xxl-4">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <!-- Review Stars Small-->
-                            <div class="rating position-relative d-table">
-                                <div class="position-absolute stars" style="width: 20%">
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                </div>
-                                <div class="stars">
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                </div>
-                            </div>
-                            <div class="text-muted small">20th September 2020 by Holly</div>
-                        </div>
-                        <p class="fw-bold mb-2">Nothing special but it&#x27;s okay</p>
-                        <p class="fs-7">It&#x27;s a t-shirt. What can I say, it does the job.</p>
                     </div>
                 </div>
-                <!-- / Reviews-->
+                <div class="d-flex flex-grow-1 flex-column ms-lg-8">
+                    @php
+                        $totalRatings = $product->ratings->count();
+                    @endphp
 
-                <!-- Review Pagination-->
-                <div class="d-flex flex-column f-w-44 mx-auto my-5 text-center">
-                    <small class="text-muted">Showing 6 of 105 reviews</small>
-                    <div class="progress f-h-1 mt-3">
-                        <div class="progress-bar bg-dark" role="progressbar" style="width: 25%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
+                    @for ($rating = 5; $rating >= 1; $rating--)
+                        @php
+                            $ratingCount = $product->ratings->where('rating', $rating)->count();
+                            $percentage = $totalRatings > 0 ? ($ratingCount / $totalRatings) * 100 : 0;
+                        @endphp
+                        <div class="d-flex align-items-center justify-content-start mb-2">
+                            <div class="f-w-20">
+                                <!-- Review Stars Small-->
+                                <div class="rating position-relative d-table">
+                                    <div class="position-absolute stars" style="width: {{ ($rating / 5) * 100 }}%">
+                                        @for ($i = 0; $i < 5; $i++)
+                                            <i class="ri-star-fill text-dark mr-1"></i>
+                                        @endfor
+                                    </div>
+                                    <div class="stars">
+                                        @for ($i = 0; $i < 5; $i++)
+                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
+                                        @endfor
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress d-flex flex-grow-1 mx-4 f-h-1">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ $percentage }}%;" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="fw-bold small d-block f-w-4 text-end">{{ $ratingCount }}</span>
+                        </div>
+                    @endfor
+                    <p class="mt-3 mb-0 d-flex align-items-start"><i class="ri-chat-voice-line me-2"></i> {{ $totalRatings }} customer(s) have reviewed this product</p>
+                </div>
+            </div><!-- / Review Summary-->
+
+            <!-- Reviews-->
+            <div class="row g-6 g-md-8 g-lg-10 my-3">
+                @foreach ($product->ratings as $review)
+                    <div class="col-12 col-lg-6 col-xxl-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <!-- Review Stars Small-->
+                            <div class="rating position-relative d-table">
+                                <div class="position-absolute stars" style="width: {{ ($review->rating / 5) * 100 }}%">
+                                    @for ($i = 0; $i < 5; $i++)
+                                        <i class="ri-star-fill text-dark mr-1"></i>
+                                    @endfor
+                                </div>
+                                <div class="stars">
+                                    @for ($i = 0; $i < 5; $i++)
+                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
+                                    @endfor
+                                </div>
+                            </div>
+                            <div class="text-muted small">{{ $review->created_at->format('jS F Y') }} by {{ $review->user->name }}</div>
+                        </div>
+                        <p class="fw-bold mb-2">{{ $review->title }}</p>
+                        <p class="fs-7">{{ $review->comment }}</p>
                     </div>
-                    <a href="#" class="btn btn-outline-dark btn-sm mt-5 align-self-center py-3 px-4 border-2">Load
-                        More</a>
-                </div><!-- / Review Pagination-->
+                @endforeach
             </div>
-            <!-- / Reviews-->
         </div>
-
+        <!-- / Reviews-->
+        </div>
     </div>
 </section>
 @endsection
