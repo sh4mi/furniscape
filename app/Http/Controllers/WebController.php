@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Category;
 class WebController extends Controller
 {
     /**
@@ -44,9 +45,8 @@ class WebController extends Controller
 
     public function product(Request $request, $id): View
     {   
-        $product = Product::with(['images', 'variants.images'])->findOrFail($id);
-        $products = Product::with(['images', 'variants.images'])->inRandomOrder()->limit(10)->get();
-        
+        $product = Product::with(['images', 'variants.images', 'ratings.user'])->findOrFail($id);
+        $products = Product::with(['images', 'variants.images', 'ratings.user'])->inRandomOrder()->limit(10)->get();
         return view('web.product', [
             'product' => $product,
             'products'=>$products,
@@ -59,7 +59,12 @@ class WebController extends Controller
 
         // Apply filters if query parameters are provided
         if ($request->filled('category')) {
-           // $query->where('category', $request->category);
+            $cat = Category::where('slug',$request->category)->first();
+           // dd($request->category);
+            if($cat){
+                $query->where('category_id', $cat->id);
+            }
+            
         }
 
         if ($request->filled('price_min')) {

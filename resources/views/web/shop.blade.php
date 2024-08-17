@@ -33,7 +33,6 @@
                     <i class="ri-equalizer-line me-2"></i> Filters
                 </button>
                 <!-- / Filter Trigger-->
-
                 <!-- Sort Options-->
                 <select class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
                     <option selected>Sort By</option>

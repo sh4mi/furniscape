@@ -53,6 +53,7 @@ class ProductsController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate images
         ]);
         // Create the product
+        $request['is_featured'] = false;
         $productData = $request->except(['images', 'variants']);
         $product = Product::create($productData);
         
@@ -258,10 +259,26 @@ class ProductsController extends Controller
     public function destroy(Product $product)
     {
         if ($product) {
+            // Check and delete associated order items if they exist
             if ($product->orderItems()->count() > 0) {
                 $product->orderItems()->delete();
             }
-
+    
+            // Delete associated images
+            $product->images()->delete();
+    
+            // Delete product variants and their associated images
+            $variants = ProductVariant::where('product_id', $product->id)->get();
+    
+            foreach ($variants as $variant) {
+                // Delete images associated with each variant
+                ProductVariantImage::where('product_variant_id', $variant->id)->delete();
+            }
+    
+            // Now delete the product variants
+            ProductVariant::where('product_id', $product->id)->delete();
+    
+            // Finally, delete the product itself
             $product->delete();
     
             return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
@@ -269,4 +286,5 @@ class ProductsController extends Controller
     
         return redirect()->route('products.index')->with('error', 'Product not found.');
     }
+    
 }

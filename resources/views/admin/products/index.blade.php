@@ -46,7 +46,7 @@
                             <td>{{ $product->SKU }}</td>
                             <td>{{ $product->dimensions }}</td>
                             <td>{{ $product->material }}</td>
-                            <td>{{ $product->weight }}</td>
+                            <td>{{ $product->weight }} lbs</td>
                             <td>{{ $product->is_featured ? 'Yes' : 'No' }}</td>
                             <td>{{ $product->is_available ? 'Yes' : 'No' }}</td>
                             <td>{{ $product->price }}</td>
@@ -61,12 +61,12 @@
                                     @method('DELETE')
                                     <button type="submit"
                                         style="background: none; border: none; cursor: pointer; padding: 0;">
-                                        <i data-feather="trash-2" class="feather-sm fill-white"></i>
+                                        <i class="fa fa-trash"></i>
                                     </button>
                                 </form>
-                                {{-- <a onclick="deleteProduct({{ $product->id }})" class="text-dark">
+                                <!-- <a onclick="deleteProduct({{ $product->id }})" class="text-dark">
                                     <i class="fa fa-trash"></i>
-                                </a> --}}
+                                </a>  -->
                             </td>
                         </tr>
                         @endforeach

@@ -119,8 +119,8 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <h4 class="px-2 mt-3">Grand Total: <span class="float-end">{{ $grandTotal }}
-                                            PKR</span></h4>
+                                    <h4 class="px-2 mt-3">Grand Total: <span class="float-end">Rs.{{ $grandTotal }}
+                                    </span></h4>
                                 </div>
                             </div>
                         </div>
