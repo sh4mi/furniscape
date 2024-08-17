@@ -43,7 +43,7 @@
                     <li class=" d-inline-block position-relative dropdown-cart">
                         <button class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
                             type="button" onclick="window.location.href='{{ route('cart') }}'">
-                            <i class="fas fa-cart-plus" style="color:white;font-size: 18px;"></i>
+                            <i class="fas fa-cart-plus" style="color:rgb(0, 0, 0);font-size: 18px;"></i>
                         </button>
                     </li>
                     <!-- /Navbar Cart Icon-->
@@ -157,36 +157,28 @@
                                                 <div class="col">
                                                     <h6 class="dropdown-heading">Kitchen</h6>
                                                     <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item"
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=kitchen-islands">Kitchen
                                                                 Islands</a>
                                                         </li>
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item"
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=kitchen-cabinets">Kitchen
                                                                 Cabinets</a></li>
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item"
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=bar-stools">Bar Stools</a></li>
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item"
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=pantry-cabinets">Pantry
                                                                 Cabinets</a>
                                                         </li>
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item"
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=kitchen-tables">Kitchen Tables</a>
                                                         </li>
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item"
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=chairs">Chairs</a></li>
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item "
+                                                        <li class="dropdown-list-item"><a class="dropdown-item "
                                                                 href="/shop?category=kitchen-accessories">Kitchen
                                                                 Accessories</a></li>
-                                                        <li class="dropdown-list-item"><a
-                                                                class="dropdown-item "
+                                                        <li class="dropdown-list-item"><a class="dropdown-item "
                                                                 href="/shop?category=kitchen-appliances">Kitchen
                                                                 Appliances</a></li>
                                                         <li class="dropdown-list-item"><a
