@@ -76,11 +76,11 @@
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=beds">Beds</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=mattresses">Mattresses</a></li>
+                                                                href="/shop?category=mattresses"></a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=wardrobes">Wardrobes</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=nightstands">Nightstands</a></li>
+                                                                href="/shop?category=nightstands"></a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=bedroom-furniture-sets">Bedroom
                                                                 Furniture Sets</a></li>
@@ -103,14 +103,14 @@
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=sofas">Sofas</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=armchairs">Armchairs</a></li>
+                                                                href="/shop?category=armchairs">ottoman-chairs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=coffee-tables">Coffee Tables</a>
+                                                                href="/shop?category=coffee-tables"></a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=tv-stands">TV Stands</a></li>
+                                                                href="/shop?category=tv-stands"></a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=bookcases">Bookcases</a></li>
+                                                                href="/shop?category=tables">tables</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=side-tables">Side Tables</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
@@ -146,8 +146,8 @@
                                                                 href="/shop?category=dining-storage">Dining Storage</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=dining-accessories">Dining
-                                                                Accessories</a></li>
+                                                                href="/shop?category=dining-accessories">
+                                                                </a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
                                                                 href="/shop?category=dining">View All</a></li>
@@ -165,7 +165,7 @@
                                                                 href="/shop?category=kitchen-cabinets">Kitchen
                                                                 Cabinets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=bar-stools">Bar Stools</a></li>
+                                                                href="/shop?category=bar-stools">Stools</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=pantry-cabinets">Pantry
                                                                 Cabinets</a>
@@ -176,11 +176,11 @@
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=chairs">Chairs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item "
-                                                                href="/shop?category=kitchen-accessories">Kitchen
-                                                                Accessories</a></li>
+                                                                href="/shop?category=kitchen-accessories">
+                            </a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item "
-                                                                href="/shop?category=kitchen-appliances">Kitchen
-                                                                Appliances</a></li>
+                                                                href="/shop?category=kitchen-appliances">
+                                            </a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
                                                                 href="/shop?category=kitchen">View All</a></li>
