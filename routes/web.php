@@ -5,6 +5,7 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\admin\UsersController;
+use App\Http\Controllers\admin\ReportController;
 use App\Http\Controllers\admin\DriversController;
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\admin\OrdersController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\admin\RatingController;
 use App\Http\Controllers\admin\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
+use App\Models\Order;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,8 +70,23 @@ Route::get('/foo', function () {
 
 Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(function () {
     Route::get('dashboard', function () {
-        return view('dashboard');
+        $pendingOrders = Order::where('status', 'pending')->count();
+        $deliveredOrders = Order::where('status', 'delivered')->count();
+        $canceledOrders = Order::where('status', 'canceled')->count();
+
+        return view('dashboard', compact('pendingOrders', 'deliveredOrders', 'canceledOrders'));
+        // return view('dashboard');
     });
+
+    Route::get('reports/orders', [ReportController::class, 'ordersReport'])->name('reports.orders');
+    Route::get('reports/products', [ReportController::class, 'productsReport'])->name('reports.products');
+    Route::get('reports/users', [ReportController::class, 'usersReport'])->name('reports.users');
+
+    // PDF Generation Routes
+    Route::get('reports/orders/pdf', [ReportController::class, 'ordersReportPdf'])->name('reports.orders.pdf');
+    Route::get('reports/products/pdf', [ReportController::class, 'productsReportPdf'])->name('reports.products.pdf');
+    Route::get('reports/users/pdf', [ReportController::class, 'usersReportPdf'])->name('reports.users.pdf');
+
     // Users
     Route::get('users', [UsersController::class, 'index'])->name('users.index');
     Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('users.edit');

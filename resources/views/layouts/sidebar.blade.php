@@ -45,29 +45,29 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="timeline-center.html" class="sidebar-link">
+                            <a href="{{ url('admin/reports/orders') }}" class="sidebar-link">
                                 <i class="mdi mdi-clock-fast"></i>
-                                <span class="hide-menu"> Center Timeline </span>
+                                <span class="hide-menu"> Orders Report </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="timeline-horizontal.html" class="sidebar-link">
+                            <a href="{{ url('admin/reports/products') }}" class="sidebar-link">
                                 <i class="mdi mdi-clock-end"></i>
-                                <span class="hide-menu"> Horizontal Timeline</span>
+                                <span class="hide-menu"> Products Report</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="timeline-left.html" class="sidebar-link">
+                            <a href="{{ url('admin/reports/users') }}" class="sidebar-link">
                                 <i class="mdi mdi-clock-in"></i>
-                                <span class="hide-menu"> Left Timeline</span>
+                                <span class="hide-menu"> Users Report</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        {{-- <li class="sidebar-item">
                             <a href="timeline-right.html" class="sidebar-link">
                                 <i class="mdi mdi-clock-start"></i>
                                 <span class="hide-menu"> Right Timeline</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="sidebar-item">
