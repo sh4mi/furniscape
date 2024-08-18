@@ -67,7 +67,7 @@ class CheckoutController extends Controller
             $user->billing_address = $request->input('billing');
             $user->city = $request->input('city');
             $user->country = $request->input('country');
-            $user->state = $request->input('state');
+            // $user->state = $request->input('state');
             $user->zip_code = $request->input('zip');
             $user->update();
             // $toEmail = "shahmir.byteshifted@gmail.com";
@@ -76,7 +76,8 @@ class CheckoutController extends Controller
         
 
         Cart::destroy($cartItems);
-        return redirect('/')->with('success', 'Order Placed Successfully');
+        return redirect('/checkout')->with('success', 'Order Placed Successfully');
+        // return redirect('/')->with('success', 'Order Placed Successfully');
     }
 
     // public function placeOrder(Request $request)

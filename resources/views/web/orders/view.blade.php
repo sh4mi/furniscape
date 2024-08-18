@@ -62,7 +62,7 @@
                                             <label for="" style="font-size: 12px; font-weight: 700;">Shipping
                                                 Address</label>
                                             <input type="text" style="font-size: 14px; padding: 5px; font-weight: 400;"
-                                                value="{{ Auth::user()->shipping_address . ',' . Auth::user()->billing_address . ',' . Auth::user()->city . ',' . Auth::user()->state . ',' . Auth::user()->country }}"
+                                                value="{{ Auth::user()->shipping_address . ',' . Auth::user()->billing_address . ',' . Auth::user()->city . ',' . Auth::user()->country }}"
                                                 name="shipping" class="form-control" placeholder="Enter Shipping Address">
                                         </div>
                                     </div>

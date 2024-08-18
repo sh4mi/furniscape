@@ -178,7 +178,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" id="decr-btn" class="input-group-text decrement-btn">-</button>
                                 <input type="text" name="quantity" id="quant-inp"
-                                    class="form-control qty-input text-center" value="1" style="width: 170px; height: 52px;">
+                                    class="form-control qty-input text-center" value="1" style="width: 170px; height: 52px;" readonly>
                                 <button type="button" id="incr-btn" class="input-group-text increment-btn">+</button>
                             </div>
                         </div>

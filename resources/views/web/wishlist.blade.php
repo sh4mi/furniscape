@@ -34,9 +34,6 @@
                                 <div class="card-badges">
                                     <span class="badge badge-card"></span>
                                 </div>
-                                <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted">
-                                    <i class="ri-heart-fill"></i>
-                                </span>
                                 <picture class="position-relative overflow-hidden d-block bg-light">
                                     ${product.images.length > 0
                                         ? `<img style="min-height: 300px;" src="${product.images[0].image_url}" alt="Product Image" class="w-100 img-fluid position-relative z-index-10">`

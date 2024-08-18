@@ -86,7 +86,7 @@
                                             <input type="hidden" class="prod_id" value="{{ $item->product_id}}">
                                             <div class="input-group">
                                                 <button type="button" id="decr-btn" class="btn btn-outline-secondary btn-sm decrement-btn changeQuantity">-</button>
-                                                <input type="text" name="quantity" id="quant-inp" class="qty-input form-control form-control-sm text-center" value="{{ $item->product_quant }}" style="width: 70px;">
+                                                <input type="text" name="quantity" id="quant-inp" class="qty-input form-control form-control-sm text-center" value="{{ $item->product_quant }}" style="width: 70px;" readonly>
                                                 <button type="button" id="incr-btn" class="btn btn-outline-secondary btn-sm increment-btn changeQuantity">+</button>
                                             </div>
                                         </div>

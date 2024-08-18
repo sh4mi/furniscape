@@ -18,10 +18,19 @@
     }
 
     .status-delivered {
-        background-color: #28a745;
+        background-color: #0e892b;
         color: #fff;
     }
 
+    .status-cancelled {
+        background-color: #e31d1d;
+        color: #fff;
+    }
+
+    .status-confirmed {
+        background-color: #28a745;
+        color: #fff;
+    }
     .badge-warning {
         background-color: #ffc107;
         color: #fff;

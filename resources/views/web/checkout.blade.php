@@ -55,10 +55,10 @@
                                         <label for="city" style="font-size: 12px; font-weight: 700;">City</label>
                                         <input type="text" style="font-size: 14px; padding: 5px; font-weight: 400;" id="city" name="city" class="form-control" placeholder="Enter City">
                                     </div>
-                                    <div class="col-md-6 mt-3">
+                                    {{-- <div class="col-md-6 mt-3">
                                         <label for="state" style="font-size: 12px; font-weight: 700;">State</label>
                                         <input type="text" style="font-size: 14px; padding: 5px; font-weight: 400;" id="state" name="state" class="form-control" placeholder="Enter State">
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6 mt-3">
                                         <label for="country" style="font-size: 12px; font-weight: 700;">Country</label>
                                         <input type="text" style="font-size: 14px; padding: 5px; font-weight: 400;" id="country" name="country" class="form-control" placeholder="Enter Country">
@@ -85,25 +85,26 @@
                     <h4 class="fw-bold">Order Summary</h4>
                     <div class="card-body mt-3" style="background-color: #f8f9fa; border: 1px solid #ced4da; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
                         <div class="row align-items-center mb-4 text-center">
-                            <table class="table table-bordered ms-2">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th style="font-weight: 700;">Name</th>
-                                        <th style="font-weight: 700;">Price</th>
                                         <th style="font-weight: 700;">Quantity</th>
+                                        <th style="font-weight: 700;">Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($cartItems as $item)
-                                    <tr>
+                                    <tr >
                                         @if ($item->variant)
                                             <td>{{ $item->variant->name }} - {{ $item->products->name }}</td>
-                                            <td>Rs.{{ $item->variant->discount_price > 0 ? $item->variant->discount_price : $item->variant->price }}</td>
+                                            <td class="text-center">{{ $item->product_quant }}</td>
+                                            <td class="text-center">Rs.{{ $item->variant->discount_price > 0 ? $item->variant->discount_price : $item->variant->price }}</td>
                                         @else
                                             <td>{{ $item->products->name }}</td>
-                                            <td>Rs.{{ $item->products->discount_price > 0 ? $item->products->discount_price : $item->products->price }}</td>
+                                            <td class="text-center">{{ $item->product_quant }}</td>
+                                            <td class="text-center">Rs.{{ $item->products->discount_price > 0 ? $item->products->discount_price : $item->products->price }}</td>
                                         @endif
-                                        <td>{{ $item->product_quant }}</td>
                                     </tr>
                                     @endforeach                                
                                 </tbody>
@@ -122,6 +123,7 @@
 </div>
 </section>
 @endsection
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('orderForm');
@@ -190,5 +192,17 @@ document.addEventListener('DOMContentLoaded', function() {
             form.submit(); // Submit the form
         }
     });
+    @if(session('success'))
+        Swal.fire({
+            title: 'Success!',
+            text: '{{ session('success') }}',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "{{ url('/') }}";  // Redirect to home after user closes the alert
+            }
+        });
+    @endif
 });
 </script>
