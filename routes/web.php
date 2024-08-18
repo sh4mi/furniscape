@@ -25,6 +25,23 @@ use App\Models\Product;
 Route::get('/signin', [WebController::class, 'login'])->name('signin');
 Route::get('/signup', [WebController::class, 'register'])->name('signup');
 
+Route::get('/about-us', function () {
+    return view('web.about-us'); 
+})->name('about-us');
+
+Route::get('/terms', function () {
+    return view('web.terms'); 
+})->name('terms');
+
+Route::get('/privacy-policy', function () {
+    return view('web.privacy-policy');
+})->name('privacy-policy');
+
+// In your routes/web.php
+Route::get('/careers', function () {
+    return view('web.careers');
+})->name('careers');
+
 Route::get('/', [WebController::class, 'index'])->name('home');
 Route::get('/account', [WebController::class, 'account'])->name('account');
 Route::get('/wishlist', [WebController::class, 'showWishlist'])->name('wishlist');
