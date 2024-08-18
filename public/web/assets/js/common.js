@@ -1,5 +1,31 @@
-// Quantity increment / decrement 
 $(document).ready(function() {
+
+    var availableTags = [];
+    $.ajax({
+        method: "GET",
+        url: "/product-list",
+        success: function(response){
+            startAutoComplete(response);
+        }
+    });
+    function startAutoComplete(availableTags) {
+        $("#search_product").autocomplete({
+            source: availableTags
+        });
+    }
+    // Function to update the cart count
+    function updateCartCount() {
+        $.ajax({
+            type: 'GET',
+            url: '/cart-count',  // You need to create a route and controller for this
+            success: function(response) {
+                $('#cartCount').text(response.count);  // Update the cart count
+            }
+        });
+    }
+
+    // Call updateCartCount on page load
+    updateCartCount();
 
     $('.small-Img').on('click', function () {
         var src = $(this).attr('src');
@@ -61,6 +87,7 @@ $(document).ready(function() {
                 'variant_id': variant_id || null
             },
             success: function(response) {
+                updateCartCount();
                 window.location.reload();
             }
         });
@@ -99,6 +126,7 @@ $(document).ready(function() {
                 'variant_id': selectedVariantId
             },
             success: function(response) {
+                updateCartCount();
                  // Create the alert
                 var alertHtml = '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
                 response.status + 

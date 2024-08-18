@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Rating;
 use App\Models\Category;
 class WebController extends Controller
 {
@@ -47,9 +48,11 @@ class WebController extends Controller
     {   
         $product = Product::with(['images', 'variants.images', 'ratings.user'])->findOrFail($id);
         $products = Product::with(['images', 'variants.images', 'ratings.user'])->inRandomOrder()->limit(10)->get();
+        $ratings = Rating::where('product_id', $id)->get();
         return view('web.product', [
             'product' => $product,
             'products'=>$products,
+            'ratings' => $ratings,
         ]);
     }
 
@@ -107,5 +110,22 @@ class WebController extends Controller
         $products = Product::whereIn('id', $wishlistIds)->with('images')->get();
 
         return response()->json($products);
+    }
+
+    public function searchProduct(Request $request){
+        $searched_product = $request->product_name;
+        if($searched_product != null){
+            $product = Product::where("name", "LIKE", "%$searched_product%")->first();
+            if($product){
+                return redirect('/product/'.$product->id);
+            }
+            else
+            {
+                return redirect->back();
+            }
+        }
+        else{
+            return redirect->back()->with('message', 'Searched product not found!');
+        }
     }
 }

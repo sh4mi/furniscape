@@ -29,16 +29,16 @@
                 <div class="col-sm">
                     <h3>Company</h3>
                     <ul class="list-unstyled links">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="{{ route('about-us') }}">About us</a></li>
+                        <li><a href="{{ route('careers') }}">Careers</a></li>
+                        {{-- <li><a href="#">Contact us</a></li> --}}
                     </ul>
                 </div>
                 <div class="col-sm">
                     <h3>Further Information</h3>
                     <ul class="list-unstyled links">
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="{{ route('terms') }}">Terms &amp; Conditions</a></li>
+                        <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">

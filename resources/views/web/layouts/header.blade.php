@@ -32,20 +32,41 @@
                     </li>
                     <!-- /Mobile Nav Toggler-->
 
-
-
                     <li class=" d-none d-lg-inline-block">
                         <a class="nav-link text-body" title="wishlist" href="{{ route('wishlist') }}">
                             <i class="fa fa-heart" style="color:red;font-size: 18px;"></i>
                         </a>
                     </li>
+                    <li class=" d-none d-lg-inline-block">
+                        <a class="nav-link text-body" title="Track Order" href="{{ route('track.order') }}">
+                            <i class="fa fa-truck" style="color:rgb(0, 0, 0);font-size: 18px;"></i>
+                        </a>
+                    </li>
                     <!-- Navbar Cart Icon-->
-                    <li class=" d-inline-block position-relative dropdown-cart">
+                    @auth
+                    <li class="d-inline-block position-relative dropdown-cart">
                         <button class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
                             type="button" onclick="window.location.href='{{ route('cart') }}'">
                             <i class="fas fa-cart-plus" style="color:rgb(0, 0, 0);font-size: 18px;"></i>
+                            <span id="cartCount" class="badge position-absolute top-0 start-100 translate-middle" 
+                                  style="background-color: red; color: white; border-radius: 50%; padding: 2px 4px;">0</span>
                         </button>
                     </li>
+                    <li class="d-inline-block position-relative">
+                        <a class="nav-link text-body" title="account" href="{{ route('account') }}">
+                            <i class="fa fa-user" style="color:rgb(0, 0, 0);font-size: 18px;"></i>
+                        </a>
+                    </li> 
+                    @endauth   
+                    <nav class="navbar navbar-light bg-light search-bar">
+                        <form class="form-inline" action="{{ url('searchproduct')}}" method="POST">
+                            @csrf
+                            <div class="input-group-prepend">
+                                <button class="input-group-text" type="submit" ><i class="fa fa-search"></i></button>
+                            </div>
+                          <input class="form-control mr-sm-2" id="search_product" name="product_name" type="search" placeholder="Search Products" aria-label="Search" style="height: 44px;">
+                        </form>
+                    </nav>              
                     <!-- /Navbar Cart Icon-->
 
                 </ul>
@@ -270,30 +291,41 @@
                             <!-- / Menswear dropdown menu-->
                         </li>
                         <li class="ms-1 d-none d-lg-inline-block">
-                            @auth
-                            <a class="nav-link text-body" href="{{ route('account') }}">
-                                Account
+                            @auth  
+                            <a class="nav-link text-body" href="{{ route('logout') }}">
+                                Logout
                             </a>
-
+                            {{-- <a class="nav-link text-body" href="{{ route('account') }}">
+                                Account
+                            </a> --}}
                             @else
                             <a class="nav-link text-body" href="{{ route('login') }}">
                                 Login
                             </a>
                             @endauth
                         </li>
-                        @auth
+                        {{-- @auth
                         <li class="ms-1 d-none d-lg-inline-block">
                             <a class="nav-link text-body" href="{{ route('logout') }}">
                                 Logout
                             </a>
                         </li>
-                        @endauth
+                        @endauth --}}
 
-                        <li class="ms-1 d-none d-lg-inline-block">
+                        {{-- <li class="ms-1 d-none d-lg-inline-block">
                             <a class="nav-link text-body" href="{{ route('track.order') }}">
                                 Track Order
                             </a>
-                        </li>
+                        </li> --}}
+                        {{-- <nav class="navbar navbar-light bg-light search-bar">
+                            <form class="form-inline" action="{{ url('searchproduct')}}" method="POST">
+                                @csrf
+                                <div class="input-group-prepend">
+                                    <button class="input-group-text" type="submit" ><i class="fa fa-search"></i></button>
+                                </div>
+                              <input class="form-control mr-sm-2" id="search_product" name="product_name" type="search" placeholder="Search Products" aria-label="Search" style="height: 44px;">
+                            </form>
+                          </nav> --}}
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="/shop?category=bedroom" role="button">
                                 Bedroom

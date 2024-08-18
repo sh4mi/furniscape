@@ -5,13 +5,15 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\admin\UsersController;
+use App\Http\Controllers\admin\ReportController;
 use App\Http\Controllers\admin\DriversController;
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\admin\OrdersController;
 use App\Http\Controllers\admin\RatingController;
 use App\Http\Controllers\admin\CategoriesController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Product;
+use App\Models\Order;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/signin', [WebController::class, 'login'])->name('signin');
 Route::get('/signup', [WebController::class, 'register'])->name('signup');
 
+Route::get('/about-us', function () {
+    return view('web.about-us'); 
+})->name('about-us');
+
+Route::get('/terms', function () {
+    return view('web.terms'); 
+})->name('terms');
+
+Route::get('/privacy-policy', function () {
+    return view('web.privacy-policy');
+})->name('privacy-policy');
+
+// In your routes/web.php
+Route::get('/careers', function () {
+    return view('web.careers');
+})->name('careers');
+
 Route::get('/', [WebController::class, 'index'])->name('home');
 Route::get('/account', [WebController::class, 'account'])->name('account');
 Route::get('/wishlist', [WebController::class, 'showWishlist'])->name('wishlist');
@@ -34,17 +53,40 @@ Route::post('/track-order', [OrdersController::class, 'searchOrder'])->name('sea
 
 Route::get('/shop', [WebController::class, 'shop'])->name('shop');
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('addToCart');
+Route::get('/cart-count', [CartController::class, 'getCartCount']);
 
 Route::get('/checkout', [WebController::class, 'checkout'])->name('checkout');
 Route::get('/product/{id}', [WebController::class, 'product'])->name('product');
+Route::post('/searchproduct', [WebController::class, 'searchProduct']);
+Route::get('/product-list', function () {
+    $products = Product::select('name')->get()->pluck('name');
+    return response()->json($products);
+});
+// Route::get('/product-list', [WebController::class, 'productList']);
+
 Route::get('/foo', function () {
     Artisan::call('storage:link');
     });
 
 Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(function () {
     Route::get('dashboard', function () {
-        return view('dashboard');
+        $pendingOrders = Order::where('status', 'pending')->count();
+        $deliveredOrders = Order::where('status', 'delivered')->count();
+        $canceledOrders = Order::where('status', 'canceled')->count();
+
+        return view('dashboard', compact('pendingOrders', 'deliveredOrders', 'canceledOrders'));
+        // return view('dashboard');
     });
+
+    Route::get('reports/orders', [ReportController::class, 'ordersReport'])->name('reports.orders');
+    Route::get('reports/products', [ReportController::class, 'productsReport'])->name('reports.products');
+    Route::get('reports/users', [ReportController::class, 'usersReport'])->name('reports.users');
+
+    // PDF Generation Routes
+    Route::get('reports/orders/pdf', [ReportController::class, 'ordersReportPdf'])->name('reports.orders.pdf');
+    Route::get('reports/products/pdf', [ReportController::class, 'productsReportPdf'])->name('reports.products.pdf');
+    Route::get('reports/users/pdf', [ReportController::class, 'usersReportPdf'])->name('reports.users.pdf');
+
     // Users
     Route::get('users', [UsersController::class, 'index'])->name('users.index');
     Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('users.edit');

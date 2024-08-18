@@ -390,11 +390,11 @@
             <div class="bg-light p-5 justify-content-between d-flex flex-column flex-lg-row">
                 <div class="d-flex flex-column align-items-center mb-4 mb-lg-0">
                     <div class="bg-dark text-white f-w-24 f-h-24 d-flex rounded-circle align-items-center justify-content-center fs-2 fw-bold mb-3">
-                        {{ $product->ratings->isNotEmpty() ? $product->ratings->avg('rating') : 'N/A' }}
+                        {{ $ratings->isNotEmpty() ? $ratings->avg('rating') : 'N/A' }}
                     </div>
                     <!-- Review Stars Medium-->
                     <div class="rating position-relative d-table">
-                        <div class="position-absolute stars" style="width: {{ ($product->ratings->isNotEmpty() ? ($product->ratings->avg('rating') / 5) * 100 : 0) }}%">
+                        <div class="position-absolute stars" style="width: {{ ($ratings->isNotEmpty() ? ($ratings->avg('rating') / 5) * 100 : 0) }}%">
                             @for ($i = 0; $i < 5; $i++)
                                 <i class="ri-star-fill text-dark ri-2x mr-1"></i>
                             @endfor
@@ -408,12 +408,12 @@
                 </div>
                 <div class="d-flex flex-grow-1 flex-column ms-lg-8">
                     @php
-                        $totalRatings = $product->ratings->count();
+                        $totalRatings = $ratings->count();
                     @endphp
 
                     @for ($rating = 5; $rating >= 1; $rating--)
                         @php
-                            $ratingCount = $product->ratings->where('rating', $rating)->count();
+                            $ratingCount = $ratings->where('rating', $rating)->count();
                             $percentage = $totalRatings > 0 ? ($ratingCount / $totalRatings) * 100 : 0;
                         @endphp
                         <div class="d-flex align-items-center justify-content-start mb-2">
@@ -444,7 +444,7 @@
 
             <!-- Reviews-->
             <div class="row g-6 g-md-8 g-lg-10 my-3">
-                @foreach ($product->ratings as $review)
+                @foreach ($ratings as $review)
                     <div class="col-12 col-lg-6 col-xxl-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <!-- Review Stars Small-->

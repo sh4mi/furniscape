@@ -90,6 +90,12 @@ class CartController extends Controller
         }
     }
 
+    public function getCartCount()
+    {
+        $cartCount = Cart::where('user_id', Auth::id())->sum('product_quant');
+        return response()->json(['count' => $cartCount]);
+    }
+
     public function deleteItem(Request $request)
     {
         $prod_id = $request->input('prod_id');
