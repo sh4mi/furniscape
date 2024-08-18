@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="{{ asset('web/assets/css/theme.bundle.css')}}" />
     <link rel="stylesheet" href="{{ asset('/dist/css/icons/font-awesome/css/fontawesome-all.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('web/assets/css/custom.css')}}" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Fix for custom scrollbar if JS is disabled-->
@@ -93,6 +95,7 @@
     <script src="{{ asset('web/assets/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{ asset('web/assets/js/popper.min.js')}}"></script>
     <script src="{{ asset('web/assets/js/bootstrap.min.js')}}"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <!--End of Tawk.to Script-->
 </body>
 

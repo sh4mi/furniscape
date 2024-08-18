@@ -11,7 +11,7 @@ use App\Http\Controllers\admin\OrdersController;
 use App\Http\Controllers\admin\RatingController;
 use App\Http\Controllers\admin\CategoriesController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,9 +34,17 @@ Route::post('/track-order', [OrdersController::class, 'searchOrder'])->name('sea
 
 Route::get('/shop', [WebController::class, 'shop'])->name('shop');
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('addToCart');
+Route::get('/cart-count', [CartController::class, 'getCartCount']);
 
 Route::get('/checkout', [WebController::class, 'checkout'])->name('checkout');
 Route::get('/product/{id}', [WebController::class, 'product'])->name('product');
+Route::post('/searchproduct', [WebController::class, 'searchProduct']);
+Route::get('/product-list', function () {
+    $products = Product::select('name')->get()->pluck('name');
+    return response()->json($products);
+});
+// Route::get('/product-list', [WebController::class, 'productList']);
+
 Route::get('/foo', function () {
     Artisan::call('storage:link');
     });
