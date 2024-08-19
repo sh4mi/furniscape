@@ -50,8 +50,8 @@
                                                 }}>Cancelled</option>
                                             <option value="refunded" {{ $order->status == 'refunded' ? 'selected' : ''
                                                 }}>Refunded</option>
-                                            <option value="completed" {{ $order->status == 'completed' ? 'selected' : ''
-                                                }}>Completed</option>
+                                            <option value="delivered" {{ $order->status == 'completed' ? 'selected' : ''
+                                                }}>Delivered</option>
                                         </select>
                                     </div>
                                 </div>
