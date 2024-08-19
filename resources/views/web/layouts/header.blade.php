@@ -142,6 +142,8 @@
                                                                 Cabinets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=rugs">Rugs</a></li>
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
+                                                                href="/shop?category=chairs">Chairs</a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
                                                                 href="/shop?category=living-room">View All</a></li>
