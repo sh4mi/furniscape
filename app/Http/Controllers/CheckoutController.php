@@ -122,7 +122,7 @@ class CheckoutController extends Controller
             // $user->state = $request->input('state');
             $user->zip_code = $request->input('zip');
             $user->update();
-            $toEmail = "sh4mi@hotmail.com";
+            $toEmail = $user->email;
             //dd($orderItems);
             $this->sendOrderConfirmationEmail(
                 $toEmail,
