@@ -9,13 +9,59 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\MyMail; 
+//use App\Mail\MyMail; 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use Illuminate\Support\Facades\View;
 class CheckoutController extends Controller
 {
     public function viewCheckout()
     {
         $cartItems = Cart::where('user_id', Auth::id())->get();
         return view('web.checkout', compact('cartItems'));
+    }
+
+    function sendOrderConfirmationEmail($toEmail, $userName, $orderNumber, $shippingAddress, $billingAddress, $paymentMethod, $totalPrice, $orderItems)
+    {
+        $mail = new PHPMailer(true);
+        $MAIL_USERNAME = "furniscape112@gmail.com";
+        $MAIL_PASSWORD = "pksj bmoq fldg vwhx";
+
+        try {
+            $mail->isSMTP();                                            
+            $mail->Host = 'smtp.gmail.com';                       
+            $mail->SMTPAuth = true;                                     
+            $mail->Username = $MAIL_USERNAME;              
+            $mail->Password = $MAIL_PASSWORD;                    
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
+            $mail->Port = 587;                                          
+
+            $mail->setFrom($MAIL_USERNAME, 'Furniscape');
+            $mail->addAddress($toEmail);                                
+
+            $mail->isHTML(true);                                         
+            $mail->Subject = 'Order Confirmation';
+
+            // Load and parse the HTML template
+           // dd($orderItems);
+            $template = View::make('emails.confirmation', [
+                'userName' => $userName,
+                'orderNumber' => $orderNumber,
+                'shippingAddress' => $shippingAddress,
+                'billingAddress' => $billingAddress,
+                'paymentMethod' => $paymentMethod,
+                'totalPrice' => $totalPrice,
+                'orderItems' => $orderItems
+            ])->render();
+
+            $mail->Body    = $template;
+            $mail->AltBody = strip_tags($template); // Plain text alternative for email clients that do not support HTML
+
+            $mail->send();
+          //  Log::info("Email successfully sent to {$toEmail}");
+        } catch (Exception $e) {
+          //  Log::error("Failed to send email to {$toEmail}. Error: " . $mail->ErrorInfo);
+        }
     }
 
     public function placeOrder(Request $request)
@@ -55,6 +101,12 @@ class CheckoutController extends Controller
                 'quantity' => $item->product_quant,
                 'price' => $price
             ]);
+            $orderItems[] = [
+                'product_name' => $item->products->name,
+                'variant_name' => $item->variant ? $item->variant->name : 'N/A',
+                'quantity' => $item->product_quant,
+                'price' => $price
+            ];
         }
         $user = User::where('id', Auth::id())->first();
         if($user)
@@ -70,8 +122,18 @@ class CheckoutController extends Controller
             // $user->state = $request->input('state');
             $user->zip_code = $request->input('zip');
             $user->update();
-            // $toEmail = "shahmir.byteshifted@gmail.com";
-            // Mail::to($toEmail)->send(new MyMail());
+            $toEmail = "sh4mi@hotmail.com";
+            //dd($orderItems);
+            $this->sendOrderConfirmationEmail(
+                $toEmail,
+                $user->first_name . ' ' . $user->last_name,
+                $order->number,
+                $order->shipping_address,
+                $order->billing_address,
+                $order->payment_method,
+                $order->total_price,
+                $orderItems
+            );
         }
         
 

@@ -48,25 +48,28 @@
                         <button class="nav-link me-0 disable-child-pointer border-0 p-0 bg-transparent text-body"
                             type="button" onclick="window.location.href='{{ route('cart') }}'">
                             <i class="fas fa-cart-plus" style="color:rgb(0, 0, 0);font-size: 18px;"></i>
-                            <span id="cartCount" class="badge position-absolute top-0 start-100 translate-middle" 
-                                  style="background-color: red; color: white; border-radius: 50%; padding: 2px 4px;">0</span>
+                            <span id="cartCount" class="badge position-absolute top-0 start-100 translate-middle"
+                                style="background-color: red; color: white; border-radius: 50%; padding: 2px 4px;">0</span>
                         </button>
                     </li>
                     <li class="d-inline-block position-relative">
                         <a class="nav-link text-body" title="account" href="{{ route('account') }}">
                             <i class="fa fa-user" style="color:rgb(0, 0, 0);font-size: 18px;"></i>
                         </a>
-                    </li> 
-                    @endauth   
+                    </li>
+                    @endauth
                     <nav class="navbar navbar-light bg-light search-bar">
                         <form class="form-inline" action="{{ url('searchproduct')}}" method="POST">
                             @csrf
+
+                            <input class="form-control mr-sm-2 search_product" id="search_product" name="product_name"
+                                type="search" placeholder="Search Products" aria-label="Search" style="height: 44px;">
                             <div class="input-group-prepend">
-                                <button class="input-group-text" type="submit" ><i class="fa fa-search"></i></button>
+                                <button class="input-group-text search-btn" type="submit"><i
+                                        class="fa fa-search"></i></button>
                             </div>
-                          <input class="form-control mr-sm-2" id="search_product" name="product_name" type="search" placeholder="Search Products" aria-label="Search" style="height: 44px;">
                         </form>
-                    </nav>              
+                    </nav>
                     <!-- /Navbar Cart Icon-->
 
                 </ul>
@@ -168,7 +171,7 @@
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=dining-accessories">
-                                                                </a></li>
+                                                            </a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
                                                                 href="/shop?category=dining">View All</a></li>
@@ -198,10 +201,10 @@
                                                                 href="/shop?category=chairs">Chairs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item "
                                                                 href="/shop?category=kitchen-accessories">
-                            </a></li>
+                                                            </a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item "
                                                                 href="/shop?category=kitchen-appliances">
-                                            </a></li>
+                                                            </a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
                                                                 href="/shop?category=kitchen">View All</a></li>
@@ -291,7 +294,7 @@
                             <!-- / Menswear dropdown menu-->
                         </li>
                         <li class="ms-1 d-none d-lg-inline-block">
-                            @auth  
+                            @auth
                             <a class="nav-link text-body" href="{{ route('logout') }}">
                                 Logout
                             </a>
@@ -321,11 +324,13 @@
                             <form class="form-inline" action="{{ url('searchproduct')}}" method="POST">
                                 @csrf
                                 <div class="input-group-prepend">
-                                    <button class="input-group-text" type="submit" ><i class="fa fa-search"></i></button>
+                                    <button class="input-group-text" type="submit"><i class="fa fa-search"></i></button>
                                 </div>
-                              <input class="form-control mr-sm-2" id="search_product" name="product_name" type="search" placeholder="Search Products" aria-label="Search" style="height: 44px;">
+                                <input class="form-control mr-sm-2 search_product" id="search_product"
+                                    name="product_name" type="search" placeholder="Search Products" aria-label="Search"
+                                    style="height: 44px;">
                             </form>
-                          </nav> --}}
+                        </nav> --}}
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="/shop?category=bedroom" role="button">
                                 Bedroom

@@ -86,13 +86,16 @@
                 <div class="row g-3" data-aos="fade-right">
                     <!-- Main Image -->
                     <div class="img-card">
-                        @if ($product->images->isNotEmpty())
-                        <img id="featured-image" class="img-fluid product-image" data-zoomable
-                            src="{{ asset($product->images->first()->image_url) }}" alt="Furniscape">
-                        @else
-                        <img id="featured-image" class="" data-zoomable
-                            src="{{ asset('/web/assets/images/product/placeholder.png') }}" alt="No Image Available">
-                        @endif
+                        <div class="zoomable">
+                            @if ($product->images->isNotEmpty())
+                            <img id="featured-image" class="img-fluid product-image zoomable__img"
+                                src="{{ asset($product->images->first()->image_url) }}" alt="Furniscape">
+                            @else
+                            <img id="featured-image" class=""
+                                src="{{ asset('/web/assets/images/product/placeholder.png') }}"
+                                alt="No Image Available">
+                            @endif
+                        </div>
                         @foreach ($product->images as $image)
                         <!-- small img -->
                         <div class="small-Card">
@@ -116,18 +119,17 @@
                                 <!-- Review Stars Small-->
                                 <div class="rating position-relative d-table">
                                     @php
-                                        $averageRating = $product->ratings->avg('rating');
-                                        $ratingPercentage = ($averageRating / 5) * 100;
+                                    $averageRating = $product->ratings->avg('rating');
+                                    $ratingPercentage = ($averageRating / 5) * 100;
                                     @endphp
                                     <div class="position-absolute stars" style="width: {{ $ratingPercentage }}%">
-                                        @for ($i = 0; $i < 5; $i++)
-                                                <i class="ri-star-fill text-dark mr-1"></i>
-                                        @endfor
+                                        @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill text-dark mr-1"></i>
+                                            @endfor
                                     </div>
                                     <div class="stars">
-                                        @for ($i = 0; $i < 5; $i++)
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        @endfor
+                                        @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill mr-1 text-muted opacity-25">
+                                            </i>
+                                            @endfor
                                     </div>
                                 </div> <small class="text-muted d-inline-block ms-2 fs-bolder">
                                     ({{ $product->ratings->count() }} review(s))
@@ -178,7 +180,8 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" id="decr-btn" class="input-group-text decrement-btn">-</button>
                                 <input type="text" name="quantity" id="quant-inp"
-                                    class="form-control qty-input text-center" value="1" style="width: 170px; height: 52px;" readonly>
+                                    class="form-control qty-input text-center" value="1"
+                                    style="width: 170px; height: 52px;" readonly>
                                 <button type="button" id="incr-btn" class="input-group-text increment-btn">+</button>
                             </div>
                         </div>
@@ -326,7 +329,7 @@
                                 <div class="card-img position-relative">
                                     <div class="card-badges">
                                         <span class="badge badge-card">
-                                            </span>
+                                        </span>
                                     </div>
                                     <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i
                                             class="ri-heart-line"></i></span>
@@ -347,11 +350,11 @@
                                             Add</button>
                                     </div>
                                 </div>
-                                <div class="card-body px-0">
+                                <div class="card-body">
                                     <a class="text-decoration-none link-cover" href="#">{{ $product->name }}</a>
-                                    <p class="mt-2 mb-0 small">
+                                    <p class="mt-2 mb-0 small price-text">
                                         Rs.{{ $product->price }}
-                                        
+
                                         @if ($product->discount_price != null)
                                         Rs.<span class="text-danger">{{ $product->discount_price }}
                                         </span>
@@ -382,93 +385,94 @@
             </div>
             <!-- / Related Products-->
 
-        <!-- Reviews-->
-        <div class="col-12" data-aos="fade-up">
-            <h3 class="fs-4 fw-bolder mt-7 mb-4 reviews">Reviews</h3>
+            <!-- Reviews-->
+            <div class="col-12" data-aos="fade-up">
+                <h3 class="fs-4 fw-bolder mt-7 mb-4 reviews">Reviews</h3>
 
-            <!-- Review Summary-->
-            <div class="bg-light p-5 justify-content-between d-flex flex-column flex-lg-row">
-                <div class="d-flex flex-column align-items-center mb-4 mb-lg-0">
-                    <div class="bg-dark text-white f-w-24 f-h-24 d-flex rounded-circle align-items-center justify-content-center fs-2 fw-bold mb-3">
-                        {{ $ratings->isNotEmpty() ? $ratings->avg('rating') : 'N/A' }}
-                    </div>
-                    <!-- Review Stars Medium-->
-                    <div class="rating position-relative d-table">
-                        <div class="position-absolute stars" style="width: {{ ($ratings->isNotEmpty() ? ($ratings->avg('rating') / 5) * 100 : 0) }}%">
-                            @for ($i = 0; $i < 5; $i++)
-                                <i class="ri-star-fill text-dark ri-2x mr-1"></i>
-                            @endfor
+                <!-- Review Summary-->
+                <div class="bg-light p-5 justify-content-between d-flex flex-column flex-lg-row">
+                    <div class="d-flex flex-column align-items-center mb-4 mb-lg-0">
+                        <div
+                            class="bg-dark text-white f-w-24 f-h-24 d-flex rounded-circle align-items-center justify-content-center fs-2 fw-bold mb-3">
+                            {{ $ratings->isNotEmpty() ? $ratings->avg('rating') : 'N/A' }}
                         </div>
-                        <div class="stars">
-                            @for ($i = 0; $i < 5; $i++)
-                                <i class="ri-star-fill ri-2x mr-1 text-muted opacity-25"></i>
-                            @endfor
+                        <!-- Review Stars Medium-->
+                        <div class="rating position-relative d-table">
+                            <div class="position-absolute stars"
+                                style="width: {{ ($ratings->isNotEmpty() ? ($ratings->avg('rating') / 5) * 100 : 0) }}%">
+                                @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill text-dark ri-2x mr-1"></i>
+                                    @endfor
+                            </div>
+                            <div class="stars">
+                                @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill ri-2x mr-1 text-muted opacity-25">
+                                    </i>
+                                    @endfor
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-flex flex-grow-1 flex-column ms-lg-8">
-                    @php
-                        $totalRatings = $ratings->count();
-                    @endphp
-
-                    @for ($rating = 5; $rating >= 1; $rating--)
+                    <div class="d-flex flex-grow-1 flex-column ms-lg-8">
                         @php
-                            $ratingCount = $ratings->where('rating', $rating)->count();
-                            $percentage = $totalRatings > 0 ? ($ratingCount / $totalRatings) * 100 : 0;
+                        $totalRatings = $ratings->count();
+                        @endphp
+
+                        @for ($rating = 5; $rating >= 1; $rating--)
+                        @php
+                        $ratingCount = $ratings->where('rating', $rating)->count();
+                        $percentage = $totalRatings > 0 ? ($ratingCount / $totalRatings) * 100 : 0;
                         @endphp
                         <div class="d-flex align-items-center justify-content-start mb-2">
                             <div class="f-w-20">
                                 <!-- Review Stars Small-->
                                 <div class="rating position-relative d-table">
                                     <div class="position-absolute stars" style="width: {{ ($rating / 5) * 100 }}%">
-                                        @for ($i = 0; $i < 5; $i++)
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        @endfor
+                                        @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill text-dark mr-1"></i>
+                                            @endfor
                                     </div>
                                     <div class="stars">
-                                        @for ($i = 0; $i < 5; $i++)
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        @endfor
+                                        @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill mr-1 text-muted opacity-25">
+                                            </i>
+                                            @endfor
                                     </div>
                                 </div>
                             </div>
                             <div class="progress d-flex flex-grow-1 mx-4 f-h-1">
-                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ $percentage }}%;" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: {{ $percentage }}%;"
+                                    aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <span class="fw-bold small d-block f-w-4 text-end">{{ $ratingCount }}</span>
                         </div>
-                    @endfor
-                    <p class="mt-3 mb-0 d-flex align-items-start"><i class="ri-chat-voice-line me-2"></i> {{ $totalRatings }} customer(s) have reviewed this product</p>
-                </div>
-            </div><!-- / Review Summary-->
+                        @endfor
+                        <p class="mt-3 mb-0 d-flex align-items-start"><i class="ri-chat-voice-line me-2"></i> {{
+                            $totalRatings }} customer(s) have reviewed this product</p>
+                    </div>
+                </div><!-- / Review Summary-->
 
-            <!-- Reviews-->
-            <div class="row g-6 g-md-8 g-lg-10 my-3">
-                @foreach ($ratings as $review)
+                <!-- Reviews-->
+                <div class="row g-6 g-md-8 g-lg-10 my-3">
+                    @foreach ($ratings as $review)
                     <div class="col-12 col-lg-6 col-xxl-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <!-- Review Stars Small-->
                             <div class="rating position-relative d-table">
                                 <div class="position-absolute stars" style="width: {{ ($review->rating / 5) * 100 }}%">
-                                    @for ($i = 0; $i < 5; $i++)
-                                        <i class="ri-star-fill text-dark mr-1"></i>
-                                    @endfor
+                                    @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill text-dark mr-1"></i>
+                                        @endfor
                                 </div>
                                 <div class="stars">
-                                    @for ($i = 0; $i < 5; $i++)
-                                        <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    @endfor
+                                    @for ($i = 0; $i < 5; $i++) <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
+                                        @endfor
                                 </div>
                             </div>
-                            <div class="text-muted small">{{ $review->created_at->format('jS F Y') }} by {{ $review->user->name }}</div>
+                            <div class="text-muted small">{{ $review->created_at->format('jS F Y') }} by {{
+                                $review->user->name }}</div>
                         </div>
                         <p class="fw-bold mb-2">{{ $review->title }}</p>
                         <p class="fs-7">{{ $review->comment }}</p>
                     </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        </div>
-        <!-- / Reviews-->
+            <!-- / Reviews-->
         </div>
     </div>
 </section>

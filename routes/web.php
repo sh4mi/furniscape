@@ -73,8 +73,8 @@ Route::middleware(['auth', 'verified','isAdmin'])->prefix('admin')->group(functi
         $pendingOrders = Order::where('status', 'pending')->count();
         $deliveredOrders = Order::where('status', 'delivered')->count();
         $canceledOrders = Order::where('status', 'canceled')->count();
-
-        return view('dashboard', compact('pendingOrders', 'deliveredOrders', 'canceledOrders'));
+        $orders = Order::with('user', 'orderItems')->get();
+        return view('dashboard', compact('pendingOrders', 'deliveredOrders', 'canceledOrders','orders'));
         // return view('dashboard');
     });
 

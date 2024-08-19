@@ -59,31 +59,48 @@ class WebController extends Controller
     public function shop(Request $request)
     {
         $query = Product::query();
-
+    
         // Apply filters if query parameters are provided
         if ($request->filled('category')) {
-            $cat = Category::where('slug',$request->category)->first();
-           // dd($request->category);
-            if($cat){
+            $cat = Category::where('slug', $request->category)->first();
+            if ($cat) {
                 $query->where('category_id', $cat->id);
             }
-            
         }
-
+    
         if ($request->filled('price_min')) {
             $query->where('price', '>=', $request->price_min);
         }
-
+    
         if ($request->filled('price_max')) {
             $query->where('price', '<=', $request->price_max);
         }
-
+    
+        // Handle sorting
+        if ($request->filled('sort_by')) {
+            switch ($request->sort_by) {
+                case '1': // Hi Low
+                    $query->orderBy('price', 'desc');
+                    break;
+                case '2': // Low Hi
+                    $query->orderBy('price', 'asc');
+                    break;
+                case '3': // Name
+                    $query->orderBy('name', 'asc');
+                    break;
+                default:
+                    // Optional: Default sorting if needed
+                    break;
+            }
+        }
+    
         // Paginate results
         $products = $query->paginate(12);
-
+    
         // Pass data to the view
-        return view('web.shop', compact('products')); //mvc
+        return view('web.shop', compact('products'));
     }
+    
 
     public function checkout(Request $request): View
     {

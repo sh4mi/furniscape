@@ -26,20 +26,26 @@
             <div class="d-flex justify-content-end align-items-center mt-4 mt-lg-0 flex-column flex-md-row">
 
                 <!-- Filter Trigger-->
-                <button
+                <!-- <button
                     class="btn bg-light p-3 me-md-3 d-flex align-items-center fs-7 lh-1 w-100 mb-2 mb-md-0 w-md-auto "
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters"
                     aria-controls="offcanvasFilters">
                     <i class="ri-equalizer-line me-2"></i> Filters
-                </button>
+                </button> -->
                 <!-- / Filter Trigger-->
                 <!-- Sort Options-->
-                <select class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
-                    <option selected>Sort By</option>
-                    <option value="1">Hi Low</option>
-                    <option value="2">Low Hi</option>
-                    <option value="3">Name</option>
-                </select>
+                <form method="GET" action="{{ route('shop') }}">
+                    @if(request('category'))
+                    <input type="hidden" name="category" value="{{ request('category') }}">
+                    @endif
+                    <select name="sort_by" class="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7"
+                        onchange="this.form.submit()">
+                        <option value="" {{ request('sort_by')=='' ? 'selected' : '' }}>Sort By</option>
+                        <option value="1" {{ request('sort_by')=='1' ? 'selected' : '' }}>Hi Low</option>
+                        <option value="2" {{ request('sort_by')=='2' ? 'selected' : '' }}>Low Hi</option>
+                        <option value="3" {{ request('sort_by')=='3' ? 'selected' : '' }}>Name</option>
+                    </select>
+                </form>
                 <!-- / Sort Options-->
             </div>
         </div> <!-- /Category Toolbar-->
@@ -51,12 +57,6 @@
                 <!-- Card Product-->
                 <div class="card border border-transparent position-relative overflow-hidden h-100 transparent">
                     <div class="card-img position-relative">
-                        {{-- <div class="card-badges">
-                            <span class="badge badge-card"><span
-                                    class="f-w-2 f-h-2 bg-danger rounded-circle d-block me-1"></span> Sale</span>
-                        </div>
-                        <span class="position-absolute top-0 end-0 p-2 z-index-20 text-muted"><i
-                                class="ri-heart-line"></i></span> --}}
                         <picture class="position-relative overflow-hidden d-block bg-light">
                             @if ($product->images->isNotEmpty())
                             <img style="min-height: 300px;" src="{{ asset($product->images->first()->image_url) }}"
@@ -70,14 +70,14 @@
                             <button class="btn btn-quick-add"><i class="ri-add-line me-2"></i> Quick Add</button>
                         </div>
                     </div>
-                    <div class="card-body px-0">
+                    <div class="card-body">
                         <a class="text-decoration-none link-cover"
                             href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
-                        <p class="mt-2 mb-0 small">
+                        <p class="mt-2 mb-0 ">
                             @if($product->discount_price != null)
                             <s class="text-muted">PKR {{$product->discount_price}}</s>
                             @endif
-                            <span class="text-danger">PKR {{$product->price}}</span>
+                            <span class="price-text">PKR {{$product->price}}</span>
                         </p>
                     </div>
                 </div>
