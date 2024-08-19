@@ -100,21 +100,21 @@
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=beds">Beds</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=mattresses"></a></li>
+                                                                href="/shop?category=toddlers-bed">Toddler beds</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=wardrobes">Wardrobes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=nightstands"></a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=bedroom-furniture-sets">Bedroom
+                                                                href="/shop?category=bed-sets">Bedroom
                                                                 Furniture Sets</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=dressers">Dressers</a></li>
+                                                                href="/shop?category=teen-bed">Teen beds
+                                                                </a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=mirrors">Mirrors</a></li>
+                                                                href="/shop?category=wardrobe">Wardrobes
+                                                            </a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=bedroom-accessories">Bedroom
-                                                                Accessories</a></li>
+                                                                href="/shop?category=dresser">Dresser</a></li>
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
+                                                                href="/shop?category=mirror">Mirror</a></li>
+                                        
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
                                                                 href="/shop?category=bedroom">View All</a></li>
@@ -127,19 +127,17 @@
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=sofas">Sofas</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=armchairs">ottoman-chairs</a></li>
+                                                                href="/shop?category=ottoman-chairs">ottoman-chairs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=coffee-tables"></a>
+                                                                href="/shop?category=kids-decor">Kids decor</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=tv-stands"></a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=tables">tables</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=side-tables">Side Tables</a></li>
+                                                                href="/shop?category=tables">Tables</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=storage-cabinets">Storage
                                                                 Cabinets</a></li>
+                                                        <li class="dropdown-list-item"><a class="dropdown-item"
+                                                                href="/shop?category=media-console">Media console</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
                                                                 href="/shop?category=rugs">Rugs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
@@ -188,24 +186,13 @@
                                                                 Islands</a>
                                                         </li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=kitchen-cabinets">Kitchen
-                                                                Cabinets</a></li>
+                                                                href="/shop?category=kitchen-cabinet">Kitchen
+                                                                cabinet</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=bar-stools">Stools</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=pantry-cabinets">Pantry
-                                                                Cabinets</a>
+                                                                href="/shop?category=stool">Stools</a></li>
                                                         </li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=kitchen-tables">Kitchen Tables</a>
-                                                        </li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item"
-                                                                href="/shop?category=chairs">Chairs</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item "
-                                                                href="/shop?category=kitchen-accessories">
-                                                            </a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item "
-                                                                href="/shop?category=kitchen-appliances">
+                                                                href="/shop?category=kitchen-cart">Kitchen cart
                                                             </a></li>
                                                         <li class="dropdown-list-item"><a
                                                                 class="dropdown-item dropdown-link-all"
